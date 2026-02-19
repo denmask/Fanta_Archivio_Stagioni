@@ -1,0 +1,154 @@
+:root {
+    --bg: #0b1120;
+    --card: #1e293b;
+    --accent: #38bdf8;
+    --gold: #fbbf24;
+    --text: #f8fafc;
+    --fascia1: #2291c5;
+    --fascia2: #f97316;
+    --fascia3: #66f585;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body { background: var(--bg); color: var(--text); overflow-x: hidden; }
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: rgba(15, 23, 42, 0.9);
+    backdrop-filter: blur(15px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-palmares {
+    background: var(--gold);
+    color: #000;
+    border: none;
+    padding: 0.8rem 1.8rem;
+    border-radius: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-palmares:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(251, 191, 36, 0.3); }
+
+select {
+    background: var(--card);
+    color: white;
+    padding: 0.8rem;
+    border-radius: 12px;
+    border: 2px solid var(--accent);
+    outline: none;
+    font-size: 1rem;
+}
+
+.season-header { text-align: center; margin: 3rem 0; }
+.season-header h2 { font-size: 3rem; font-weight: 900; margin-bottom: 20px; text-transform: uppercase; letter-spacing: -1px; }
+
+#sponsorLogo { 
+    height: 120px; 
+    margin-bottom: 15px; 
+    mix-blend-mode: screen;
+    filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.4));
+}
+
+.fanta-table {
+    width: 90%;
+    max-width: 1000px;
+    margin: 0 auto 5rem;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+.fanta-table th {
+    padding: 10px;
+    color: var(--accent);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+}
+
+.fanta-table tr { 
+    background: linear-gradient(90deg, #1e293b 0%, #161e2e 100%); 
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.fanta-table tbody tr:hover { 
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+    z-index: 10;
+}
+
+.fanta-table td { padding: 1.5rem; text-align: center; position: relative; }
+
+.fascia-indicator {
+    position: absolute;
+    left: 0;
+    top: 15%;
+    height: 70%;
+    width: 6px;
+    border-radius: 0 4px 4px 0;
+}
+
+.f1 { background-color: var(--fascia1); box-shadow: 2px 0 10px #2291c5; }
+.f2 { background-color: var(--fascia2); box-shadow: 2px 0 10px #f97316; }
+.f3 { background-color: var(--fascia3); box-shadow: 2px 0 10px #66f585; }
+
+.fanta-table tr td:first-child { 
+    border-radius: 20px 0 0 20px; 
+    font-weight: 900; 
+    color: var(--accent); 
+    font-size: 2rem;
+}
+
+.fanta-table tr td:last-child { border-radius: 0 20px 20px 0; font-size: 1.3rem; }
+
+.team-cell { display: flex; align-items: center; gap: 25px; text-align: left; }
+.team-info strong { font-size: 1.8rem; font-weight: 800; line-height: 1; }
+.team-info small { font-size: 1.1rem; color: #94a3b8; }
+
+.team-logo { 
+    width: 65px; 
+    height: 65px; 
+    object-fit: contain; 
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.fanta-table tr:hover .team-logo { 
+    transform: rotate(-10deg) scale(1.2); 
+    filter: drop-shadow(0 0 10px var(--accent));
+}
+
+.pts-bold { font-weight: 900; color: var(--accent); font-size: 2rem; }
+.fp-text { color: #94a3b8; font-size: 1.4rem; }
+
+#palmaresGrid { display: flex; flex-direction: column; gap: 25px; padding: 3rem 5%; max-width: 900px; margin: 0 auto; }
+.palmares-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg, #1e293b 0%, #0f172a 100%);
+    padding: 2.5rem 3.5rem;
+    border-radius: 30px;
+    border-left: 12px solid var(--gold);
+    transition: all 0.4s ease;
+}
+.palmares-card:hover { transform: scale(1.03) translateX(15px); }
+.palmares-winner { font-size: 3rem; font-weight: 900; }
+.palmares-mister b { color: #fff; font-size: 1.3rem; }
+.palmares-badge { width: 120px; height: 120px; transition: 0.5s; }
+.palmares-card:hover .palmares-badge { transform: rotate(12deg) scale(1.2); }
+
+.hidden { display: none; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+tbody tr, .palmares-card { animation: fadeInUp 0.5s ease forwards; }
