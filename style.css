@@ -4,15 +4,26 @@
     --accent: #38bdf8;
     --gold: #fbbf24;
     --text: #f8fafc;
-    --fascia1: #2291c5;
-    --fascia2: #f97316;
-    --fascia3: #66f585;
+    --fascia1: #2291c5; /* Blu/Azzurro per Fascia 1 */
+    --fascia2: #f97316; /* Arancione per Fascia 2 */
+    --fascia3: #66f585; /* Verde Chiaro per Fascia 3 */
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+/* Reset e Font */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Poppins', sans-serif; 
+}
 
-body { background: var(--bg); color: var(--text); overflow-x: hidden; }
+body { 
+    background: var(--bg); 
+    color: var(--text); 
+    overflow-x: hidden; 
+}
 
+/* Header e Navigazione */
 header {
     display: flex;
     justify-content: space-between;
@@ -38,7 +49,10 @@ header {
     font-size: 1rem;
 }
 
-.btn-palmares:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(251, 191, 36, 0.3); }
+.btn-palmares:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 20px rgba(251, 191, 36, 0.3); 
+}
 
 select {
     background: var(--card);
@@ -50,8 +64,29 @@ select {
     font-size: 1rem;
 }
 
-.season-header { text-align: center; margin: 3rem 0; }
-.season-header h2 { font-size: 3rem; font-weight: 900; margin-bottom: 20px; text-transform: uppercase; letter-spacing: -1px; }
+/* Sezione Titoli */
+.season-header { 
+    text-align: center; 
+    margin: 3rem 0; 
+}
+
+.season-header h2 { 
+    font-size: 3rem; 
+    font-weight: 900; 
+    margin-bottom: 20px; 
+    text-transform: uppercase; 
+    letter-spacing: -1px; 
+}
+
+.section-title {
+    text-align: center; /* Centratura richiesta */
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 3rem 0 2rem;
+    text-transform: uppercase;
+    color: var(--gold);
+    width: 100%;
+}
 
 #sponsorLogo { 
     height: 120px; 
@@ -60,6 +95,7 @@ select {
     filter: drop-shadow(0 0 15px rgba(56, 189, 248, 0.4));
 }
 
+/* Tabella Classifica */
 .fanta-table {
     width: 90%;
     max-width: 1000px;
@@ -89,8 +125,13 @@ select {
     z-index: 10;
 }
 
-.fanta-table td { padding: 1.5rem; text-align: center; position: relative; }
+.fanta-table td { 
+    padding: 1.5rem; 
+    text-align: center; 
+    position: relative; 
+}
 
+/* Rettangolini Fasce (Solo 24/25 e 25/26) */
 .fascia-indicator {
     position: absolute;
     left: 0;
@@ -100,9 +141,9 @@ select {
     border-radius: 0 4px 4px 0;
 }
 
-.f1 { background-color: var(--fascia1); box-shadow: 2px 0 10px #2291c5; }
-.f2 { background-color: var(--fascia2); box-shadow: 2px 0 10px #f97316; }
-.f3 { background-color: var(--fascia3); box-shadow: 2px 0 10px #66f585; }
+.f1 { background-color: var(--fascia1); box-shadow: 2px 0 10px var(--fascia1); }
+.f2 { background-color: var(--fascia2); box-shadow: 2px 0 10px var(--fascia2); }
+.f3 { background-color: var(--fascia3); box-shadow: 2px 0 10px var(--fascia3); }
 
 .fanta-table tr td:first-child { 
     border-radius: 20px 0 0 20px; 
@@ -111,11 +152,29 @@ select {
     font-size: 2rem;
 }
 
-.fanta-table tr td:last-child { border-radius: 0 20px 20px 0; font-size: 1.3rem; }
+.fanta-table tr td:last-child { 
+    border-radius: 0 20px 20px 0; 
+    font-size: 1.3rem; 
+}
 
-.team-cell { display: flex; align-items: center; gap: 25px; text-align: left; }
-.team-info strong { font-size: 1.8rem; font-weight: 800; line-height: 1; }
-.team-info small { font-size: 1.1rem; color: #94a3b8; }
+/* Info Squadra */
+.team-cell { 
+    display: flex; 
+    align-items: center; 
+    gap: 25px; 
+    text-align: left; 
+}
+
+.team-info strong { 
+    font-size: 1.8rem; 
+    font-weight: 800; 
+    line-height: 1; 
+}
+
+.team-info small { 
+    font-size: 1.1rem; 
+    color: #94a3b8; 
+}
 
 .team-logo { 
     width: 65px; 
@@ -132,7 +191,16 @@ select {
 .pts-bold { font-weight: 900; color: var(--accent); font-size: 2rem; }
 .fp-text { color: #94a3b8; font-size: 1.4rem; }
 
-#palmaresGrid { display: flex; flex-direction: column; gap: 25px; padding: 3rem 5%; max-width: 900px; margin: 0 auto; }
+/* Palmarès / Albo d'Oro */
+#palmaresGrid { 
+    display: flex; 
+    flex-direction: column; 
+    gap: 25px; 
+    padding: 0 5% 3rem; 
+    max-width: 900px; 
+    margin: 0 auto; 
+}
+
 .palmares-card {
     display: flex;
     align-items: center;
@@ -143,12 +211,69 @@ select {
     border-left: 12px solid var(--gold);
     transition: all 0.4s ease;
 }
-.palmares-card:hover { transform: scale(1.03) translateX(15px); }
+
+.palmares-card:hover { 
+    transform: scale(1.03) translateX(15px); 
+}
+
 .palmares-winner { font-size: 3rem; font-weight: 900; }
 .palmares-mister b { color: #fff; font-size: 1.3rem; }
 .palmares-badge { width: 120px; height: 120px; transition: 0.5s; }
 .palmares-card:hover .palmares-badge { transform: rotate(12deg) scale(1.2); }
 
+/* Hall of Fame / Fantallenatori Storici */
+.hall-of-fame-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.mister-card {
+    background: linear-gradient(145deg, #1e293b, #111827);
+    padding: 2rem;
+    border-radius: 25px;
+    text-align: center;
+    border-bottom: 5px solid var(--accent);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.mister-card:hover { 
+    transform: translateY(-10px); 
+    background: #1e293b; 
+    box-shadow: 0 15px 30px rgba(56, 189, 248, 0.2);
+}
+
+.mister-name { 
+    font-size: 1.6rem; 
+    font-weight: 800; 
+    color: #fff; 
+    margin-bottom: 8px;
+}
+
+.mister-stats { 
+    color: var(--gold); 
+    font-weight: 700; 
+    font-size: 1.2rem; 
+    margin-bottom: 5px; 
+}
+
+.mister-period { 
+    font-size: 1rem; 
+    color: #94a3b8; 
+    font-style: italic;
+}
+
+/* Utility */
 .hidden { display: none; }
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-tbody tr, .palmares-card { animation: fadeInUp 0.5s ease forwards; }
+
+@keyframes fadeInUp { 
+    from { opacity: 0; transform: translateY(30px); } 
+    to { opacity: 1; transform: translateY(0); } 
+}
+
+tbody tr, .palmares-card, .mister-card { 
+    animation: fadeInUp 0.5s ease forwards; 
+}
