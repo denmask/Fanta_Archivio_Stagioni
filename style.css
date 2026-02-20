@@ -997,3 +997,25 @@ tbody tr, .palmares-card, .mister-card {
 
 .mondiale-color { color: #10b981 !important; }
 .europeo-color { color: #6366f1 !important; }
+
+/* ── PARZIALE BADGE ── */
+.badge-parziale {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, rgba(251,191,36,0.15), rgba(245,158,11,0.05));
+    border: 1px solid rgba(251,191,36,0.3);
+    color: var(--gold2);
+    padding: 2px 7px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.modal-season-nota {
+    font-size: 0.68rem;
+    color: var(--gold2);
+    font-style: italic;
+    margin-top: 2px;
+    opacity: 0.85;
+}

@@ -379,6 +379,15 @@
           "logo": "images/vicenza.png",
           "mister": "Kevin Sandri",
           "punti": 44
+        },
+        {
+          "pos": 4,
+          "squadra": "Udinese",
+          "logo": "images/udinese.png",
+          "mister": "Michele Picilli",
+          "punti": null,
+          "parziale": true,
+          "nota": "Dimesso a gennaio 2022"
         }
       ]
     }

@@ -109,7 +109,9 @@ function buildMisterStats() {
                 annoInizio,
                 squadra: t.squadra,
                 logo: t.logo,
-                pos: t.pos
+                pos: t.pos,
+                parziale: t.parziale || false,
+                nota: t.nota || null
             });
         });
     });
@@ -212,7 +214,7 @@ function renderHallOfFame(targetContainer) {
                     <div class="mister-team-info">
                         <img src="${s.logo}" class="mister-team-logo" onerror="this.src='images/default.png'" title="${s.squadra}">
                         <span class="mister-team-name">${s.squadra}</span>
-                        <span class="mister-team-pos">${getPosLabel(s.pos)}</span>
+                        <span class="mister-team-pos">${s.parziale ? '<span class="badge-parziale">Parziale</span>' : getPosLabel(s.pos)}</span>
                     </div>
                 </div>
             `).join('');
@@ -297,9 +299,12 @@ function openMisterModal(encodedName) {
             <span class="modal-season-year">${s.anno}</span>
             <div class="modal-season-team">
                 <img src="${s.logo}" onerror="this.src='images/default.png'" class="modal-season-logo">
-                <span>${s.squadra}</span>
+                <div>
+                    <span>${s.squadra}</span>
+                    ${s.nota ? `<div class="modal-season-nota">${s.nota}</div>` : ''}
+                </div>
             </div>
-            <span class="modal-season-pos">${getPosLabel(s.pos)}</span>
+            <span class="modal-season-pos">${s.parziale ? '<span class="badge-parziale">Parziale</span>' : getPosLabel(s.pos)}</span>
         </div>
     `).join('');
 
