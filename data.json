@@ -6,6 +6,30 @@
     {"stagione": "2022-23", "vincitore": "Inter", "logo": "images/inter.png", "allenatore": "Mattia Beltrame"},
     {"stagione": "2021-22", "vincitore": "Roma", "logo": "images/roma.png", "allenatore": "Denis Mascherin"}
   ],
+  "coppa": [
+    {
+      "stagione": "2024-25",
+      "vincitore": "Bologna",
+      "logo_vincitore": "images/bologna.png",
+      "mister_vincitore": "Federico Burello",
+      "finalista": "Milan",
+      "logo_finalista": "images/milan.png",
+      "mister_finalista": "Kevin Di Bernardo",
+      "risultato": "0-1",
+      "marcatore": "Ndoye"
+    },
+    {
+      "stagione": "2023-24",
+      "vincitore": "Juventus",
+      "logo_vincitore": "images/juventus.png",
+      "mister_vincitore": "Denis Mascherin",
+      "finalista": "Atalanta",
+      "logo_finalista": "images/atalanta.png",
+      "mister_finalista": "Cristian Tartaro",
+      "risultato": "0-1",
+      "marcatore": "Vlahovic"
+    }
+  ],
   "stagioni": [
     {
       "anno": "2025-26",
