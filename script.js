@@ -91,6 +91,7 @@ function renderPalmares() {
     });
 
     renderCoppa(container);
+    renderTornei(container);
     renderHallOfFame(container);
 }
 
@@ -141,6 +142,46 @@ function renderCoppa(targetContainer) {
                         <img src="${c.logo_vincitore}" class="coppa-logo" onerror="this.src='images/default.png'">
                         <div class="coppa-team-name">${c.vincitore}</div>
                         <div class="coppa-mister">🥇 ${c.mister_vincitore}</div>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+
+    html += '</div>';
+    targetContainer.innerHTML += html;
+}
+
+function renderTornei(targetContainer) {
+    const tornei = fantaData.tornei;
+    if (!tornei || tornei.length === 0) return;
+
+    let html = '<h2 class="section-title tornei-title">Tornei Internazionali</h2>';
+    html += '<div class="coppa-list">';
+
+    tornei.forEach((t, i) => {
+        const isMondiale = t.tipo === 'FantaMundial';
+        const cardClass = isMondiale ? 'coppa-card torneo-mondiale' : 'coppa-card torneo-europeo';
+        const icon = isMondiale ? '🌍' : '⭐';
+        const label = `${icon} ${t.tipo} — ${t.edizione}`;
+
+        html += `
+            <div class="${cardClass}" style="animation-delay: ${i * 0.12}s">
+                <div class="coppa-season-label torneo-label">${label}</div>
+                <div class="coppa-final-row">
+                    <div class="coppa-team winner">
+                        <img src="${t.logo_vincitore}" class="coppa-logo" onerror="this.src='images/default.png'">
+                        <div class="coppa-team-name">${t.vincitore}</div>
+                        <div class="coppa-mister">🥇 ${t.mister_vincitore}</div>
+                    </div>
+                    <div class="coppa-score-area">
+                        <div class="coppa-vs-label">FINALE</div>
+                        <div class="coppa-score">${t.risultato}</div>
+                    </div>
+                    <div class="coppa-team finalist">
+                        <img src="${t.logo_finalista}" class="coppa-logo" onerror="this.src='images/default.png'">
+                        <div class="coppa-team-name">${t.finalista}</div>
+                        <div class="coppa-mister">🥈 ${t.mister_finalista}</div>
                     </div>
                 </div>
             </div>
@@ -231,6 +272,10 @@ function openMisterModal(encodedName) {
         c.mister_vincitore.split('(')[0].trim() === name
     );
 
+    const torneiVinti = (fantaData.tornei || []).filter(t =>
+        t.mister_vincitore.split('(')[0].trim() === name
+    );
+
     const ori = stagioni.filter(s => s.pos === 1).length;
     const argenti = stagioni.filter(s => s.pos === 2).length;
     const bronzi = stagioni.filter(s => s.pos === 3).length;
@@ -304,6 +349,22 @@ function openMisterModal(encodedName) {
                 </div>
             </div>
         `).join('')}</div>
+        ` : ''}
+
+        ${torneiVinti.length > 0 ? `
+        <div class="modal-section-title tornei-modal-title">🌍 Tornei Internazionali</div>
+        <div class="modal-trophies-list">${torneiVinti.map(t => {
+            const icon = t.tipo === 'FantaMundial' ? '🌍' : '⭐';
+            const tClass = t.tipo === 'FantaMundial' ? 'torneo-entry mondiale-entry' : 'torneo-entry europeo-entry';
+            return `
+            <div class="modal-trophy-entry ${tClass}">
+                <img src="${t.logo_vincitore}" class="modal-trophy-logo" onerror="this.src='images/default.png'">
+                <div>
+                    <div class="modal-trophy-season">${icon} ${t.tipo} — ${t.edizione}</div>
+                    <div class="modal-trophy-team torneo-trophy-team ${t.tipo === 'FantaMundial' ? 'mondiale-color' : 'europeo-color'}">🏆 ${t.vincitore}</div>
+                </div>
+            </div>`;
+        }).join('')}</div>
         ` : ''}
 
         <div class="modal-section-title">📋 Storico Stagioni</div>

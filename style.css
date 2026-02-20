@@ -851,7 +851,7 @@ tbody tr, .palmares-card, .mister-card {
 }
 
 .coppa-team.finalist .coppa-logo {
-    filter: grayscale(30%) opacity(0.8);
+    filter: none;
 }
 
 .coppa-logo {
@@ -862,7 +862,11 @@ tbody tr, .palmares-card, .mister-card {
 }
 
 .coppa-card:hover .coppa-team.winner .coppa-logo {
-    transform: scale(1.12) rotate(-5deg);
+    transform: none;
+}
+
+.coppa-card:hover .coppa-team.finalist .coppa-logo {
+    transform: none;
 }
 
 .coppa-team-name {
@@ -936,3 +940,60 @@ tbody tr, .palmares-card, .mister-card {
 .coppa-trophy-team {
     color: #e63946 !important;
 }
+
+/* ── TORNEI INTERNAZIONALI ── */
+.tornei-title {
+    color: #10b981 !important;
+}
+
+.tornei-title::after {
+    background: linear-gradient(90deg, #10b981, transparent) !important;
+}
+
+.torneo-mondiale {
+    border-left-color: #10b981 !important;
+    background: linear-gradient(120deg, #0a1a10 0%, #0a120e 60%, #0d1526 100%) !important;
+    border-color: rgba(16,185,129,0.2) !important;
+}
+
+.torneo-mondiale:hover {
+    border-color: rgba(16,185,129,0.45) !important;
+    box-shadow: 0 10px 36px rgba(16,185,129,0.12) !important;
+}
+
+.torneo-europeo {
+    border-left-color: #6366f1 !important;
+    background: linear-gradient(120deg, #0e0a1a 0%, #0c0a18 60%, #0d1526 100%) !important;
+    border-color: rgba(99,102,241,0.2) !important;
+}
+
+.torneo-europeo:hover {
+    border-color: rgba(99,102,241,0.45) !important;
+    box-shadow: 0 10px 36px rgba(99,102,241,0.12) !important;
+}
+
+.torneo-label {
+    color: inherit !important;
+}
+
+.torneo-mondiale .torneo-label { color: #10b981 !important; }
+.torneo-europeo .torneo-label { color: #6366f1 !important; }
+
+/* Modal tornei */
+.tornei-modal-title {
+    color: #10b981 !important;
+    border-bottom-color: rgba(16,185,129,0.25) !important;
+}
+
+.torneo-entry.mondiale-entry {
+    background: linear-gradient(90deg, rgba(16,185,129,0.1), transparent) !important;
+    border-color: rgba(16,185,129,0.2) !important;
+}
+
+.torneo-entry.europeo-entry {
+    background: linear-gradient(90deg, rgba(99,102,241,0.1), transparent) !important;
+    border-color: rgba(99,102,241,0.2) !important;
+}
+
+.mondiale-color { color: #10b981 !important; }
+.europeo-color { color: #6366f1 !important; }
