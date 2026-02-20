@@ -111,6 +111,7 @@ function buildMisterStats() {
                 logo: t.logo,
                 pos: t.pos,
                 parziale: t.parziale || false,
+                vice: t.vice || false,
                 nota: t.nota || null
             });
         });
@@ -126,6 +127,7 @@ function renderCoppa(targetContainer) {
     html += '<div class="coppa-list">';
 
     coppa.forEach((c, i) => {
+        if (c.risultato === 'In corso') return;
         html += `
             <div class="coppa-card" style="animation-delay: ${i * 0.12}s">
                 <div class="coppa-season-label">STAGIONE ${c.stagione}</div>
@@ -214,7 +216,7 @@ function renderHallOfFame(targetContainer) {
                     <div class="mister-team-info">
                         <img src="${s.logo}" class="mister-team-logo" onerror="this.src='images/default.png'" title="${s.squadra}">
                         <span class="mister-team-name">${s.squadra}</span>
-                        <span class="mister-team-pos">${s.parziale ? '<span class="badge-parziale">Parziale</span>' : getPosLabel(s.pos)}</span>
+                        <span class="mister-team-pos">${s.vice ? '<span class="badge-vice">Vice</span>' : s.parziale ? '<span class="badge-parziale">Parziale</span>' : getPosLabel(s.pos)}</span>
                     </div>
                 </div>
             `).join('');
@@ -278,6 +280,20 @@ function openMisterModal(encodedName) {
         t.mister_vincitore.split('(')[0].trim() === name
     );
 
+    // All coppa participations
+    const coppePartecipazioni = (fantaData.coppa || []).map(c => {
+        const entry = (c.classifica || []).find(r => r.mister.split('(')[0].trim() === name);
+        if (!entry) return null;
+        return { stagione: c.stagione, squadra: entry.squadra, logo: entry.logo, fase: entry.fase, pos: entry.pos, inCorso: c.risultato === 'In corso' };
+    }).filter(Boolean);
+
+    // All tornei participations
+    const torneiPartecipazioni = (fantaData.tornei || []).map(t => {
+        const entry = (t.classifica || []).find(r => r.mister.split('(')[0].trim() === name);
+        if (!entry) return null;
+        return { tipo: t.tipo, edizione: t.edizione, nazione: entry.nazione, logo: entry.logo, fase: entry.fase, punti: entry.punti, pos: entry.pos };
+    }).filter(Boolean);
+
     const ori = stagioni.filter(s => s.pos === 1).length;
     const argenti = stagioni.filter(s => s.pos === 2).length;
     const bronzi = stagioni.filter(s => s.pos === 3).length;
@@ -304,7 +320,7 @@ function openMisterModal(encodedName) {
                     ${s.nota ? `<div class="modal-season-nota">${s.nota}</div>` : ''}
                 </div>
             </div>
-            <span class="modal-season-pos">${s.parziale ? '<span class="badge-parziale">Parziale</span>' : getPosLabel(s.pos)}</span>
+            <span class="modal-season-pos">${s.vice ? '<span class="badge-vice">Vice</span>' : s.parziale ? '<span class="badge-parziale">Parziale</span>' : getPosLabel(s.pos)}</span>
         </div>
     `).join('');
 
@@ -356,18 +372,37 @@ function openMisterModal(encodedName) {
         `).join('')}</div>
         ` : ''}
 
-        ${torneiVinti.length > 0 ? `
+        ${coppePartecipazioni.length > 0 ? `
+        <div class="modal-section-title coppa-modal-title">🏆 FantaCoppa Italia Frecciarossa</div>
+        <div class="modal-trophies-list">${coppePartecipazioni.map(c => {
+            const faseColor = c.fase === 'Campione' ? 'fase-campione' : c.fase === 'Finale' ? 'fase-finale' : c.inCorso ? 'fase-incorso' : 'fase-eliminato';
+            return `
+            <div class="modal-trophy-entry coppa-entry partecipazione-entry">
+                <img src="${c.logo}" class="modal-trophy-logo" onerror="this.src='images/default.png'">
+                <div class="partecipazione-info">
+                    <div class="modal-trophy-season">Stagione ${c.stagione}</div>
+                    <div class="partecipazione-squadra">${c.squadra}</div>
+                </div>
+                <span class="fase-badge ${faseColor}">${c.fase}</span>
+            </div>`;
+        }).join('')}</div>
+        ` : ''}
+
+        ${torneiPartecipazioni.length > 0 ? `
         <div class="modal-section-title tornei-modal-title">🌍 Tornei Internazionali</div>
-        <div class="modal-trophies-list">${torneiVinti.map(t => {
+        <div class="modal-trophies-list">${torneiPartecipazioni.map(t => {
             const icon = t.tipo === 'FantaMundial' ? '🌍' : '⭐';
             const tClass = t.tipo === 'FantaMundial' ? 'torneo-entry mondiale-entry' : 'torneo-entry europeo-entry';
+            const faseColor = t.fase === 'Campione' ? 'fase-campione' : t.fase === 'Finale' ? 'fase-finale' : 'fase-eliminato';
+            const ptsLabel = t.punti !== null && t.punti !== undefined ? ` — ${t.punti} pt` : '';
             return `
-            <div class="modal-trophy-entry ${tClass}">
-                <img src="${t.logo_vincitore}" class="modal-trophy-logo" onerror="this.src='images/default.png'">
-                <div>
+            <div class="modal-trophy-entry ${tClass} partecipazione-entry">
+                <img src="${t.logo}" class="modal-trophy-logo" onerror="this.src='images/default.png'">
+                <div class="partecipazione-info">
                     <div class="modal-trophy-season">${icon} ${t.tipo} — ${t.edizione}</div>
-                    <div class="modal-trophy-team torneo-trophy-team ${t.tipo === 'FantaMundial' ? 'mondiale-color' : 'europeo-color'}">🏆 ${t.vincitore}</div>
+                    <div class="partecipazione-squadra">${t.nazione}${ptsLabel}</div>
                 </div>
+                <span class="fase-badge ${faseColor}">${t.fase}</span>
             </div>`;
         }).join('')}</div>
         ` : ''}

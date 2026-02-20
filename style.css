@@ -1019,3 +1019,76 @@ tbody tr, .palmares-card, .mister-card {
     margin-top: 2px;
     opacity: 0.85;
 }
+
+/* ── FASE BADGE & PARTECIPAZIONI ── */
+.partecipazione-entry {
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.partecipazione-info {
+    flex: 1;
+}
+
+.partecipazione-squadra {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: #fff;
+    margin-top: 2px;
+}
+
+.fase-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.fase-campione {
+    background: linear-gradient(135deg, rgba(251,191,36,0.2), rgba(245,158,11,0.08));
+    border: 1px solid rgba(251,191,36,0.4);
+    color: var(--gold);
+}
+
+.fase-finale {
+    background: linear-gradient(135deg, rgba(148,163,184,0.15), rgba(148,163,184,0.05));
+    border: 1px solid rgba(148,163,184,0.3);
+    color: #94a3b8;
+}
+
+.fase-eliminato {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--muted);
+}
+
+/* ── VICE BADGE ── */
+.badge-vice {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(99,102,241,0.05));
+    border: 1px solid rgba(99,102,241,0.3);
+    color: #818cf8;
+    padding: 2px 7px;
+    border-radius: 10px;
+    white-space: nowrap;
+}
+
+.fase-incorso {
+    background: linear-gradient(135deg, rgba(56,189,248,0.15), rgba(14,165,233,0.05));
+    border: 1px solid rgba(56,189,248,0.35);
+    color: var(--accent);
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 4px rgba(56,189,248,0.2); }
+    50% { box-shadow: 0 0 10px rgba(56,189,248,0.5); }
+}

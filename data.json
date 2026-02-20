@@ -43,7 +43,57 @@
       "logo_finalista": "images/francia.png",
       "mister_finalista": "Denis Mascherin",
       "risultato": "7-5 d.c.r.",
-      "marcatore": null
+      "marcatore": null,
+      "classifica": [
+        {
+          "pos": 1,
+          "nazione": "Argentina",
+          "logo": "images/argentina.png",
+          "mister": "Kevin Sandri",
+          "punti": 12,
+          "fase": "Campione"
+        },
+        {
+          "pos": 2,
+          "nazione": "Francia",
+          "logo": "images/francia.png",
+          "mister": "Denis Mascherin",
+          "punti": 9,
+          "fase": "Finale"
+        },
+        {
+          "pos": 3,
+          "nazione": "Brasile",
+          "logo": "images/brasile.png",
+          "mister": "Mattia Beltrame",
+          "punti": 9,
+          "fase": "Quarti"
+        },
+        {
+          "pos": 4,
+          "nazione": "Portogallo",
+          "logo": "images/portogallo.png",
+          "mister": "Giovanni Bean",
+          "punti": 9,
+          "fase": "Quarti"
+        },
+        {
+          "pos": 5,
+          "nazione": "Spagna",
+          "logo": "images/spagna.png",
+          "mister": "Riccardo Rella",
+          "punti": 7,
+          "fase": "Ottavi"
+        },
+        {
+          "pos": 6,
+          "nazione": "Germania",
+          "logo": "images/germania.png",
+          "mister": "Andrea Campagnolo",
+          "punti": null,
+          "fase": "Gironi"
+        }
+      ]
     },
     {
       "tipo": "FantaEuropeo",
@@ -56,10 +106,152 @@
       "logo_finalista": "images/inghilterra.png",
       "mister_finalista": "Kevin Sandri",
       "risultato": "2-1",
-      "marcatore": null
+      "marcatore": null,
+      "classifica": [
+        {
+          "pos": 1,
+          "nazione": "Spagna",
+          "logo": "images/spagna.png",
+          "mister": "Cristian Tartaro",
+          "punti": 19,
+          "fase": "Campione"
+        },
+        {
+          "pos": 2,
+          "nazione": "Inghilterra",
+          "logo": "images/inghilterra.png",
+          "mister": "Kevin Sandri",
+          "punti": 14,
+          "fase": "Finale"
+        },
+        {
+          "pos": 3,
+          "nazione": "Germania",
+          "logo": "images/germania.png",
+          "mister": "Denis Mascherin",
+          "punti": 12,
+          "fase": "Quarti"
+        },
+        {
+          "pos": 4,
+          "nazione": "Francia",
+          "logo": "images/francia.png",
+          "mister": "Mattia Beltrame",
+          "punti": 9,
+          "fase": "Quarti"
+        },
+        {
+          "pos": 5,
+          "nazione": "Portogallo",
+          "logo": "images/portogallo.png",
+          "mister": "Federico Burello",
+          "punti": 9,
+          "fase": "Quarti"
+        },
+        {
+          "pos": 6,
+          "nazione": "Italia",
+          "logo": "images/italia.png",
+          "mister": "Kevin Di Bernardo",
+          "punti": 7,
+          "fase": "Ottavi"
+        },
+        {
+          "pos": 7,
+          "nazione": "Belgio",
+          "logo": "images/belgio.png",
+          "mister": "Andrea Campagnolo",
+          "punti": 7,
+          "fase": "Ottavi"
+        },
+        {
+          "pos": 8,
+          "nazione": "Croazia",
+          "logo": "images/croazia.png",
+          "mister": "Giacomo Bot",
+          "punti": 4,
+          "fase": "Gironi"
+        }
+      ]
     }
   ],
   "coppa": [
+    {
+      "stagione": "2025-26",
+      "vincitore": "TBD",
+      "logo_vincitore": "images/default.png",
+      "mister_vincitore": "In corso",
+      "finalista": "TBD",
+      "logo_finalista": "images/default.png",
+      "mister_finalista": "In corso",
+      "risultato": "In corso",
+      "marcatore": null,
+      "classifica": [
+        {
+          "pos": 1,
+          "squadra": "Atalanta",
+          "logo": "images/atalanta.png",
+          "mister": "Kevin Di Bernardo",
+          "fase": "Semifinale"
+        },
+        {
+          "pos": 2,
+          "squadra": "Lazio",
+          "logo": "images/lazio.png",
+          "mister": "Cristian Tartaro",
+          "fase": "Semifinale"
+        },
+        {
+          "pos": 3,
+          "squadra": "Inter",
+          "logo": "images/inter.png",
+          "mister": "Federico Burello",
+          "fase": "Semifinale"
+        },
+        {
+          "pos": 4,
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Mattia Beltrame",
+          "fase": "Quarti"
+        },
+        {
+          "pos": 5,
+          "squadra": "Bologna",
+          "logo": "images/bologna.png",
+          "mister": "Nicola Marano",
+          "fase": "Quarti"
+        },
+        {
+          "pos": 6,
+          "squadra": "Juventus",
+          "logo": "images/juventus.png",
+          "mister": "Denis Mascherin",
+          "fase": "Quarti"
+        },
+        {
+          "pos": 7,
+          "squadra": "Milan",
+          "logo": "images/milan.png",
+          "mister": "Lorenzo Moro",
+          "fase": "Ottavi"
+        },
+        {
+          "pos": 8,
+          "squadra": "Roma",
+          "logo": "images/roma.png",
+          "mister": "Alex Beltrame",
+          "fase": "Ottavi"
+        },
+        {
+          "pos": 9,
+          "squadra": "Udinese",
+          "logo": "images/udinese.png",
+          "mister": "Kevin Sandri",
+          "fase": "Ottavi"
+        }
+      ]
+    },
     {
       "stagione": "2024-25",
       "vincitore": "Bologna",
@@ -69,7 +261,65 @@
       "logo_finalista": "images/milan.png",
       "mister_finalista": "Kevin Di Bernardo",
       "risultato": "0-1",
-      "marcatore": "Ndoye"
+      "marcatore": "Ndoye",
+      "classifica": [
+        {
+          "pos": 1,
+          "squadra": "Bologna",
+          "logo": "images/bologna.png",
+          "mister": "Federico Burello",
+          "fase": "Campione"
+        },
+        {
+          "pos": 2,
+          "squadra": "Milan",
+          "logo": "images/milan.png",
+          "mister": "Kevin Di Bernardo",
+          "fase": "Finale"
+        },
+        {
+          "pos": 3,
+          "squadra": "Inter",
+          "logo": "images/inter.png",
+          "mister": "Denis Mascherin",
+          "fase": "Semifinale"
+        },
+        {
+          "pos": 4,
+          "squadra": "Atalanta",
+          "logo": "images/atalanta.png",
+          "mister": "Cristian Tartaro",
+          "fase": "Quarti"
+        },
+        {
+          "pos": 5,
+          "squadra": "Roma",
+          "logo": "images/roma.png",
+          "mister": "Alex Beltrame",
+          "fase": "Quarti"
+        },
+        {
+          "pos": 6,
+          "squadra": "Juventus",
+          "logo": "images/juventus.png",
+          "mister": "Kevin Sandri",
+          "fase": "Quarti"
+        },
+        {
+          "pos": 7,
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Mattia Beltrame",
+          "fase": "Ottavi"
+        },
+        {
+          "pos": 8,
+          "squadra": "Genoa",
+          "logo": "images/genoa.png",
+          "mister": "Giovanni Bean",
+          "fase": "Sedicesimi"
+        }
+      ]
     },
     {
       "stagione": "2023-24",
@@ -80,7 +330,65 @@
       "logo_finalista": "images/atalanta.png",
       "mister_finalista": "Cristian Tartaro",
       "risultato": "0-1",
-      "marcatore": "Vlahovic"
+      "marcatore": "Vlahovic",
+      "classifica": [
+        {
+          "pos": 1,
+          "squadra": "Juventus",
+          "logo": "images/juventus.png",
+          "mister": "Denis Mascherin",
+          "fase": "Campione"
+        },
+        {
+          "pos": 2,
+          "squadra": "Atalanta",
+          "logo": "images/atalanta.png",
+          "mister": "Cristian Tartaro",
+          "fase": "Finale"
+        },
+        {
+          "pos": 3,
+          "squadra": "Fiorentina",
+          "logo": "images/fiorentina.png",
+          "mister": "Kevin Di Bernardo",
+          "fase": "Semifinale"
+        },
+        {
+          "pos": 4,
+          "squadra": "Lazio",
+          "logo": "images/lazio.png",
+          "mister": "Kevin Sandri",
+          "fase": "Semifinale"
+        },
+        {
+          "pos": 5,
+          "squadra": "Milan",
+          "logo": "images/milan.png",
+          "mister": "Giovanni Bean",
+          "fase": "Quarti"
+        },
+        {
+          "pos": 6,
+          "squadra": "Roma",
+          "logo": "images/roma.png",
+          "mister": "Andrea Campagnolo",
+          "fase": "Quarti"
+        },
+        {
+          "pos": 7,
+          "squadra": "Inter",
+          "logo": "images/inter.png",
+          "mister": "Mattia Beltrame",
+          "fase": "Ottavi"
+        },
+        {
+          "pos": 8,
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Mattia Minin",
+          "fase": "Ottavi"
+        }
+      ]
     }
   ],
   "stagioni": [
@@ -221,6 +529,15 @@
           "mister": "Giovanni Bean",
           "punti": 30,
           "fp": 2383
+        },
+        {
+          "pos": 1,
+          "squadra": "Bologna",
+          "logo": "images/bologna.png",
+          "mister": "Giacomo Bot",
+          "punti": null,
+          "vice": true,
+          "nota": "Vice di Federico Burello"
         }
       ]
     },
@@ -291,6 +608,15 @@
           "mister": "Mattia Minin (vice Giacomo Bot)",
           "punti": 36,
           "fp": 2522.5
+        },
+        {
+          "pos": 8,
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Giacomo Bot",
+          "punti": null,
+          "vice": true,
+          "nota": "Vice di Mattia Minin"
         }
       ]
     },
@@ -364,7 +690,9 @@
           "squadra": "Udinese",
           "logo": "images/udinese.png",
           "mister": "Riccardo Rella",
-          "punti": 65
+          "punti": 65,
+          "parziale": true,
+          "nota": "Subentrato a gennaio 2022"
         },
         {
           "pos": 3,
