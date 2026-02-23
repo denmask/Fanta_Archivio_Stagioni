@@ -1299,3 +1299,6 @@ tbody tr, .palmares-card, .mister-card {
     0%, 100% { box-shadow: 0 0 4px rgba(56,189,248,0.2); }
     50% { box-shadow: 0 0 10px rgba(56,189,248,0.5); }
 }
+img[src*="juventus"] {
+    filter: brightness(0) invert(1);
+}

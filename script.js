@@ -38,7 +38,7 @@ function renderSeason(anno) {
 
     const useFasce = (anno === "2025-26" || anno === "2024-25");
 
-    season.classifica.forEach((team, i) => {
+    season.classifica.filter(team => !team.vice).forEach((team, i) => {
         let fasciaClass = "";
         if (useFasce) {
             if (team.pos <= 4) fasciaClass = "f1";
