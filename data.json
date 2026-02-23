@@ -401,7 +401,7 @@
           "squadra": "Inter",
           "logo": "images/inter.png",
           "mister": "Federico Burello",
-          "punti": 50,
+          "punti": 53,
           "fp": 1902
         },
         {
@@ -409,7 +409,7 @@
           "squadra": "Napoli",
           "logo": "images/napoli.png",
           "mister": "Mattia Beltrame",
-          "punti": 43,
+          "punti": 46,
           "fp": 1792.5
         },
         {
@@ -417,7 +417,7 @@
           "squadra": "Atalanta",
           "logo": "images/atalanta.png",
           "mister": "Kevin Di Bernardo",
-          "punti": 43,
+          "punti": 46,
           "fp": 1758.5
         },
         {
@@ -441,7 +441,7 @@
           "squadra": "Roma",
           "logo": "images/roma.png",
           "mister": "Alex Beltrame",
-          "punti": 29,
+          "punti": 32,
           "fp": 1764
         },
         {
