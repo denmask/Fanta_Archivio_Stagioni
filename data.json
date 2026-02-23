@@ -249,6 +249,13 @@
           "logo": "images/udinese.png",
           "mister": "Kevin Sandri",
           "fase": "Ottavi"
+        },
+        {
+          "pos": 10,
+          "squadra": "Fiorentina",
+          "logo": "images/fiorentina.png",
+          "mister": "Valentina Pozzi",
+          "fase": "Ottavi"
         }
       ]
     },
@@ -435,6 +442,15 @@
           "mister": "Denis Mascherin",
           "punti": 34,
           "fp": 1841.5
+        },
+        {
+          "pos": 5,
+          "squadra": "Juventus",
+          "logo": "images/juventus.png",
+          "mister": "Valentina Pozzi",
+          "punti": null,
+          "vice": true,
+          "nota": "Vice di Denis Mascherin (da novembre)"
         },
         {
           "pos": 6,

@@ -14,6 +14,7 @@
         </div>
         <nav>
             <button onclick="togglePalmares()" class="btn-palmares">🏆 PALMARÈS</button>
+            <button onclick="toggleAttivita()" class="btn-attivita">👥 ATTIVITÀ</button>
             <select id="seasonSelector" onchange="changeSeason(this.value)"></select>
         </nav>
     </header>
@@ -21,6 +22,10 @@
     <main id="app">
         <section id="palmaresSection" class="hidden">
             <div id="palmaresGrid" class="grid-container"></div>
+        </section>
+
+        <section id="attivitaSection" class="hidden">
+            <div id="attivitaGrid" class="grid-container"></div>
         </section>
 
         <section id="rankingSection">

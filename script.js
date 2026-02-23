@@ -435,10 +435,156 @@ function changeSeason(val) {
 
 function togglePalmares() {
     const isPalmaresHidden = document.getElementById('palmaresSection').classList.contains('hidden');
-    document.getElementById('palmaresSection').classList.toggle('hidden');
-    document.getElementById('rankingSection').classList.toggle('hidden');
-    const btn = document.querySelector('.btn-palmares');
-    btn.innerText = isPalmaresHidden ? "Torna alla Classifica" : "🏆 PALMARÈS";
+    
+    // Hide all sections first
+    document.getElementById('palmaresSection').classList.add('hidden');
+    document.getElementById('attivitaSection').classList.add('hidden');
+    document.getElementById('rankingSection').classList.add('hidden');
+
+    const btnPalmares = document.querySelector('.btn-palmares');
+    const btnAttivita = document.querySelector('.btn-attivita');
+
+    if (isPalmaresHidden) {
+        document.getElementById('palmaresSection').classList.remove('hidden');
+        btnPalmares.innerText = "Torna alla Classifica";
+        btnAttivita.innerText = "👥 ATTIVITÀ";
+    } else {
+        document.getElementById('rankingSection').classList.remove('hidden');
+        btnPalmares.innerText = "🏆 PALMARÈS";
+        btnAttivita.innerText = "👥 ATTIVITÀ";
+    }
+}
+
+function toggleAttivita() {
+    const isAttivitaHidden = document.getElementById('attivitaSection').classList.contains('hidden');
+
+    // Hide all sections first
+    document.getElementById('palmaresSection').classList.add('hidden');
+    document.getElementById('attivitaSection').classList.add('hidden');
+    document.getElementById('rankingSection').classList.add('hidden');
+
+    const btnPalmares = document.querySelector('.btn-palmares');
+    const btnAttivita = document.querySelector('.btn-attivita');
+
+    if (isAttivitaHidden) {
+        document.getElementById('attivitaSection').classList.remove('hidden');
+        btnAttivita.innerText = "Torna alla Classifica";
+        btnPalmares.innerText = "🏆 PALMARÈS";
+        renderAttivita();
+    } else {
+        document.getElementById('rankingSection').classList.remove('hidden');
+        btnAttivita.innerText = "👥 ATTIVITÀ";
+        btnPalmares.innerText = "🏆 PALMARÈS";
+    }
+}
+
+function renderAttivita() {
+    const container = document.getElementById('attivitaGrid');
+    container.innerHTML = '<h2 class="section-title">Attività Fantallenatori</h2>';
+
+    const CURRENT_SEASON = "2025-26";
+    const stats = buildMisterStats();
+
+    const ADMIN_ORDER = { "Denis Mascherin": 0, "Kevin Di Bernardo": 1 };
+
+    // Sort: admins first (fixed order), then active alphabetically, then retired alphabetically
+    const misterList = Object.keys(stats).sort((a, b) => {
+        const aIsAdmin = a in ADMIN_ORDER;
+        const bIsAdmin = b in ADMIN_ORDER;
+        if (aIsAdmin && bIsAdmin) return ADMIN_ORDER[a] - ADMIN_ORDER[b];
+        if (aIsAdmin) return -1;
+        if (bIsAdmin) return 1;
+
+        const aMax = [...stats[a].stagioni].sort((x, y) => y.annoInizio - x.annoInizio)[0].anno;
+        const bMax = [...stats[b].stagioni].sort((x, y) => y.annoInizio - x.annoInizio)[0].anno;
+        const aActive = aMax === CURRENT_SEASON;
+        const bActive = bMax === CURRENT_SEASON;
+        if (aActive && !bActive) return -1;
+        if (!aActive && bActive) return 1;
+
+        // Within same group: sort by start year ascending (oldest first),
+        // then by number of non-vice seasons descending, then alphabetically
+        const aMin = Math.min(...stats[a].stagioni.map(s => s.annoInizio));
+        const bMin = Math.min(...stats[b].stagioni.map(s => s.annoInizio));
+        if (aMin !== bMin) return aMin - bMin;
+        const aOwn = stats[a].stagioni.filter(s => !s.vice).length;
+        const bOwn = stats[b].stagioni.filter(s => !s.vice).length;
+        if (aOwn !== bOwn) return bOwn - aOwn;
+        return a.localeCompare(b);
+    });
+
+    let html = '<div class="attivita-list">';
+    let activeHeaderAdded = false;
+    let retiredHeaderAdded = false;
+
+    html += '<div class="attivita-group-label attivita-group-admin">⚙️ Staff</div>';
+
+    misterList.forEach(name => {
+        const stagioni = stats[name].stagioni;
+        const years = stagioni.map(s => parseInt(s.anno.split('-')[0]));
+        const minYear = Math.min(...years);
+        const maxAnno = [...stagioni].sort((a, b) => b.annoInizio - a.annoInizio)[0].anno;
+        const isActive = maxAnno === CURRENT_SEASON;
+        const isAdmin = name in ADMIN_ORDER;
+
+        if (!isAdmin && !activeHeaderAdded) {
+            activeHeaderAdded = true;
+            html += '<div class="attivita-group-label attivita-group-active">🟢 Attivi</div>';
+        }
+
+        if (!isAdmin && !isActive && !retiredHeaderAdded) {
+            retiredHeaderAdded = true;
+            html += '<div class="attivita-group-label attivita-group-retired">🔴 Ritirati</div>';
+        }
+
+        // End year: second part of last season string (e.g. "2024-25" → 2025)
+        const endYearStr = isActive ? 'in corso' : (() => {
+            const parts = maxAnno.split('-');
+            const y2 = parts[1];
+            // Handle short format like "24" → "2024"
+            return y2.length === 2 ? '20' + y2 : y2;
+        })();
+
+        const periodoLabel = isActive ? `${minYear} – in corso` : `${minYear} – ${endYearStr}`;
+        const statusClass = isActive ? 'attivita-status active' : 'attivita-status retired';
+        const statusLabel = isActive ? '🟢 Attivo' : '🔴 Ritirato';
+        const initiali = name.split(' ').map(p => p[0]).join('').toUpperCase().slice(0, 2);
+        const misterEncoded = encodeURIComponent(name);
+        const numStagioni = stagioni.filter(s => !s.vice).length;
+        const isOnlyVice = numStagioni === 0 && stagioni.some(s => s.vice);
+
+        const roleBadge = name === "Denis Mascherin"
+            ? '<span class="attivita-role-badge admin">👑 SuperAdmin</span>'
+            : name === "Kevin Di Bernardo"
+            ? '<span class="attivita-role-badge vice">🛡️ ViceAdmin</span>'
+            : isOnlyVice
+            ? '<span class="attivita-role-badge only-vice">🔁 Solo Vice</span>'
+            : '';
+
+        const cardClass = isAdmin ? ' attivita-card-admin' : isOnlyVice ? ' attivita-card-vice' : '';
+        const avatarClass = isAdmin ? ' attivita-avatar-admin' : isOnlyVice ? ' attivita-avatar-vice' : '';
+        const statusClassFinal = isActive
+            ? (isOnlyVice ? 'attivita-status active-vice' : 'attivita-status active')
+            : (isOnlyVice ? 'attivita-status retired-vice' : 'attivita-status retired');
+        const stagionLabel = isOnlyVice
+            ? `${stagioni.length} stagion${stagioni.length === 1 ? 'e' : 'i'} (solo vice)`
+            : `${numStagioni} stagion${numStagioni === 1 ? 'e' : 'i'}`;
+
+        html += `
+            <div class="attivita-card${cardClass}" onclick="openMisterModal('${misterEncoded}')" title="Clicca per la scheda di ${name}">
+                <div class="attivita-avatar${avatarClass}">${initiali}</div>
+                <div class="attivita-info">
+                    <div class="attivita-name">${name} ${roleBadge}</div>
+                    <div class="attivita-periodo">📅 ${periodoLabel}</div>
+                    <div class="attivita-stagioni">${stagionLabel}</div>
+                </div>
+                <div class="${statusClassFinal}">${isActive ? (isOnlyVice ? '🔁 Vice Attivo' : '🟢 Attivo') : (isOnlyVice ? '🔁 Vice Ritirato' : '🔴 Ritirato')}</div>
+            </div>
+        `;
+    });
+
+    html += '</div>';
+    container.innerHTML += html;
 }
 
 window.onload = loadData;

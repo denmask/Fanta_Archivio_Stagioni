@@ -72,6 +72,213 @@ nav { display: flex; align-items: center; gap: 1rem; }
     box-shadow: 0 8px 20px rgba(251,191,36,0.35);
 }
 
+.btn-attivita {
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    color: #000;
+    border: none;
+    padding: 0.75rem 1.6rem;
+    border-radius: 10px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    margin-left: 0.5rem;
+}
+
+.btn-attivita:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(56,189,248,0.35);
+}
+
+/* ── ATTIVITÀ SECTION ── */
+.attivita-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 800px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+}
+
+.attivita-card {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1rem 1.4rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.attivita-card:hover {
+    background: var(--card2);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(56,189,248,0.12);
+    border-color: rgba(56,189,248,0.3);
+}
+
+.attivita-avatar {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #000;
+}
+
+.attivita-info {
+    flex: 1;
+}
+
+.attivita-name {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text);
+}
+
+.attivita-periodo {
+    font-size: 0.88rem;
+    color: var(--gold);
+    font-weight: 600;
+    margin-top: 0.15rem;
+}
+
+.attivita-stagioni {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-top: 0.1rem;
+}
+
+.attivita-status {
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.attivita-status.active {
+    background: rgba(74,222,128,0.15);
+    color: #4ade80;
+    border: 1px solid rgba(74,222,128,0.3);
+}
+
+.attivita-status.retired {
+    background: rgba(248,113,113,0.12);
+    color: #f87171;
+    border: 1px solid rgba(248,113,113,0.25);
+}
+
+.attivita-group-label {
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.1rem;
+}
+
+.attivita-group-admin {
+    background: rgba(251,191,36,0.12);
+    color: var(--gold);
+    border-left: 3px solid var(--gold);
+}
+
+.attivita-group-active {
+    background: rgba(74,222,128,0.1);
+    color: #4ade80;
+    border-left: 3px solid #4ade80;
+    margin-top: 1.2rem;
+}
+
+.attivita-group-retired {
+    background: rgba(248,113,113,0.08);
+    color: #f87171;
+    border-left: 3px solid #f87171;
+    margin-top: 1.2rem;
+}
+
+.attivita-card-admin {
+    border-color: rgba(251,191,36,0.3);
+    background: linear-gradient(135deg, rgba(251,191,36,0.07), var(--card));
+}
+
+.attivita-card-admin:hover {
+    border-color: rgba(251,191,36,0.55) !important;
+    box-shadow: 0 6px 20px rgba(251,191,36,0.15) !important;
+}
+
+.attivita-avatar-admin {
+    background: linear-gradient(135deg, var(--gold), var(--gold2)) !important;
+}
+
+.attivita-role-badge {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.15rem 0.55rem;
+    border-radius: 20px;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+}
+
+.attivita-role-badge.admin {
+    background: rgba(251,191,36,0.2);
+    color: var(--gold);
+    border: 1px solid rgba(251,191,36,0.4);
+}
+
+.attivita-role-badge.vice {
+    background: rgba(56,189,248,0.15);
+    color: var(--accent);
+    border: 1px solid rgba(56,189,248,0.35);
+}
+
+.attivita-role-badge.only-vice {
+    background: rgba(167,139,250,0.18);
+    color: #a78bfa;
+    border: 1px solid rgba(167,139,250,0.35);
+}
+
+.attivita-card-vice {
+    border-color: rgba(167,139,250,0.25);
+    background: linear-gradient(135deg, rgba(167,139,250,0.06), var(--card));
+    opacity: 0.88;
+}
+
+.attivita-card-vice:hover {
+    border-color: rgba(167,139,250,0.45) !important;
+    box-shadow: 0 6px 20px rgba(167,139,250,0.12) !important;
+    opacity: 1;
+}
+
+.attivita-avatar-vice {
+    background: linear-gradient(135deg, #a78bfa, #7c3aed) !important;
+}
+
+.attivita-status.active-vice {
+    background: rgba(167,139,250,0.15);
+    color: #a78bfa;
+    border: 1px solid rgba(167,139,250,0.3);
+}
+
+.attivita-status.retired-vice {
+    background: rgba(167,139,250,0.08);
+    color: #c4b5fd;
+    border: 1px solid rgba(167,139,250,0.2);
+    opacity: 0.8;
+}
+
 select {
     background: var(--card);
     color: white;
