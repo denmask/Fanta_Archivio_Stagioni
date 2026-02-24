@@ -15,6 +15,7 @@
         <nav>
             <button onclick="togglePalmares()" class="btn-palmares">🏆 PALMARÈS</button>
             <button onclick="toggleAttivita()" class="btn-attivita">👥 ATTIVITÀ</button>
+            <button onclick="toggleFasce()" class="btn-fasce">📊 FASCE</button>
             <select id="seasonSelector" onchange="changeSeason(this.value)"></select>
         </nav>
     </header>
@@ -26,6 +27,10 @@
 
         <section id="attivitaSection" class="hidden">
             <div id="attivitaGrid" class="grid-container"></div>
+        </section>
+
+        <section id="fasceSection" class="hidden">
+            <div id="fasceGrid" class="grid-container"></div>
         </section>
 
         <section id="rankingSection">

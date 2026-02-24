@@ -90,7 +90,7 @@
           "nazione": "Germania",
           "logo": "images/germania.png",
           "mister": "Andrea Campagnolo",
-          "punti": null,
+          "punti": 3,
           "fase": "Gironi"
         }
       ]
@@ -417,7 +417,8 @@
           "logo": "images/napoli.png",
           "mister": "Mattia Beltrame",
           "punti": 46,
-          "fp": 1792.5
+          "fp": 1792.5,
+          "uscita": true
         },
         {
           "pos": 3,
@@ -534,9 +535,19 @@
           "pos": 7,
           "squadra": "Roma",
           "logo": "images/roma.png",
-          "mister": "Andrea Campagnolo (vice Alex Beltrame)",
+          "mister": "Alex Beltrame",
           "punti": 33,
-          "fp": 2428.5
+          "fp": 2428.5,
+          "nota": "Vice di Andrea Campagnolo (1ª metà stagione), poi 1° allenatore (2ª metà stagione)"
+        },
+        {
+          "pos": 7,
+          "squadra": "Roma",
+          "logo": "images/roma.png",
+          "mister": "Andrea Campagnolo",
+          "punti": null,
+          "vice": true,
+          "nota": "1° allenatore nella 1ª metà stagione, poi lascia ad Alex Beltrame"
         },
         {
           "pos": 8,
@@ -705,10 +716,19 @@
           "pos": 2,
           "squadra": "Udinese",
           "logo": "images/udinese.png",
-          "mister": "Riccardo Rella",
+          "mister": "Michele Picilli",
           "punti": 65,
           "parziale": true,
-          "nota": "Subentrato a gennaio 2022"
+          "nota": "1° allenatore nel girone d'andata, poi sostituito da Riccardo Rella nel girone di ritorno"
+        },
+        {
+          "pos": 2,
+          "squadra": "Udinese",
+          "logo": "images/udinese.png",
+          "mister": "Riccardo Rella",
+          "punti": null,
+          "vice": true,
+          "nota": "Subentrato nel girone di ritorno a Michele Picilli"
         },
         {
           "pos": 3,
@@ -723,15 +743,6 @@
           "logo": "images/vicenza.png",
           "mister": "Kevin Sandri",
           "punti": 44
-        },
-        {
-          "pos": 4,
-          "squadra": "Udinese",
-          "logo": "images/udinese.png",
-          "mister": "Michele Picilli",
-          "punti": null,
-          "parziale": true,
-          "nota": "Dimesso a gennaio 2022"
         }
       ]
     }
