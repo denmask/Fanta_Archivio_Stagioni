@@ -1,371 +1,230 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap');
 
+/* ══════════════════════════════════════════
+   VARIABILI & RESET
+══════════════════════════════════════════ */
 :root {
-    --bg: #080e1a;
-    --bg2: #0d1526;
-    --card: #111c30;
-    --card2: #162035;
+    --bg: #070d1a;
+    --bg2: #0b1422;
+    --card: #0f1a2e;
+    --card2: #142038;
     --accent: #38bdf8;
     --accent2: #0ea5e9;
     --gold: #fbbf24;
     --gold2: #f59e0b;
-    --text: #f0f6ff;
-    --muted: #7a90b0;
-    --fascia1: #2291c5;
+    --text: #e8f1ff;
+    --muted: #6b84a8;
+    --fascia1: #38bdf8;
     --fascia2: #f97316;
     --fascia3: #4ade80;
-    --border: rgba(56,189,248,0.12);
+    --red: #ef4444;
+    --border: rgba(56,189,248,0.1);
+    --radius: 14px;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Poppins', sans-serif;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+*, *::before, *::after {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
 
 body {
+    font-family: var(--font-body);
     background: var(--bg);
     color: var(--text);
     overflow-x: hidden;
-    background-image:
-        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(56,189,248,0.07) 0%, transparent 70%);
+    line-height: 1.5;
+    font-size: 16px;
+    background-image: radial-gradient(ellipse 90% 40% at 50% -5%, rgba(56,189,248,0.06) 0%, transparent 70%);
 }
 
-/* ── HEADER ── */
+/* ══════════════════════════════════════════
+   ACCESSIBILITÀ
+══════════════════════════════════════════ */
+:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ══════════════════════════════════════════
+   HEADER
+══════════════════════════════════════════ */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.2rem 5%;
-    background: rgba(8,14,26,0.92);
+    padding: 1rem 5%;
+    background: rgba(7,13,26,0.94);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     position: sticky;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid var(--border);
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 .logo-area h1 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.2rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 900;
     letter-spacing: 3px;
     color: #fff;
+    white-space: nowrap;
 }
 
-.logo-area h1 span {
-    color: var(--accent);
+.logo-area h1 span { color: var(--accent); }
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
 }
 
-nav { display: flex; align-items: center; gap: 1rem; }
+/* Buttons */
+.btn-palmares,
+.btn-attivita,
+.btn-fasce {
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+    min-height: 44px;
+}
 
 .btn-palmares {
     background: linear-gradient(135deg, var(--gold), var(--gold2));
     color: #000;
-    border: none;
-    padding: 0.75rem 1.6rem;
-    border-radius: 10px;
-    font-weight: 800;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
 }
-
-.btn-palmares:hover {
+.btn-palmares:hover, .btn-palmares:focus-visible {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(251,191,36,0.35);
+    box-shadow: 0 6px 18px rgba(251,191,36,0.35);
 }
 
 .btn-attivita {
     background: linear-gradient(135deg, #38bdf8, #0ea5e9);
     color: #000;
-    border: none;
-    padding: 0.75rem 1.6rem;
-    border-radius: 10px;
-    font-weight: 800;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
-    margin-left: 0.5rem;
 }
-
-.btn-attivita:hover {
+.btn-attivita:hover, .btn-attivita:focus-visible {
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(56,189,248,0.35);
+    box-shadow: 0 6px 18px rgba(56,189,248,0.35);
 }
 
-/* ── ATTIVITÀ SECTION ── */
-.attivita-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    max-width: 800px;
-    margin: 1.5rem auto;
-    padding: 0 1rem;
+.btn-fasce {
+    background: linear-gradient(135deg, #a855f7, #7c3aed);
+    color: #fff;
 }
-
-.attivita-card {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 1rem 1.4rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.attivita-card:hover {
-    background: var(--card2);
+.btn-fasce:hover, .btn-fasce:focus-visible {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(56,189,248,0.12);
-    border-color: rgba(56,189,248,0.3);
-}
-
-.attivita-avatar {
-    width: 48px;
-    height: 48px;
-    min-width: 48px;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 800;
-    font-size: 1.1rem;
-    color: #000;
-}
-
-.attivita-info {
-    flex: 1;
-}
-
-.attivita-name {
-    font-weight: 700;
-    font-size: 0.92rem;
-    color: var(--text);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.attivita-periodo {
-    font-size: 0.88rem;
-    color: var(--gold);
-    font-weight: 600;
-    margin-top: 0.15rem;
-}
-
-.attivita-stagioni {
-    font-size: 0.8rem;
-    color: var(--muted);
-    margin-top: 0.1rem;
-}
-
-.attivita-status {
-    font-size: 0.82rem;
-    font-weight: 700;
-    padding: 0.35rem 0.85rem;
-    border-radius: 20px;
-    white-space: nowrap;
-}
-
-.attivita-status.active {
-    background: rgba(74,222,128,0.15);
-    color: #4ade80;
-    border: 1px solid rgba(74,222,128,0.3);
-}
-
-.attivita-status.retired {
-    background: rgba(248,113,113,0.12);
-    color: #f87171;
-    border: 1px solid rgba(248,113,113,0.25);
-}
-
-.attivita-group-label {
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: 0.4rem 0.8rem;
-    border-radius: 8px;
-    margin-top: 0.5rem;
-    margin-bottom: 0.1rem;
-}
-
-.attivita-group-admin {
-    background: rgba(251,191,36,0.12);
-    color: var(--gold);
-    border-left: 3px solid var(--gold);
-}
-
-.attivita-group-active {
-    background: rgba(74,222,128,0.1);
-    color: #4ade80;
-    border-left: 3px solid #4ade80;
-    margin-top: 1.2rem;
-}
-
-.attivita-group-retired {
-    background: rgba(248,113,113,0.08);
-    color: #f87171;
-    border-left: 3px solid #f87171;
-    margin-top: 1.2rem;
-}
-
-.attivita-card-admin {
-    border-color: rgba(251,191,36,0.3);
-    background: linear-gradient(135deg, rgba(251,191,36,0.07), var(--card));
-}
-
-.attivita-card-admin:hover {
-    border-color: rgba(251,191,36,0.55) !important;
-    box-shadow: 0 6px 20px rgba(251,191,36,0.15) !important;
-}
-
-.attivita-avatar-admin {
-    background: linear-gradient(135deg, var(--gold), var(--gold2)) !important;
-}
-
-.attivita-role-badge {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 0.15rem 0.55rem;
-    border-radius: 20px;
-    margin-left: 0.4rem;
-    vertical-align: middle;
-}
-
-.attivita-role-badge.admin {
-    background: rgba(251,191,36,0.2);
-    color: var(--gold);
-    border: 1px solid rgba(251,191,36,0.4);
-}
-
-.attivita-role-badge.vice {
-    background: rgba(56,189,248,0.15);
-    color: var(--accent);
-    border: 1px solid rgba(56,189,248,0.35);
-}
-
-.attivita-role-badge.only-vice {
-    background: rgba(167,139,250,0.18);
-    color: #a78bfa;
-    border: 1px solid rgba(167,139,250,0.35);
-}
-
-.attivita-card-uscita {
-    border-color: rgba(251,191,36,0.25);
-    background: linear-gradient(135deg, rgba(251,191,36,0.06), var(--card));
-}
-
-.attivita-card-uscita:hover {
-    border-color: rgba(251,191,36,0.45) !important;
-    box-shadow: 0 6px 20px rgba(251,191,36,0.12) !important;
-}
-
-.attivita-avatar-uscita {
-    background: linear-gradient(135deg, #fbbf24, #d97706) !important;
-}
-
-.attivita-status.uscita {
-    background: rgba(251,191,36,0.15);
-    color: #fbbf24;
-    border: 1px solid rgba(251,191,36,0.35);
-}
-    border-color: rgba(167,139,250,0.25);
-    background: linear-gradient(135deg, rgba(167,139,250,0.06), var(--card));
-    opacity: 0.88;
-}
-
-.attivita-card-vice:hover {
-    border-color: rgba(167,139,250,0.45) !important;
-    box-shadow: 0 6px 20px rgba(167,139,250,0.12) !important;
-    opacity: 1;
-}
-
-.attivita-avatar-vice {
-    background: linear-gradient(135deg, #a78bfa, #7c3aed) !important;
-}
-
-.attivita-status.active-vice {
-    background: rgba(167,139,250,0.15);
-    color: #a78bfa;
-    border: 1px solid rgba(167,139,250,0.3);
-}
-
-.attivita-status.retired-vice {
-    background: rgba(167,139,250,0.08);
-    color: #c4b5fd;
-    border: 1px solid rgba(167,139,250,0.2);
-    opacity: 0.8;
+    box-shadow: 0 6px 18px rgba(168,85,247,0.4);
 }
 
 select {
     background: var(--card);
-    color: white;
-    padding: 0.75rem 1rem;
+    color: var(--text);
+    padding: 0.6rem 0.9rem;
     border-radius: 10px;
     border: 1.5px solid var(--accent);
     outline: none;
-    font-size: 0.95rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    min-height: 44px;
+    cursor: pointer;
 }
+select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
 
-/* ── SEASON HEADER ── */
+/* ══════════════════════════════════════════
+   SEASON HEADER
+══════════════════════════════════════════ */
 .season-header {
     text-align: center;
-    margin: 3rem 0 2rem;
+    margin: 2.5rem 0 1.5rem;
+    padding: 0 1rem;
 }
 
 .season-header h2 {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 3.5rem;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 900;
     letter-spacing: 4px;
     background: linear-gradient(135deg, #fff 30%, var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 #sponsorLogo {
-    height: 110px;
-    margin-bottom: 15px;
+    height: 90px;
+    margin-bottom: 12px;
     mix-blend-mode: screen;
-    filter: drop-shadow(0 0 14px rgba(56,189,248,0.4));
+    filter: drop-shadow(0 0 12px rgba(56,189,248,0.35)) brightness(1.1) contrast(1.1);
 }
 
-/* ── TABLE ── */
+/* ══════════════════════════════════════════
+   CLASSIFICA TABLE
+══════════════════════════════════════════ */
 .fanta-table {
-    width: 90%;
+    width: 92%;
     max-width: 1000px;
-    margin: 0 auto 5rem;
+    margin: 0 auto 4rem;
     border-collapse: separate;
-    border-spacing: 0 12px;
+    border-spacing: 0 10px;
 }
 
 .fanta-table th {
-    padding: 10px;
+    padding: 10px 12px;
     color: var(--accent);
     text-transform: uppercase;
+    font-family: var(--font-display);
     font-weight: 700;
     letter-spacing: 2px;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
 }
 
 .fanta-table tr {
     background: linear-gradient(90deg, var(--card) 0%, var(--bg2) 100%);
-    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
-    position: relative;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .fanta-table tbody tr:hover {
-    transform: scale(1.015) translateY(-4px);
-    box-shadow: 0 12px 28px rgba(0,0,0,0.45);
+    transform: scale(1.012) translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.4);
     z-index: 10;
+    position: relative;
 }
 
 .fanta-table td {
-    padding: 1.4rem;
+    padding: 1.2rem 1rem;
     text-align: center;
     position: relative;
 }
@@ -379,76 +238,95 @@ select {
     border-radius: 0 4px 4px 0;
 }
 
-.f1 { background: var(--fascia1); box-shadow: 2px 0 10px var(--fascia1); }
-.f2 { background: var(--fascia2); box-shadow: 2px 0 10px var(--fascia2); }
-.f3 { background: var(--fascia3); box-shadow: 2px 0 10px var(--fascia3); }
+.f1 { background: var(--fascia1); box-shadow: 2px 0 8px var(--fascia1); }
+.f2 { background: var(--fascia2); box-shadow: 2px 0 8px var(--fascia2); }
+.f3 { background: var(--fascia3); box-shadow: 2px 0 8px var(--fascia3); }
 
 .fanta-table tr td:first-child {
-    border-radius: 16px 0 0 16px;
+    border-radius: 14px 0 0 14px;
+    font-family: var(--font-display);
     font-weight: 900;
     color: var(--accent);
-    font-size: 1.8rem;
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
 }
 
 .fanta-table tr td:last-child {
-    border-radius: 0 16px 16px 0;
-    font-size: 1.2rem;
+    border-radius: 0 14px 14px 0;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
 }
 
 .team-cell {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 14px;
     text-align: left;
 }
 
-.team-info strong { font-size: 1.6rem; font-weight: 800; line-height: 1; }
-.team-info small { font-size: 1rem; color: var(--muted); }
+.team-info strong {
+    font-family: var(--font-body);
+    font-size: clamp(1.05rem, 2.5vw, 1.4rem);
+    font-weight: 800;
+    line-height: 1;
+    display: block;
+}
+.team-info small {
+    font-size: clamp(0.75rem, 2vw, 0.95rem);
+    color: var(--muted);
+}
 
 .team-logo {
-    width: 58px;
-    height: 58px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
-    transition: transform 0.4s cubic-bezier(0.175,0.885,0.32,1.275);
+    transition: transform 0.35s cubic-bezier(0.175,0.885,0.32,1.275);
+    flex-shrink: 0;
 }
-
 .fanta-table tr:hover .team-logo {
-    transform: rotate(-10deg) scale(1.2);
-    filter: drop-shadow(0 0 8px var(--accent));
+    transform: rotate(-8deg) scale(1.15);
+    filter: drop-shadow(0 0 7px var(--accent));
 }
 
-.pts-bold { font-weight: 900; color: var(--accent); font-size: 1.8rem; }
-.fp-text { color: var(--muted); font-size: 1.2rem; }
+.pts-bold {
+    font-family: var(--font-display);
+    font-weight: 900;
+    color: var(--accent);
+    font-size: clamp(1.4rem, 3vw, 1.8rem);
+}
+.fp-text { color: var(--muted); font-size: clamp(0.9rem, 2vw, 1.1rem); }
 
-/* ── SECTION TITLE ── */
+/* ══════════════════════════════════════════
+   SECTION TITLE
+══════════════════════════════════════════ */
 .section-title {
     text-align: center;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.8rem;
-    letter-spacing: 5px;
-    margin: 3.5rem 0 2rem;
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
+    font-weight: 900;
+    letter-spacing: 4px;
+    margin: 3rem 0 1.5rem;
     color: var(--gold);
     width: 100%;
-    position: relative;
 }
 
 .section-title::after {
     content: '';
     display: block;
-    width: 80px;
+    width: 70px;
     height: 3px;
     background: linear-gradient(90deg, var(--gold), transparent);
-    margin: 8px auto 0;
+    margin: 6px auto 0;
     border-radius: 2px;
 }
 
-/* ── PALMARES ── */
+/* ══════════════════════════════════════════
+   PALMARES
+══════════════════════════════════════════ */
 #palmaresGrid {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-    padding: 0 5% 3rem;
-    max-width: 900px;
+    gap: 14px;
+    padding: 0 4% 3rem;
+    max-width: 860px;
     margin: 0 auto;
 }
 
@@ -456,140 +334,123 @@ select {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: linear-gradient(120deg, var(--card) 0%, #0f172a 100%);
-    padding: 2rem 3rem;
-    border-radius: 24px;
-    border-left: 10px solid var(--gold);
-    transition: all 0.35s ease;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3), inset 0 0 0 1px rgba(255,255,255,0.03);
+    background: linear-gradient(120deg, var(--card) 0%, #0e1828 100%);
+    padding: 1.5rem 2rem;
+    border-radius: 20px;
+    border-left: 8px solid var(--gold);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     position: relative;
     overflow: hidden;
-}
-
-.palmares-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(120deg, rgba(251,191,36,0.0) 0%, rgba(251,191,36,0.04) 100%);
-    opacity: 0;
-    transition: opacity 0.35s ease;
-    border-radius: 24px;
-    pointer-events: none;
-}
-
-.palmares-card:hover::after {
-    opacity: 1;
+    gap: 1rem;
 }
 
 .palmares-card:hover {
-    transform: scale(1.025) translateX(12px);
-    box-shadow: 0 10px 35px rgba(251,191,36,0.18), -10px 0 30px rgba(251,191,36,0.08);
+    transform: scale(1.02) translateX(8px);
+    box-shadow: 0 8px 30px rgba(251,191,36,0.15);
 }
 
 .palmares-season {
-    font-size: 0.82rem;
+    font-family: var(--font-display);
+    font-size: 0.78rem;
     letter-spacing: 3px;
     color: var(--gold2);
     font-weight: 700;
     text-transform: uppercase;
-    margin-bottom: 6px;
-    opacity: 0.85;
+    margin-bottom: 4px;
 }
 
 .palmares-winner {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.8rem;
-    letter-spacing: 3px;
+    font-family: var(--font-display);
+    font-size: clamp(1.6rem, 4vw, 2.4rem);
+    font-weight: 900;
+    letter-spacing: 2px;
     color: #fff;
 }
 
-.palmares-mister { margin-top: 6px; font-size: 1rem; color: var(--muted); }
+.palmares-mister { margin-top: 4px; font-size: 0.9rem; color: var(--muted); }
 .palmares-mister b { color: #fff; }
 
 .modalita-badge {
     display: inline-block;
-    margin-top: 10px;
-    font-size: 0.72rem;
+    margin-top: 8px;
+    font-size: 0.68rem;
     font-weight: 700;
     letter-spacing: 0.8px;
     text-transform: uppercase;
-    padding: 3px 10px;
+    padding: 2px 9px;
     border-radius: 20px;
 }
-
 .modalita-badge.trad {
-    background: linear-gradient(135deg, rgba(251,191,36,0.18), rgba(245,158,11,0.08));
+    background: rgba(251,191,36,0.15);
     border: 1px solid rgba(251,191,36,0.4);
     color: var(--gold);
 }
-
 .modalita-badge.squadre {
-    background: linear-gradient(135deg, rgba(56,189,248,0.15), rgba(14,165,233,0.05));
+    background: rgba(56,189,248,0.12);
     border: 1px solid rgba(56,189,248,0.35);
     color: var(--accent);
 }
 
 .palmares-badge {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
-    transition: 0.4s;
-    filter: drop-shadow(0 0 8px rgba(251,191,36,0.2));
+    transition: transform 0.35s ease, filter 0.35s ease;
+    filter: drop-shadow(0 0 6px rgba(251,191,36,0.15));
+    flex-shrink: 0;
 }
-
 .palmares-card:hover .palmares-badge {
-    transform: rotate(10deg) scale(1.15);
-    filter: drop-shadow(0 0 14px rgba(251,191,36,0.4));
+    transform: rotate(8deg) scale(1.12);
+    filter: drop-shadow(0 0 12px rgba(251,191,36,0.4));
 }
 
-/* ── HALL OF FAME GRID ── */
+/* ══════════════════════════════════════════
+   HALL OF FAME
+══════════════════════════════════════════ */
 .hall-of-fame-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 22px;
-    padding: 1rem 0 3rem;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 18px;
+    padding: 0.5rem 0 3rem;
     width: 100%;
 }
 
-/* ── MISTER CARD (New Design) ── */
 .mister-card {
-    background: linear-gradient(155deg, var(--card2) 0%, #0d1728 100%);
-    border-radius: 22px;
+    background: linear-gradient(155deg, var(--card2) 0%, #0b1424 100%);
+    border-radius: 20px;
     overflow: hidden;
     border: 1px solid var(--border);
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     position: relative;
+    cursor: pointer;
 }
-
 .mister-card::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 3px;
     background: linear-gradient(90deg, var(--accent), transparent);
-    border-radius: 22px 22px 0 0;
+}
+.mister-card:hover, .mister-card:focus-visible {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(56,189,248,0.14);
+    border-color: rgba(56,189,248,0.28);
 }
 
-.mister-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 18px 40px rgba(56,189,248,0.15);
-    border-color: rgba(56,189,248,0.3);
-}
-
-/* Card Header */
 .mister-card-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.4rem 1.6rem 1rem;
+    padding: 1.2rem 1.4rem 0.9rem;
     border-bottom: 1px solid var(--border);
-    gap: 10px;
+    gap: 8px;
 }
 
 .mister-name {
-    font-size: 1.1rem;
     font-weight: 800;
+    font-size: 1.05rem;
     color: #fff;
     line-height: 1.2;
     flex: 1;
@@ -599,1009 +460,613 @@ select {
 }
 
 .mister-stats-badge {
-    background: linear-gradient(135deg, rgba(56,189,248,0.15), rgba(56,189,248,0.05));
-    border: 1px solid rgba(56,189,248,0.3);
+    background: rgba(56,189,248,0.12);
+    border: 1px solid rgba(56,189,248,0.25);
     color: var(--accent);
     font-weight: 700;
-    font-size: 0.8rem;
-    padding: 4px 12px;
+    font-size: 0.75rem;
+    padding: 3px 10px;
     border-radius: 20px;
     white-space: nowrap;
-    letter-spacing: 0.3px;
 }
 
-/* Teams list inside card */
 .mister-teams-list {
-    padding: 0.8rem 1.2rem 1.2rem;
+    padding: 0.7rem 1rem 1rem;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
 }
 
 .mister-team-entry {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 0.55rem 0.8rem;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.03);
+    gap: 9px;
+    padding: 0.45rem 0.7rem;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.025);
     transition: background 0.2s ease;
 }
-
-.mister-team-entry:hover {
-    background: rgba(56,189,248,0.07);
-}
+.mister-team-entry:hover { background: rgba(56,189,248,0.07); }
 
 .mister-team-season {
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 700;
     color: var(--muted);
-    letter-spacing: 0.5px;
-    min-width: 58px;
+    letter-spacing: 0.4px;
+    min-width: 52px;
     text-transform: uppercase;
 }
 
 .mister-team-info {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 7px;
     flex: 1;
 }
 
 .mister-team-logo {
-    width: 26px;
-    height: 26px;
-    object-fit: contain;
-    flex-shrink: 0;
-    filter: drop-shadow(0 1px 4px rgba(0,0,0,0.5));
-    transition: transform 0.25s ease;
-}
-
-.mister-team-entry:hover .mister-team-logo {
-    transform: scale(1.15) rotate(-5deg);
-}
-
-.mister-team-name {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text);
-    flex: 1;
-}
-
-.mister-team-pos {
-    font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--muted);
-    min-width: 36px;
-    text-align: right;
-}
-
-/* ── UTILITY ── */
-.hidden { display: none; }
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(25px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-tbody tr, .palmares-card, .mister-card {
-    animation: fadeInUp 0.45s ease forwards;
-    opacity: 0;
-}
-/* ── MISTER CARD CLICKABLE ── */
-.mister-card {
-    cursor: pointer;
-}
-
-.mister-card-footer {
-    padding: 0.7rem 1.6rem 1rem;
-    border-top: 1px solid var(--border);
-    margin-top: 4px;
-}
-
-.mister-card-cta {
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: 0.5px;
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
-    text-transform: uppercase;
-}
-
-.mister-card:hover .mister-card-cta {
-    opacity: 1;
-}
-
-/* ── MISTER MODAL OVERLAY ── */
-.mister-modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(4, 8, 18, 0.88);
-    backdrop-filter: blur(14px);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-    padding: 1rem;
-}
-
-.mister-modal-overlay.active {
-    opacity: 1;
-    pointer-events: all;
-}
-
-.mister-modal-box {
-    background: linear-gradient(160deg, #111c30 0%, #0a1120 100%);
-    border: 1px solid rgba(56,189,248,0.2);
-    border-radius: 28px;
-    width: 100%;
-    max-width: 520px;
-    max-height: 88vh;
-    overflow-y: auto;
-    padding: 2.2rem 2rem 2rem;
-    position: relative;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 0 1px rgba(56,189,248,0.08);
-    transform: translateY(30px) scale(0.97);
-    transition: transform 0.35s cubic-bezier(0.175,0.885,0.32,1.275);
-    scrollbar-width: thin;
-    scrollbar-color: var(--accent) transparent;
-}
-
-.mister-modal-overlay.active .mister-modal-box {
-    transform: translateY(0) scale(1);
-}
-
-.mister-modal-close {
-    position: absolute;
-    top: 1.2rem;
-    right: 1.4rem;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    color: var(--muted);
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    font-size: 0.85rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease;
-}
-
-.mister-modal-close:hover {
-    background: rgba(255,255,255,0.12);
-    color: #fff;
-    transform: rotate(90deg);
-}
-
-/* Modal Header */
-.modal-header-area {
-    display: flex;
-    align-items: center;
-    gap: 1.2rem;
-    margin-bottom: 1.8rem;
-}
-
-.modal-avatar {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent2), #0369a1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.6rem;
-    color: #fff;
-    letter-spacing: 1px;
-    flex-shrink: 0;
-    box-shadow: 0 0 0 3px rgba(56,189,248,0.2), 0 8px 20px rgba(0,0,0,0.4);
-}
-
-.modal-mister-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2rem;
-    letter-spacing: 2px;
-    color: #fff;
-    line-height: 1.1;
-}
-
-.modal-role {
-    font-size: 0.75rem;
-    color: var(--accent);
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    opacity: 0.8;
-}
-
-/* Stats Row */
-.modal-stats-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-bottom: 14px;
-}
-
-.modal-stat-box {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 1rem 0.5rem;
-    text-align: center;
-    transition: border-color 0.2s;
-}
-
-.modal-stat-box.highlight-gold {
-    background: linear-gradient(135deg, rgba(251,191,36,0.12), rgba(245,158,11,0.04));
-    border-color: rgba(251,191,36,0.3);
-}
-
-.modal-stat-value {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.4rem;
-    color: #fff;
-    line-height: 1;
-    margin-bottom: 4px;
-}
-
-.modal-stat-box.highlight-gold .modal-stat-value {
-    color: var(--gold);
-}
-
-.modal-stat-label {
-    font-size: 0.68rem;
-    color: var(--muted);
-    font-weight: 700;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-}
-
-/* Medals */
-.modal-medals-row {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 1.8rem;
-}
-
-.modal-medal {
-    flex: 1;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 0.6rem;
-    text-align: center;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-}
-
-.modal-medal span {
-    font-weight: 800;
-    font-size: 1.15rem;
-    color: #fff;
-}
-
-/* Section title inside modal */
-.modal-section-title {
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin: 1.4rem 0 0.7rem;
-    padding-bottom: 6px;
-    border-bottom: 1px solid var(--border);
-}
-
-/* Trophies */
-.modal-trophies-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.modal-trophy-entry {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    background: linear-gradient(90deg, rgba(251,191,36,0.08), transparent);
-    border: 1px solid rgba(251,191,36,0.15);
-    border-radius: 14px;
-    padding: 0.8rem 1rem;
-}
-
-.modal-trophy-logo {
-    width: 36px;
-    height: 36px;
-    object-fit: contain;
-    filter: drop-shadow(0 0 6px rgba(251,191,36,0.3));
-}
-
-.modal-trophy-season {
-    font-size: 0.72rem;
-    color: var(--muted);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.modal-trophy-team {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.3rem;
-    letter-spacing: 1px;
-    color: var(--gold);
-}
-
-.modal-no-trophies {
-    font-size: 0.85rem;
-    color: var(--muted);
-    font-style: italic;
-    padding: 0.5rem 0;
-}
-
-/* Season rows */
-.modal-seasons-list {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.modal-season-row {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 0.6rem 0.8rem;
-    border-radius: 12px;
-    background: rgba(255,255,255,0.02);
-    border: 1px solid transparent;
-    transition: all 0.2s ease;
-}
-
-.modal-season-row:hover {
-    background: rgba(56,189,248,0.05);
-    border-color: rgba(56,189,248,0.1);
-}
-
-.modal-season-year {
-    font-size: 0.72rem;
-    color: var(--muted);
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    min-width: 54px;
-    text-transform: uppercase;
-}
-
-.modal-season-team {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex: 1;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--text);
-}
-
-.modal-season-logo {
     width: 24px;
     height: 24px;
     object-fit: contain;
+    flex-shrink: 0;
+    filter: drop-shadow(0 1px 3px rgba(0,0,0,0.5));
+    transition: transform 0.25s ease;
 }
+.mister-team-entry:hover .mister-team-logo { transform: scale(1.12) rotate(-4deg); }
 
-.modal-season-pos {
-    font-size: 0.82rem;
+.mister-team-name { font-size: 0.85rem; font-weight: 600; color: var(--text); flex: 1; }
+.mister-team-pos { font-size: 0.75rem; font-weight: 700; color: var(--muted); min-width: 32px; text-align: right; }
+
+.mister-card-footer {
+    padding: 0.6rem 1.4rem 0.9rem;
+    border-top: 1px solid var(--border);
+}
+.mister-card-cta {
+    font-family: var(--font-display);
+    font-size: 0.78rem;
     font-weight: 700;
-    color: var(--muted);
-    min-width: 40px;
-    text-align: right;
+    color: var(--accent);
+    letter-spacing: 0.5px;
+    opacity: 0.65;
+    transition: opacity 0.2s ease;
+    text-transform: uppercase;
+}
+.mister-card:hover .mister-card-cta { opacity: 1; }
+
+/* ══════════════════════════════════════════
+   UTILITY
+══════════════════════════════════════════ */
+.hidden { display: none !important; }
+.grid-container { padding: 0 4%; }
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── FANTACOPPA ITALIA FRECCIAROSSA ── */
-.coppa-title {
-    color: #e63946 !important;
-}
-
-.coppa-title::after {
-    background: linear-gradient(90deg, #e63946, transparent) !important;
-}
-
-.coppa-title span {
-    color: #fff;
-}
-
-.coppa-list {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    width: 100%;
-}
-
-.coppa-card {
-    background: linear-gradient(120deg, #1a0d10 0%, #0f0a14 60%, #0d1526 100%);
-    border-radius: 24px;
-    border: 1px solid rgba(230,57,70,0.2);
-    border-left: 8px solid #e63946;
-    padding: 1.6rem 2rem;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.4), 0 0 0 1px rgba(230,57,70,0.06);
-    transition: all 0.35s ease;
-    position: relative;
-    overflow: hidden;
-    animation: fadeInUp 0.45s ease forwards;
+tbody tr, .palmares-card, .mister-card, .coppa-card {
+    animation: fadeInUp 0.4s ease forwards;
     opacity: 0;
 }
 
-.coppa-card::before {
-    content: '';
-    position: absolute;
-    top: -40px; right: -40px;
-    width: 160px; height: 160px;
-    background: radial-gradient(circle, rgba(230,57,70,0.06) 0%, transparent 70%);
-    pointer-events: none;
-}
-
-.coppa-card:hover {
-    transform: scale(1.018) translateX(8px);
-    border-color: rgba(230,57,70,0.45);
-    box-shadow: 0 10px 36px rgba(230,57,70,0.12);
-}
-
-.coppa-season-label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    color: #e63946;
-    text-transform: uppercase;
-    margin-bottom: 1.2rem;
-    opacity: 0.85;
-}
-
-.coppa-final-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-}
-
-.coppa-team {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    flex: 1;
-}
-
-.coppa-team.winner .coppa-logo {
-    filter: drop-shadow(0 0 10px rgba(251,191,36,0.35));
-}
-
-.coppa-team.finalist .coppa-logo {
-    filter: none;
-}
-
-.coppa-logo {
-    width: 64px;
-    height: 64px;
-    object-fit: contain;
-    transition: transform 0.35s ease;
-}
-
-.coppa-card:hover .coppa-team.winner .coppa-logo {
-    transform: none;
-}
-
-.coppa-card:hover .coppa-team.finalist .coppa-logo {
-    transform: none;
-}
-
-.coppa-team-name {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.6rem;
-    letter-spacing: 2px;
-    color: #fff;
-    text-align: center;
-    line-height: 1;
-}
-
-.coppa-team.finalist .coppa-team-name {
-    color: var(--muted);
-}
-
-.coppa-mister {
-    font-size: 0.78rem;
-    color: var(--muted);
-    font-weight: 600;
-    text-align: center;
-}
-
-.coppa-team.winner .coppa-mister {
+/* ══════════════════════════════════════════
+   BADGE GENERICI
+══════════════════════════════════════════ */
+.badge-parziale {
+    font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.4px; text-transform: uppercase;
+    background: rgba(251,191,36,0.14);
+    border: 1px solid rgba(251,191,36,0.3);
     color: var(--gold2);
+    padding: 2px 6px; border-radius: 9px; white-space: nowrap;
+}
+.badge-vice {
+    font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.4px; text-transform: uppercase;
+    background: rgba(99,102,241,0.14);
+    border: 1px solid rgba(99,102,241,0.3);
+    color: #818cf8;
+    padding: 2px 6px; border-radius: 9px; white-space: nowrap;
+}
+.modal-season-nota {
+    font-size: 0.65rem; color: var(--gold2);
+    font-style: italic; margin-top: 2px; opacity: 0.85;
 }
 
-.coppa-score-area {
+/* ══════════════════════════════════════════
+   ATTIVITÀ
+══════════════════════════════════════════ */
+.attivita-list {
     display: flex;
     flex-direction: column;
+    gap: 0.6rem;
+    max-width: 780px;
+    margin: 1.2rem auto;
+    padding: 0 1rem;
+}
+
+.attivita-card {
+    display: flex;
     align-items: center;
-    gap: 4px;
-    min-width: 90px;
+    gap: 1rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.9rem 1.2rem;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    min-height: 64px;
+}
+.attivita-card:hover {
+    background: var(--card2);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 18px rgba(56,189,248,0.1);
+    border-color: rgba(56,189,248,0.25);
 }
 
-.coppa-vs-label {
-    font-size: 0.62rem;
-    font-weight: 800;
-    letter-spacing: 3px;
-    color: #e63946;
-    text-transform: uppercase;
+.attivita-avatar {
+    width: 44px; height: 44px; min-width: 44px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 800; font-size: 1rem; color: #000;
+    flex-shrink: 0;
 }
 
-.coppa-score {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.6rem;
-    letter-spacing: 4px;
-    color: #fff;
-    line-height: 1;
-    text-shadow: 0 0 20px rgba(230,57,70,0.4);
+.attivita-info { flex: 1; min-width: 0; }
+
+.attivita-name {
+    font-weight: 700; font-size: 1rem;
+    color: var(--text);
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 
-.coppa-marcatore {
-    font-size: 0.72rem;
+.attivita-periodo {
+    font-size: 0.78rem; color: var(--gold); font-weight: 600; margin-top: 2px;
+}
+
+.attivita-stagioni { font-size: 0.74rem; color: var(--muted); margin-top: 1px; }
+
+.attivita-status {
+    font-size: 0.75rem; font-weight: 700;
+    padding: 0.3rem 0.75rem; border-radius: 20px; white-space: nowrap;
+}
+.attivita-status.active    { background: rgba(74,222,128,0.13); color: #4ade80; border: 1px solid rgba(74,222,128,0.28); }
+.attivita-status.retired   { background: rgba(248,113,113,0.1); color: #f87171; border: 1px solid rgba(248,113,113,0.22); }
+.attivita-status.uscita    { background: rgba(251,191,36,0.13); color: #fbbf24; border: 1px solid rgba(251,191,36,0.32); }
+.attivita-status.active-vice  { background: rgba(167,139,250,0.13); color: #a78bfa; border: 1px solid rgba(167,139,250,0.28); }
+.attivita-status.retired-vice { background: rgba(167,139,250,0.07); color: #c4b5fd; border: 1px solid rgba(167,139,250,0.18); opacity: 0.8; }
+
+.attivita-group-label {
+    font-family: var(--font-display);
+    font-size: 0.78rem; font-weight: 800;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 0.35rem 0.75rem; border-radius: 7px;
+    margin-top: 0.4rem; margin-bottom: 0.1rem;
+}
+.attivita-group-admin  { background: rgba(251,191,36,0.1); color: var(--gold); border-left: 3px solid var(--gold); }
+.attivita-group-active { background: rgba(74,222,128,0.08); color: #4ade80; border-left: 3px solid #4ade80; margin-top: 1rem; }
+.attivita-group-retired{ background: rgba(248,113,113,0.07); color: #f87171; border-left: 3px solid #f87171; margin-top: 1rem; }
+
+.attivita-card-admin { border-color: rgba(251,191,36,0.28); background: linear-gradient(135deg, rgba(251,191,36,0.06), var(--card)); }
+.attivita-card-admin:hover { border-color: rgba(251,191,36,0.5) !important; box-shadow: 0 5px 18px rgba(251,191,36,0.12) !important; }
+.attivita-avatar-admin { background: linear-gradient(135deg, var(--gold), var(--gold2)) !important; }
+
+.attivita-card-uscita { border-color: rgba(251,191,36,0.22); background: linear-gradient(135deg, rgba(251,191,36,0.05), var(--card)); }
+.attivita-card-uscita:hover { border-color: rgba(251,191,36,0.42) !important; }
+.attivita-avatar-uscita { background: linear-gradient(135deg, #fbbf24, #d97706) !important; }
+
+.attivita-card-vice { border-color: rgba(167,139,250,0.22); background: linear-gradient(135deg, rgba(167,139,250,0.05), var(--card)); opacity: 0.88; }
+.attivita-card-vice:hover { border-color: rgba(167,139,250,0.42) !important; opacity: 1; }
+.attivita-avatar-vice { background: linear-gradient(135deg, #a78bfa, #7c3aed) !important; }
+
+.attivita-role-badge {
+    display: inline-block; font-size: 0.65rem; font-weight: 700;
+    padding: 0.12rem 0.5rem; border-radius: 20px;
+    margin-left: 0.35rem; vertical-align: middle;
+}
+.attivita-role-badge.admin { background: rgba(251,191,36,0.18); color: var(--gold); border: 1px solid rgba(251,191,36,0.38); }
+.attivita-role-badge.vice  { background: rgba(56,189,248,0.13); color: var(--accent); border: 1px solid rgba(56,189,248,0.32); }
+.attivita-role-badge.only-vice { background: rgba(167,139,250,0.16); color: #a78bfa; border: 1px solid rgba(167,139,250,0.32); }
+
+/* ══════════════════════════════════════════
+   MODAL MISTER
+══════════════════════════════════════════ */
+.mister-modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(4,8,18,0.88);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    z-index: 9999;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s ease;
+    padding: 1rem;
+}
+.mister-modal-overlay.active { opacity: 1; pointer-events: all; }
+
+.mister-modal-box {
+    background: linear-gradient(160deg, #111c30 0%, #09101e 100%);
+    border: 1px solid rgba(56,189,248,0.18);
+    border-radius: 24px;
+    width: 100%; max-width: 520px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 2rem 1.8rem;
+    position: relative;
+    box-shadow: 0 28px 70px rgba(0,0,0,0.7);
+    transform: translateY(28px) scale(0.97);
+    transition: transform 0.33s cubic-bezier(0.175,0.885,0.32,1.275);
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) transparent;
+}
+.mister-modal-overlay.active .mister-modal-box { transform: translateY(0) scale(1); }
+
+.mister-modal-close {
+    position: absolute; top: 1rem; right: 1.2rem;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
     color: var(--muted);
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    margin-top: 2px;
+    width: 34px; height: 34px; border-radius: 50%;
+    font-size: 0.85rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s ease;
+}
+.mister-modal-close:hover { background: rgba(255,255,255,0.1); color: #fff; transform: rotate(90deg); }
+
+.modal-header-area { display: flex; align-items: center; gap: 1.1rem; margin-bottom: 1.5rem; }
+
+.modal-avatar {
+    width: 60px; height: 60px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent2), #0369a1);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: 1.5rem; font-weight: 900;
+    color: #fff; letter-spacing: 1px; flex-shrink: 0;
+    box-shadow: 0 0 0 3px rgba(56,189,248,0.18), 0 6px 18px rgba(0,0,0,0.4);
 }
 
-/* ── COPPA IN MODAL ── */
-.coppa-modal-title {
-    color: #e63946 !important;
-    border-bottom-color: rgba(230,57,70,0.25) !important;
+.modal-mister-name {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 4vw, 1.9rem);
+    font-weight: 900; letter-spacing: 1.5px; color: #fff; line-height: 1.1;
+}
+.modal-role {
+    font-size: 0.7rem; color: var(--accent); font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase; opacity: 0.8;
 }
 
-.modal-trophy-entry.coppa-entry {
-    background: linear-gradient(90deg, rgba(230,57,70,0.1), transparent);
-    border-color: rgba(230,57,70,0.2);
+.modal-stats-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-bottom: 12px; }
+
+.modal-stat-box {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 14px; padding: 0.9rem 0.4rem; text-align: center;
+}
+.modal-stat-box.highlight-gold {
+    background: linear-gradient(135deg, rgba(251,191,36,0.1), rgba(245,158,11,0.03));
+    border-color: rgba(251,191,36,0.28);
 }
 
-.coppa-trophy-team {
-    color: #e63946 !important;
+.modal-stat-value {
+    font-family: var(--font-display);
+    font-size: 2.1rem; font-weight: 900; color: #fff; line-height: 1; margin-bottom: 3px;
+}
+.modal-stat-box.highlight-gold .modal-stat-value { color: var(--gold); }
+
+.modal-stat-label { font-size: 0.62rem; color: var(--muted); font-weight: 700; letter-spacing: 0.7px; text-transform: uppercase; }
+
+.modal-medals-row { display: flex; gap: 8px; margin-bottom: 1.5rem; }
+
+.modal-medal {
+    flex: 1; background: rgba(255,255,255,0.025);
+    border: 1px solid var(--border); border-radius: 10px;
+    padding: 0.55rem; text-align: center; font-size: 0.95rem;
+    display: flex; align-items: center; justify-content: center; gap: 5px;
+}
+.modal-medal span { font-weight: 800; font-size: 1.1rem; color: #fff; }
+
+.modal-section-title {
+    font-family: var(--font-display);
+    font-size: 0.75rem; font-weight: 800; color: var(--accent);
+    letter-spacing: 2px; text-transform: uppercase;
+    margin: 1.2rem 0 0.6rem;
+    padding-bottom: 5px; border-bottom: 1px solid var(--border);
 }
 
-/* ── TORNEI INTERNAZIONALI ── */
-.tornei-title {
-    color: #10b981 !important;
-}
+.modal-trophies-list { display: flex; flex-direction: column; gap: 7px; }
 
-.tornei-title::after {
-    background: linear-gradient(90deg, #10b981, transparent) !important;
+.modal-trophy-entry {
+    display: flex; align-items: center; gap: 12px;
+    background: linear-gradient(90deg, rgba(251,191,36,0.07), transparent);
+    border: 1px solid rgba(251,191,36,0.13);
+    border-radius: 12px; padding: 0.7rem 0.9rem;
 }
+.modal-trophy-logo { width: 32px; height: 32px; object-fit: contain; filter: drop-shadow(0 0 5px rgba(251,191,36,0.25)); }
+.modal-trophy-season { font-size: 0.68rem; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; }
+.modal-trophy-team { font-family: var(--font-display); font-size: 1.2rem; font-weight: 800; letter-spacing: 1px; color: var(--gold); }
+.modal-no-trophies { font-size: 0.82rem; color: var(--muted); font-style: italic; padding: 0.4rem 0; }
 
-.torneo-mondiale {
-    border-left-color: #10b981 !important;
-    background: linear-gradient(120deg, #0a1a10 0%, #0a120e 60%, #0d1526 100%) !important;
-    border-color: rgba(16,185,129,0.2) !important;
-}
+.modal-seasons-list { display: flex; flex-direction: column; gap: 5px; }
 
-.torneo-mondiale:hover {
-    border-color: rgba(16,185,129,0.45) !important;
-    box-shadow: 0 10px 36px rgba(16,185,129,0.12) !important;
+.modal-season-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 0.55rem 0.7rem; border-radius: 10px;
+    background: rgba(255,255,255,0.018);
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
 }
+.modal-season-row:hover { background: rgba(56,189,248,0.04); border-color: rgba(56,189,248,0.1); }
 
-.torneo-europeo {
-    border-left-color: #6366f1 !important;
-    background: linear-gradient(120deg, #0e0a1a 0%, #0c0a18 60%, #0d1526 100%) !important;
-    border-color: rgba(99,102,241,0.2) !important;
-}
+.modal-season-year { font-size: 0.67rem; color: var(--muted); font-weight: 700; letter-spacing: 0.4px; min-width: 50px; text-transform: uppercase; }
+.modal-season-team { display: flex; align-items: center; gap: 7px; flex: 1; font-size: 0.85rem; font-weight: 600; color: var(--text); }
+.modal-season-logo { width: 22px; height: 22px; object-fit: contain; }
+.modal-season-pos { font-size: 0.78rem; font-weight: 700; color: var(--muted); min-width: 36px; text-align: right; }
 
-.torneo-europeo:hover {
-    border-color: rgba(99,102,241,0.45) !important;
-    box-shadow: 0 10px 36px rgba(99,102,241,0.12) !important;
-}
+/* ══════════════════════════════════════════
+   COPPA ITALIA
+══════════════════════════════════════════ */
+.coppa-title { color: #e63946 !important; }
+.coppa-title::after { background: linear-gradient(90deg, #e63946, transparent) !important; }
+.coppa-title span { color: #fff; }
 
-.torneo-label {
-    color: inherit !important;
+.coppa-list { display: flex; flex-direction: column; gap: 14px; width: 100%; }
+
+.coppa-card {
+    background: linear-gradient(120deg, #180c0f 0%, #0e0a14 60%, #0b1422 100%);
+    border-radius: 20px;
+    border: 1px solid rgba(230,57,70,0.18);
+    border-left: 7px solid #e63946;
+    padding: 1.4rem 1.6rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; overflow: hidden;
 }
+.coppa-card:hover { transform: scale(1.015) translateX(6px); box-shadow: 0 8px 30px rgba(230,57,70,0.1); border-color: rgba(230,57,70,0.4); }
+
+.coppa-season-label { font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; letter-spacing: 3px; color: #e63946; text-transform: uppercase; margin-bottom: 1rem; }
+
+.coppa-final-row { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; flex-wrap: wrap; }
+
+.coppa-team { display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1; min-width: 100px; }
+.coppa-team.winner .coppa-logo { filter: drop-shadow(0 0 9px rgba(251,191,36,0.3)); }
+
+.coppa-logo { width: 56px; height: 56px; object-fit: contain; transition: transform 0.3s ease; }
+
+.coppa-team-name { font-family: var(--font-display); font-size: clamp(1.1rem, 3vw, 1.5rem); font-weight: 900; letter-spacing: 1.5px; color: #fff; text-align: center; line-height: 1; }
+.coppa-team.finalist .coppa-team-name { color: var(--muted); }
+
+.coppa-mister { font-size: 0.72rem; color: var(--muted); font-weight: 600; text-align: center; }
+.coppa-team.winner .coppa-mister { color: var(--gold2); }
+
+.coppa-score-area { display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 80px; }
+.coppa-vs-label { font-family: var(--font-display); font-size: 0.6rem; font-weight: 800; letter-spacing: 3px; color: #e63946; text-transform: uppercase; }
+.coppa-score { font-family: var(--font-display); font-size: 2.2rem; font-weight: 900; letter-spacing: 3px; color: #fff; line-height: 1; text-shadow: 0 0 18px rgba(230,57,70,0.35); }
+.coppa-marcatore { font-size: 0.68rem; color: var(--muted); font-weight: 600; }
+
+.coppa-modal-title { color: #e63946 !important; border-bottom-color: rgba(230,57,70,0.22) !important; }
+.modal-trophy-entry.coppa-entry { background: linear-gradient(90deg, rgba(230,57,70,0.08), transparent); border-color: rgba(230,57,70,0.18); }
+.coppa-trophy-team { color: #e63946 !important; }
+
+/* ══════════════════════════════════════════
+   TORNEI
+══════════════════════════════════════════ */
+.tornei-title { color: #10b981 !important; }
+.tornei-title::after { background: linear-gradient(90deg, #10b981, transparent) !important; }
+
+.torneo-mondiale { border-left-color: #10b981 !important; background: linear-gradient(120deg, #091510 0%, #090f0b 60%, #0b1422 100%) !important; border-color: rgba(16,185,129,0.18) !important; }
+.torneo-mondiale:hover { border-color: rgba(16,185,129,0.4) !important; box-shadow: 0 8px 28px rgba(16,185,129,0.1) !important; }
+.torneo-europeo { border-left-color: #6366f1 !important; background: linear-gradient(120deg, #0d0a18 0%, #0b0a16 60%, #0b1422 100%) !important; border-color: rgba(99,102,241,0.18) !important; }
+.torneo-europeo:hover { border-color: rgba(99,102,241,0.4) !important; box-shadow: 0 8px 28px rgba(99,102,241,0.1) !important; }
 
 .torneo-mondiale .torneo-label { color: #10b981 !important; }
 .torneo-europeo .torneo-label { color: #6366f1 !important; }
 
-/* Modal tornei */
-.tornei-modal-title {
-    color: #10b981 !important;
-    border-bottom-color: rgba(16,185,129,0.25) !important;
-}
+.tornei-modal-title { color: #10b981 !important; border-bottom-color: rgba(16,185,129,0.22) !important; }
+.torneo-entry.mondiale-entry { background: linear-gradient(90deg, rgba(16,185,129,0.09), transparent) !important; border-color: rgba(16,185,129,0.18) !important; }
+.torneo-entry.europeo-entry { background: linear-gradient(90deg, rgba(99,102,241,0.09), transparent) !important; border-color: rgba(99,102,241,0.18) !important; }
 
-.torneo-entry.mondiale-entry {
-    background: linear-gradient(90deg, rgba(16,185,129,0.1), transparent) !important;
-    border-color: rgba(16,185,129,0.2) !important;
-}
+/* ══════════════════════════════════════════
+   FASE BADGE / PARTECIPAZIONI
+══════════════════════════════════════════ */
+.partecipazione-entry { justify-content: space-between !important; align-items: center !important; }
+.partecipazione-info { flex: 1; }
+.partecipazione-squadra { font-family: var(--font-display); font-size: 1.05rem; font-weight: 800; letter-spacing: 0.8px; color: #fff; margin-top: 2px; }
 
-.torneo-entry.europeo-entry {
-    background: linear-gradient(90deg, rgba(99,102,241,0.1), transparent) !important;
-    border-color: rgba(99,102,241,0.2) !important;
-}
-
-.mondiale-color { color: #10b981 !important; }
-.europeo-color { color: #6366f1 !important; }
-
-/* ── PARZIALE BADGE ── */
-.badge-parziale {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    background: linear-gradient(135deg, rgba(251,191,36,0.15), rgba(245,158,11,0.05));
-    border: 1px solid rgba(251,191,36,0.3);
-    color: var(--gold2);
-    padding: 2px 7px;
-    border-radius: 10px;
-    white-space: nowrap;
-}
-
-.modal-season-nota {
-    font-size: 0.68rem;
-    color: var(--gold2);
-    font-style: italic;
-    margin-top: 2px;
-    opacity: 0.85;
-}
-
-/* ── FASE BADGE & PARTECIPAZIONI ── */
-.partecipazione-entry {
-    justify-content: space-between !important;
-    align-items: center !important;
-}
-
-.partecipazione-info {
-    flex: 1;
-}
-
-.partecipazione-squadra {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    color: #fff;
-    margin-top: 2px;
-}
-
-.fase-badge {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    padding: 3px 9px;
-    border-radius: 10px;
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-
-.fase-campione {
-    background: linear-gradient(135deg, rgba(251,191,36,0.2), rgba(245,158,11,0.08));
-    border: 1px solid rgba(251,191,36,0.4);
-    color: var(--gold);
-}
-
-.fase-finale {
-    background: linear-gradient(135deg, rgba(148,163,184,0.15), rgba(148,163,184,0.05));
-    border: 1px solid rgba(148,163,184,0.3);
-    color: #94a3b8;
-}
-
-.fase-eliminato {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.08);
-    color: var(--muted);
-}
-
-/* ── VICE BADGE ── */
-.badge-vice {
-    font-size: 0.65rem;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(99,102,241,0.05));
-    border: 1px solid rgba(99,102,241,0.3);
-    color: #818cf8;
-    padding: 2px 7px;
-    border-radius: 10px;
-    white-space: nowrap;
-}
-
-.fase-incorso {
-    background: linear-gradient(135deg, rgba(56,189,248,0.15), rgba(14,165,233,0.05));
-    border: 1px solid rgba(56,189,248,0.35);
-    color: var(--accent);
-    animation: pulse-glow 2s ease-in-out infinite;
-}
+.fase-badge { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.4px; text-transform: uppercase; padding: 3px 8px; border-radius: 9px; white-space: nowrap; flex-shrink: 0; }
+.fase-campione { background: rgba(251,191,36,0.18); border: 1px solid rgba(251,191,36,0.38); color: var(--gold); }
+.fase-finale   { background: rgba(148,163,184,0.13); border: 1px solid rgba(148,163,184,0.28); color: #94a3b8; }
+.fase-eliminato{ background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); color: var(--muted); }
+.fase-incorso  { background: rgba(56,189,248,0.13); border: 1px solid rgba(56,189,248,0.32); color: var(--accent); animation: pulse-glow 2s ease-in-out infinite; }
 
 @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 4px rgba(56,189,248,0.2); }
-    50% { box-shadow: 0 0 10px rgba(56,189,248,0.5); }
-}
-img[src*="juventus"] {
-    filter: brightness(0) invert(1);
-}
-/* ── PULSANTE FASCE ── */
-.btn-fasce {
-    background: linear-gradient(135deg, #a855f7, #7c3aed);
-    color: #fff;
-    border: none;
-    padding: 0.75rem 1.6rem;
-    border-radius: 10px;
-    font-weight: 800;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
-}
-.btn-fasce:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(168,85,247,0.4);
+    0%,100% { box-shadow: 0 0 3px rgba(56,189,248,0.18); }
+    50% { box-shadow: 0 0 9px rgba(56,189,248,0.48); }
 }
 
-/* ── FASCE PAGE ── */
-.fasce-page {
-    max-width: 960px;
-    margin: 2rem auto;
-    padding: 0 1.5rem 3rem;
-}
+/* ══════════════════════════════════════════
+   PULSANTE FASCE & PAGINA FASCE
+══════════════════════════════════════════ */
+.fasce-page { max-width: 980px; margin: 2rem auto; padding: 0 1.2rem 3rem; }
 
 .fasce-page-title {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.4rem;
-    letter-spacing: 3px;
-    text-align: center;
-    margin-bottom: 0.3rem;
-    color: #fff;
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 5vw, 2.4rem);
+    font-weight: 900; letter-spacing: 3px;
+    text-align: center; margin-bottom: 0.3rem; color: #fff;
 }
-.fasce-page-subtitle {
-    text-align: center;
-    color: var(--muted);
-    font-size: 0.9rem;
-    margin-bottom: 2.5rem;
-}
+.fasce-page-subtitle { text-align: center; color: var(--muted); font-size: 0.85rem; margin-bottom: 2rem; }
 
 /* Legenda */
-.fasce-legenda {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 2.5rem;
-}
-.fasce-legenda-row {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-}
-.fasce-legenda-row.row-top .legenda-card {
-    flex: 1;
-    max-width: 300px;
-}
-.fasce-legenda-row.row-bottom .legenda-card {
-    flex: 0 0 calc(33.33% - 0.67rem);
-    max-width: 300px;
-}
+.fasce-legenda { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
+
+.fasce-legenda-row { display: flex; gap: 0.75rem; justify-content: center; }
+.fasce-legenda-row.row-top .legenda-card { flex: 1; max-width: 300px; }
+.fasce-legenda-row.row-bottom .legenda-card { flex: 0 0 calc(33.33% - 0.5rem); max-width: 300px; }
 
 .legenda-card {
-    border-radius: 16px;
-    padding: 1.3rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    border: 1px solid rgba(255,255,255,0.07);
-    background: var(--card);
-    position: relative;
-    overflow: hidden;
+    border-radius: var(--radius); padding: 1.1rem 1.3rem;
+    display: flex; align-items: center; gap: 0.9rem;
+    background: var(--card); position: relative; overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid rgba(255,255,255,0.06);
 }
-.legenda-card:hover {
-    transform: translateY(-3px);
-}
-.legenda-card.f-campione:hover { box-shadow: 0 8px 24px rgba(251,191,36,0.2); }
-.legenda-card.f1:hover { box-shadow: 0 8px 24px rgba(56,189,248,0.2); }
-.legenda-card.f2:hover { box-shadow: 0 8px 24px rgba(249,115,22,0.2); }
-.legenda-card.f3:hover { box-shadow: 0 8px 24px rgba(74,222,128,0.2); }
-.legenda-card.f-ultimo:hover { box-shadow: 0 8px 24px rgba(239,68,68,0.2); }
+.legenda-card:hover { transform: translateY(-3px); }
+.legenda-card.f-campione { border-color: rgba(251,191,36,0.18); }
+.legenda-card.f-campione:hover { box-shadow: 0 7px 22px rgba(251,191,36,0.18); }
+.legenda-card.f1 { border-color: rgba(56,189,248,0.18); }
+.legenda-card.f1:hover { box-shadow: 0 7px 22px rgba(56,189,248,0.18); }
+.legenda-card.f2 { border-color: rgba(249,115,22,0.18); }
+.legenda-card.f2:hover { box-shadow: 0 7px 22px rgba(249,115,22,0.18); }
+.legenda-card.f3 { border-color: rgba(74,222,128,0.18); }
+.legenda-card.f3:hover { box-shadow: 0 7px 22px rgba(74,222,128,0.18); }
+.legenda-card.f-ultimo { border-color: rgba(239,68,68,0.18); }
+.legenda-card.f-ultimo:hover { box-shadow: 0 7px 22px rgba(239,68,68,0.18); }
+
 .legenda-card::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 5px;
-    border-radius: 16px 0 0 16px;
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 5px; border-radius: var(--radius) 0 0 var(--radius);
 }
-.legenda-card.f-campione { border-color: rgba(251,191,36,0.2); }
-.legenda-card.f1 { border-color: rgba(56,189,248,0.2); }
-.legenda-card.f2 { border-color: rgba(249,115,22,0.2); }
-.legenda-card.f3 { border-color: rgba(74,222,128,0.2); }
-.legenda-card.f-ultimo { border-color: rgba(239,68,68,0.2); }
 .legenda-card.f-campione::before { background: #fbbf24; }
 .legenda-card.f1::before { background: #38bdf8; }
 .legenda-card.f2::before { background: #f97316; }
 .legenda-card.f3::before { background: #4ade80; }
 .legenda-card.f-ultimo::before { background: #ef4444; }
 
-.legenda-icon { font-size: 1.8rem; }
-.legenda-info {}
-.legenda-nome {
-    font-weight: 800;
-    font-size: 0.95rem;
-    color: #fff;
-}
-.legenda-desc {
-    font-size: 0.78rem;
-    color: var(--muted);
-    margin-top: 0.15rem;
-}
+.legenda-icon { font-size: 1.6rem; }
+.legenda-nome { font-weight: 800; font-size: 1rem; color: #fff; }
+.legenda-desc { font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
 .legenda-posti {
-    font-size: 0.72rem;
-    font-weight: 700;
-    margin-top: 0.2rem;
-    padding: 0.15rem 0.5rem;
-    border-radius: 20px;
-    display: inline-block;
+    font-size: 0.74rem; font-weight: 700; margin-top: 4px;
+    padding: 0.12rem 0.45rem; border-radius: 20px; display: inline-block;
 }
-.f-campione .legenda-posti { background: rgba(251,191,36,0.15); color: #fbbf24; }
-.f1 .legenda-posti { background: rgba(56,189,248,0.15); color: #38bdf8; }
-.f2 .legenda-posti { background: rgba(249,115,22,0.15); color: #f97316; }
-.f3 .legenda-posti { background: rgba(74,222,128,0.15); color: #4ade80; }
-.f-ultimo .legenda-posti { background: rgba(239,68,68,0.15); color: #ef4444; }
+.f-campione .legenda-posti { background: rgba(251,191,36,0.14); color: #fbbf24; }
+.f1 .legenda-posti { background: rgba(56,189,248,0.14); color: #38bdf8; }
+.f2 .legenda-posti { background: rgba(249,115,22,0.14); color: #f97316; }
+.f3 .legenda-posti { background: rgba(74,222,128,0.14); color: #4ade80; }
+.f-ultimo .legenda-posti { background: rgba(239,68,68,0.14); color: #ef4444; }
 
 /* Season blocks */
-.fasce-season-block {
-    margin-bottom: 2.5rem;
-    background: var(--card);
-    border-radius: 18px;
-    border: 1px solid var(--border);
-    overflow: hidden;
-}
-.fasce-season-header {
-    padding: 1rem 1.5rem;
-    background: var(--card2);
-    border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-.fasce-season-year {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.6rem;
-    letter-spacing: 2px;
-    color: var(--accent);
-}
-.fasce-season-badge {
-    font-size: 0.72rem;
-    font-weight: 700;
-    padding: 0.2rem 0.7rem;
-    border-radius: 20px;
-    background: rgba(56,189,248,0.12);
-    color: var(--accent);
-    border: 1px solid rgba(56,189,248,0.3);
-}
-.fasce-season-badge.in-corso {
-    background: rgba(251,191,36,0.12);
-    color: var(--gold);
-    border-color: rgba(251,191,36,0.3);
-}
+.fasce-season-block { margin-bottom: 2rem; background: var(--card); border-radius: 16px; border: 1px solid var(--border); overflow: hidden; }
+.fasce-season-header { padding: 0.9rem 1.3rem; background: var(--card2); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 0.9rem; }
+.fasce-season-year { font-family: var(--font-display); font-size: 1.5rem; font-weight: 900; letter-spacing: 2px; color: var(--accent); }
+.fasce-season-badge { font-family: var(--font-display); font-size: 0.7rem; font-weight: 700; padding: 0.18rem 0.65rem; border-radius: 20px; background: rgba(56,189,248,0.1); color: var(--accent); border: 1px solid rgba(56,189,248,0.28); }
+.fasce-season-badge.in-corso { background: rgba(251,191,36,0.1); color: var(--gold); border-color: rgba(251,191,36,0.28); }
 
-.fasce-table-wrap {
-    overflow-x: auto;
-}
+.fasce-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
-.fasce-table {
-    width: 100%;
-    border-collapse: collapse;
-}
+.fasce-table { width: 100%; border-collapse: collapse; min-width: 420px; }
 .fasce-table th {
-    text-align: left;
-    padding: 0.8rem 1.5rem;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    color: var(--muted);
+    text-align: left; padding: 0.7rem 1.2rem;
+    font-family: var(--font-body); font-size: 0.78rem; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase; color: var(--muted);
     border-bottom: 1px solid var(--border);
 }
-.fasce-table td {
-    padding: 0.9rem 1.5rem;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    font-size: 0.9rem;
-}
+.fasce-table td { padding: 0.75rem 1.2rem; border-bottom: 1px solid rgba(255,255,255,0.035); font-size: 0.9rem; vertical-align: middle; }
 .fasce-table tr:last-child td { border-bottom: none; }
 .fasce-table tr:hover td { background: rgba(255,255,255,0.02); }
 
-.fasce-strip {
-    width: 4px;
-    height: 38px;
-    border-radius: 4px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 0.5rem;
-}
-.strip-campione { background: #fbbf24; box-shadow: 0 0 8px rgba(251,191,36,0.5); }
-.strip-f1 { background: #38bdf8; box-shadow: 0 0 8px rgba(56,189,248,0.4); }
-.strip-f2 { background: #f97316; box-shadow: 0 0 8px rgba(249,115,22,0.4); }
-.strip-f3 { background: #4ade80; box-shadow: 0 0 8px rgba(74,222,128,0.4); }
-.strip-ultimo { background: #ef4444; box-shadow: 0 0 8px rgba(239,68,68,0.4); }
+.fasce-strip { width: 4px; height: 36px; border-radius: 3px; display: inline-block; vertical-align: middle; margin-right: 0.4rem; }
+.strip-campione { background: #fbbf24; box-shadow: 0 0 7px rgba(251,191,36,0.5); }
+.strip-f1 { background: #38bdf8; box-shadow: 0 0 7px rgba(56,189,248,0.4); }
+.strip-f2 { background: #f97316; box-shadow: 0 0 7px rgba(249,115,22,0.4); }
+.strip-f3 { background: #4ade80; box-shadow: 0 0 7px rgba(74,222,128,0.4); }
+.strip-ultimo { background: #ef4444; box-shadow: 0 0 7px rgba(239,68,68,0.4); }
 
-.fasce-pos {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.4rem;
-    color: var(--muted);
-    min-width: 2rem;
-    display: inline-block;
-    vertical-align: middle;
-}
+.fasce-pos { font-family: var(--font-display); font-size: 1.35rem; font-weight: 900; color: var(--muted); min-width: 1.8rem; display: inline-block; vertical-align: middle; }
 .fasce-pos.campione { color: #fbbf24; }
 
-.fasce-mister { font-weight: 700; color: #fff; white-space: nowrap; }
-.fasce-squadra { font-size: 0.78rem; color: var(--muted); margin-top: 0.1rem; }
+.fasce-mister { font-weight: 700; font-size: 1rem; color: #fff; white-space: nowrap; }
+.fasce-squadra { font-size: 0.82rem; color: var(--muted); margin-top: 2px; }
 
-.fascia-badge-pill {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.25rem 0.8rem;
-    border-radius: 20px;
-}
-.pill-campione { background: rgba(251,191,36,0.15); color: #fbbf24; border: 1px solid rgba(251,191,36,0.3); }
-.pill-f1 { background: rgba(56,189,248,0.12); color: #38bdf8; border: 1px solid rgba(56,189,248,0.25); }
-.pill-f2 { background: rgba(249,115,22,0.12); color: #f97316; border: 1px solid rgba(249,115,22,0.25); }
-.pill-f3 { background: rgba(74,222,128,0.12); color: #4ade80; border: 1px solid rgba(74,222,128,0.25); }
-.pill-ultimo { background: rgba(239,68,68,0.12); color: #ef4444; border: 1px solid rgba(239,68,68,0.25); }
+.fascia-badge-pill { display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.8rem; font-weight: 700; padding: 0.28rem 0.8rem; border-radius: 20px; }
+.pill-campione { background: rgba(251,191,36,0.14); color: #fbbf24; border: 1px solid rgba(251,191,36,0.28); }
+.pill-f1 { background: rgba(56,189,248,0.11); color: #38bdf8; border: 1px solid rgba(56,189,248,0.22); }
+.pill-f2 { background: rgba(249,115,22,0.11); color: #f97316; border: 1px solid rgba(249,115,22,0.22); }
+.pill-f3 { background: rgba(74,222,128,0.11); color: #4ade80; border: 1px solid rgba(74,222,128,0.22); }
+.pill-ultimo { background: rgba(239,68,68,0.11); color: #ef4444; border: 1px solid rgba(239,68,68,0.22); }
 
-/* Movimento fasce */
+.fasce-note { font-size: 0.76rem; color: var(--muted); font-style: italic; margin-top: 3px; }
 
-.fasce-note {
-    font-size: 0.72rem;
-    color: var(--muted);
-    font-style: italic;
-    margin-top: 0.15rem;
-}
-
-/* Obiettivo */
-.obiettivo-ok { color: #4ade80; font-size: 0.78rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem; }
-.obiettivo-ko { color: #ef4444; font-size: 0.78rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem; }
-.obiettivo-in-corso { color: var(--gold); font-size: 0.78rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem; }
-.obiettivo-superato { font-size: 0.78rem; font-weight: 800; color: #4ade80; display: inline-flex; align-items: center; gap: 0.4rem; }
-
-.dot-obj {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    display: inline-block;
-    flex-shrink: 0;
-}
-.dot-green { background: #4ade80; box-shadow: 0 0 5px rgba(74,222,128,0.7); }
-.dot-gold  { background: #fbbf24; box-shadow: 0 0 5px rgba(251,191,36,0.7); }
-.dot-red   { background: #ef4444; box-shadow: 0 0 5px rgba(239,68,68,0.7); }
-
-.fascia-move { font-size: 0.78rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.4rem; }
+/* Movimento / Obiettivo */
+.fascia-move { font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.35rem; }
 .move-up   { color: #4ade80; }
 .move-down { color: #ef4444; }
 .move-same { color: var(--muted); }
 .move-new  { color: #a855f7; }
 
-.dot-move {
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    display: inline-block;
-    flex-shrink: 0;
-}
+.dot-move { width: 7px; height: 7px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
 .dot-up   { background: #4ade80; box-shadow: 0 0 5px rgba(74,222,128,0.6); }
 .dot-down { background: #ef4444; box-shadow: 0 0 5px rgba(239,68,68,0.6); }
-.dot-same { background: #7a90b0; }
+.dot-same { background: var(--muted); }
 .dot-new  { background: #a855f7; box-shadow: 0 0 5px rgba(168,85,247,0.6); }
 
-@media (max-width: 600px) {
+.obiettivo-ok      { color: #4ade80; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.35rem; }
+.obiettivo-ko      { color: #ef4444; font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.35rem; }
+.obiettivo-in-corso{ color: var(--gold); font-size: 0.82rem; font-weight: 700; display: inline-flex; align-items: center; gap: 0.35rem; }
+.obiettivo-superato{ font-size: 0.82rem; font-weight: 800; color: #4ade80; display: inline-flex; align-items: center; gap: 0.35rem; }
+
+.dot-obj { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.dot-green { background: #4ade80; box-shadow: 0 0 5px rgba(74,222,128,0.7); }
+.dot-gold  { background: #fbbf24; box-shadow: 0 0 5px rgba(251,191,36,0.7); }
+.dot-red   { background: #ef4444; box-shadow: 0 0 5px rgba(239,68,68,0.7); }
+
+/* Juventus fix */
+img[src*="juventus"] { filter: brightness(0) invert(1); }
+
+/* ══════════════════════════════════════════
+   RESPONSIVE MOBILE
+══════════════════════════════════════════ */
+@media (max-width: 768px) {
+    header { padding: 0.8rem 4%; }
+    nav { gap: 0.4rem; }
+    .btn-palmares, .btn-attivita, .btn-fasce { padding: 0.55rem 0.9rem; font-size: 0.88rem; }
+
+    .fanta-table { width: 100%; border-spacing: 0 8px; }
+    .fanta-table th { padding: 6px 8px; font-size: 0.78rem; }
+    .fanta-table td { padding: 0.9rem 0.7rem; }
+    .team-logo { width: 38px; height: 38px; }
+    .team-cell { gap: 10px; }
+
+    .palmares-card { padding: 1.2rem 1.4rem; }
+    .palmares-badge { width: 64px; height: 64px; }
+
+    .hall-of-fame-grid { grid-template-columns: 1fr; }
+
+    .mister-modal-box { padding: 1.5rem 1.3rem; border-radius: 20px; }
+
+    .attivita-list { padding: 0 0.5rem; }
+
     .fasce-legenda-row { flex-direction: column; }
-    .fasce-legenda-row.row-top .legenda-card,
-    .fasce-legenda-row.row-bottom .legenda-card { max-width: 100%; flex: 1 1 100%; }
-    .fasce-page-title { font-size: 1.8rem; }
-    .fasce-table th, .fasce-table td { padding: 0.7rem 1rem; }
+    .fasce-legenda-row .legenda-card { max-width: 100%; flex: 1 1 100%; }
+    .fasce-page { padding: 0 0.75rem 2rem; }
+    .fasce-table th, .fasce-table td { padding: 0.65rem 0.85rem; }
+    .fasce-season-header { padding: 0.75rem 1rem; }
+
+    .coppa-final-row { gap: 0.5rem; }
+    .coppa-team { min-width: 80px; }
+    .coppa-logo { width: 44px; height: 44px; }
+    .coppa-score { font-size: 1.8rem; }
+
+    #sponsorLogo { height: 70px; }
+}
+
+@media (max-width: 480px) {
+    .logo-area h1 { font-size: 1.35rem; letter-spacing: 2px; }
+    .btn-palmares, .btn-attivita, .btn-fasce { padding: 0.5rem 0.75rem; font-size: 0.82rem; }
+    select { padding: 0.5rem 0.6rem; font-size: 0.82rem; }
+
+    .fanta-table { border-spacing: 0 6px; }
+    .fanta-table td { padding: 0.75rem 0.5rem; }
+    .team-logo { width: 30px; height: 30px; }
+    .team-cell { gap: 7px; }
+    .fp-text { display: none; }
+
+    .modal-stats-row { grid-template-columns: repeat(3,1fr); gap: 6px; }
+    .modal-stat-value { font-size: 1.7rem; }
+
+    .section-title { font-size: 1.5rem; letter-spacing: 2px; }
+
+    .palmares-card { flex-direction: column; text-align: center; border-left: none; border-top: 6px solid var(--gold); }
+    .palmares-badge { width: 56px; height: 56px; }
 }
