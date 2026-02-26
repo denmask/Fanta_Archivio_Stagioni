@@ -544,6 +544,11 @@ select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
     to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes rowIn {
+    from { opacity: 0; transform: translateX(-8px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
 tbody tr, .palmares-card, .mister-card, .coppa-card {
     animation: fadeInUp 0.4s ease forwards;
     opacity: 0;
@@ -1070,3 +1075,175 @@ img[src*="juventus"] { filter: brightness(0) invert(1); }
     .palmares-card { flex-direction: column; text-align: center; border-left: none; border-top: 6px solid var(--gold); }
     .palmares-badge { width: 56px; height: 56px; }
 }
+/* ══════════════════════════════════════════════════════════════
+   STATISTICHE 2025/26
+══════════════════════════════════════════════════════════════ */
+
+.btn-stats2526 {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #e2b714;
+  border: 1px solid #e2b71455;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-stats2526:hover {
+  background: linear-gradient(135deg, #e2b714, #f0c72a);
+  color: #111;
+  border-color: transparent;
+}
+
+.stats2526-wrap {
+  background: var(--card-bg, #1c1c2e);
+  border-radius: 16px;
+  padding: 28px 24px;
+  border: 1px solid var(--border, #2a2a3e);
+}
+
+.stats2526-header {
+  margin-bottom: 20px;
+}
+
+.stats2526-sub {
+  font-size: 13px;
+  color: var(--muted, #888);
+  margin-top: 4px;
+}
+
+.stats-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.stats-tab-btn {
+  background: transparent;
+  border: 1px solid var(--border, #2a2a3e);
+  color: var(--muted, #888);
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
+}
+
+.stats-tab-btn:hover {
+  border-color: #e2b714;
+  color: #e2b714;
+}
+
+.stats-tab-btn.active {
+  background: linear-gradient(135deg, #e2b714, #f0c72a);
+  color: #111;
+  border-color: transparent;
+  box-shadow: 0 2px 12px #e2b71433;
+}
+
+.stats2526-table {
+  width: 100%;
+  border-collapse: collapse !important;
+  border-spacing: 0 !important;
+}
+
+.stats2526-table thead th {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted, #888);
+  padding: 8px 10px;
+  text-align: center;
+  border-bottom: 1px solid var(--border, #2a2a3e);
+}
+
+.stats2526-table thead th:nth-child(2) { text-align: left; }
+
+.stats2526-table tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  transition: background 0.15s;
+  animation: rowIn 0.35s ease both;
+  opacity: 0; /* sarà sovrascritta da rowIn forwards */
+}
+
+.stats2526-table tbody tr:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+.stats2526-table td {
+  padding: 10px 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.stats2526-table td:nth-child(2) { text-align: left; }
+
+.pos-num-stats {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  color: var(--muted, #888);
+}
+
+.team-cell-stats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ts-name {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.ts-mister {
+  font-size: 11px;
+  color: var(--muted, #888);
+}
+
+.dr-pos { color: #22c55e; font-weight: 700; }
+.dr-neg { color: #ef4444; font-weight: 700; }
+
+/* Badge forma */
+.forma-cell {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.stats2526-table td.forma-td {
+  display: table-cell;
+}
+
+.stats2526-table .forma-cell-wrapper {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+}
+
+.ris-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0;
+}
+
+.ris-w { background: #16a34a; color: #fff; }
+.ris-d { background: #ca8a04; color: #fff; }
+.ris-l { background: #dc2626; color: #fff; }

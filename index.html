@@ -16,6 +16,7 @@
             <button onclick="togglePalmares()" class="btn-palmares">🏆 PALMARÈS</button>
             <button onclick="toggleAttivita()" class="btn-attivita">👥 ATTIVITÀ</button>
             <button onclick="toggleFasce()" class="btn-fasce">📊 FASCE</button>
+            <button onclick="toggleStats2526()" class="btn-stats2526">📈 STATISTICHE 25/26</button>
             <select id="seasonSelector" onchange="changeSeason(this.value)"></select>
         </nav>
     </header>
@@ -31,6 +32,32 @@
 
         <section id="fasceSection" class="hidden">
             <div id="fasceGrid" class="grid-container"></div>
+        </section>
+
+        <section id="stats2526Section" class="hidden">
+            <div class="stats2526-wrap">
+                <div class="stats2526-header">
+                    <h2 class="section-title" style="margin-bottom:0">📈 Statistiche Stagione 2025/26</h2>
+                    <p class="stats2526-sub">Lega Privata Udinese 1896 · Aggiornate alla Giornata 26</p>
+                </div>
+                <div class="stats-tabs">
+                    <button id="statsTab_globale"    class="stats-tab-btn active" onclick="setStatsMode('globale')">🌍 Globale</button>
+                    <button id="statsTab_casa"       class="stats-tab-btn"        onclick="setStatsMode('casa')">🏠 Casa</button>
+                    <button id="statsTab_trasferta"  class="stats-tab-btn"        onclick="setStatsMode('trasferta')">✈️ Fuori Casa</button>
+                    <button id="statsTab_forma"      class="stats-tab-btn"        onclick="setStatsMode('forma')">🔥 Forma</button>
+                </div>
+                <div style="overflow-x:auto">
+                    <table class="fanta-table stats2526-table">
+                        <thead id="stats2526Head">
+                            <tr>
+                                <th>#</th><th style="text-align:left">Squadra</th>
+                                <th>PT</th><th>PG</th><th>V</th><th>N</th><th>P</th><th>GF</th><th>GS</th><th>DR</th>
+                            </tr>
+                        </thead>
+                        <tbody id="stats2526Body"></tbody>
+                    </table>
+                </div>
+            </div>
         </section>
 
         <section id="rankingSection">

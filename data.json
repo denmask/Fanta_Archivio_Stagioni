@@ -746,5 +746,735 @@
         }
       ]
     }
+  ],
+  "risultati2526": [
+    {
+      "g": 1,
+      "casa": "Milan",
+      "gC": 1,
+      "gT": 2,
+      "tras": "Juventus"
+    },
+    {
+      "g": 1,
+      "casa": "Napoli",
+      "gC": 2,
+      "gT": 0,
+      "tras": "Bologna"
+    },
+    {
+      "g": 1,
+      "casa": "Roma",
+      "gC": 2,
+      "gT": 0,
+      "tras": "Lazio"
+    },
+    {
+      "g": 1,
+      "casa": "Inter",
+      "gC": 4,
+      "gT": 3,
+      "tras": "Atalanta"
+    },
+    {
+      "g": 2,
+      "casa": "Milan",
+      "gC": 2,
+      "gT": 1,
+      "tras": "Bologna"
+    },
+    {
+      "g": 2,
+      "casa": "Atalanta",
+      "gC": 0,
+      "gT": 2,
+      "tras": "Napoli"
+    },
+    {
+      "g": 2,
+      "casa": "Inter",
+      "gC": 2,
+      "gT": 1,
+      "tras": "Roma"
+    },
+    {
+      "g": 2,
+      "casa": "Lazio",
+      "gC": 4,
+      "gT": 1,
+      "tras": "Juventus"
+    },
+    {
+      "g": 3,
+      "casa": "Napoli",
+      "gC": 4,
+      "gT": 3,
+      "tras": "Inter"
+    },
+    {
+      "g": 3,
+      "casa": "Roma",
+      "gC": 2,
+      "gT": 3,
+      "tras": "Juventus"
+    },
+    {
+      "g": 3,
+      "casa": "Milan",
+      "gC": 2,
+      "gT": 0,
+      "tras": "Lazio"
+    },
+    {
+      "g": 3,
+      "casa": "Bologna",
+      "gC": 0,
+      "gT": 3,
+      "tras": "Atalanta"
+    },
+    {
+      "g": 4,
+      "casa": "Roma",
+      "gC": 1,
+      "gT": 3,
+      "tras": "Milan"
+    },
+    {
+      "g": 4,
+      "casa": "Atalanta",
+      "gC": 3,
+      "gT": 0,
+      "tras": "Lazio"
+    },
+    {
+      "g": 4,
+      "casa": "Inter",
+      "gC": 3,
+      "gT": 4,
+      "tras": "Bologna"
+    },
+    {
+      "g": 4,
+      "casa": "Napoli",
+      "gC": 1,
+      "gT": 1,
+      "tras": "Juventus"
+    },
+    {
+      "g": 5,
+      "casa": "Juventus",
+      "gC": 2,
+      "gT": 2,
+      "tras": "Atalanta"
+    },
+    {
+      "g": 5,
+      "casa": "Bologna",
+      "gC": 1,
+      "gT": 4,
+      "tras": "Roma"
+    },
+    {
+      "g": 5,
+      "casa": "Milan",
+      "gC": 3,
+      "gT": 1,
+      "tras": "Napoli"
+    },
+    {
+      "g": 5,
+      "casa": "Lazio",
+      "gC": 3,
+      "gT": 1,
+      "tras": "Inter"
+    },
+    {
+      "g": 6,
+      "casa": "Roma",
+      "gC": 2,
+      "gT": 2,
+      "tras": "Atalanta"
+    },
+    {
+      "g": 6,
+      "casa": "Napoli",
+      "gC": 3,
+      "gT": 3,
+      "tras": "Lazio"
+    },
+    {
+      "g": 6,
+      "casa": "Juventus",
+      "gC": 0,
+      "gT": 5,
+      "tras": "Bologna"
+    },
+    {
+      "g": 6,
+      "casa": "Inter",
+      "gC": 5,
+      "gT": 0,
+      "tras": "Milan"
+    },
+    {
+      "g": 7,
+      "casa": "Napoli",
+      "gC": 1,
+      "gT": 2,
+      "tras": "Roma"
+    },
+    {
+      "g": 7,
+      "casa": "Inter",
+      "gC": 1,
+      "gT": 0,
+      "tras": "Juventus"
+    },
+    {
+      "g": 7,
+      "casa": "Lazio",
+      "gC": 0,
+      "gT": 2,
+      "tras": "Bologna"
+    },
+    {
+      "g": 7,
+      "casa": "Atalanta",
+      "gC": 0,
+      "gT": 2,
+      "tras": "Milan"
+    },
+    {
+      "g": 8,
+      "casa": "Atalanta",
+      "gC": 1,
+      "gT": 2,
+      "tras": "Inter"
+    },
+    {
+      "g": 8,
+      "casa": "Lazio",
+      "gC": 1,
+      "gT": 1,
+      "tras": "Roma"
+    },
+    {
+      "g": 8,
+      "casa": "Bologna",
+      "gC": 3,
+      "gT": 4,
+      "tras": "Napoli"
+    },
+    {
+      "g": 8,
+      "casa": "Juventus",
+      "gC": 0,
+      "gT": 2,
+      "tras": "Milan"
+    },
+    {
+      "g": 9,
+      "casa": "Napoli",
+      "gC": 2,
+      "gT": 3,
+      "tras": "Atalanta"
+    },
+    {
+      "g": 9,
+      "casa": "Bologna",
+      "gC": 0,
+      "gT": 1,
+      "tras": "Milan"
+    },
+    {
+      "g": 9,
+      "casa": "Roma",
+      "gC": 1,
+      "gT": 4,
+      "tras": "Inter"
+    },
+    {
+      "g": 9,
+      "casa": "Juventus",
+      "gC": 4,
+      "gT": 0,
+      "tras": "Lazio"
+    },
+    {
+      "g": 10,
+      "casa": "Inter",
+      "gC": 1,
+      "gT": 2,
+      "tras": "Napoli"
+    },
+    {
+      "g": 10,
+      "casa": "Atalanta",
+      "gC": 0,
+      "gT": 3,
+      "tras": "Bologna"
+    },
+    {
+      "g": 10,
+      "casa": "Juventus",
+      "gC": 2,
+      "gT": 1,
+      "tras": "Roma"
+    },
+    {
+      "g": 10,
+      "casa": "Lazio",
+      "gC": 4,
+      "gT": 3,
+      "tras": "Milan"
+    },
+    {
+      "g": 11,
+      "casa": "Juventus",
+      "gC": 0,
+      "gT": 2,
+      "tras": "Napoli"
+    },
+    {
+      "g": 11,
+      "casa": "Milan",
+      "gC": 2,
+      "gT": 0,
+      "tras": "Roma"
+    },
+    {
+      "g": 11,
+      "casa": "Bologna",
+      "gC": 1,
+      "gT": 3,
+      "tras": "Inter"
+    },
+    {
+      "g": 11,
+      "casa": "Lazio",
+      "gC": 0,
+      "gT": 1,
+      "tras": "Atalanta"
+    },
+    {
+      "g": 12,
+      "casa": "Atalanta",
+      "gC": 3,
+      "gT": 3,
+      "tras": "Juventus"
+    },
+    {
+      "g": 12,
+      "casa": "Roma",
+      "gC": 5,
+      "gT": 2,
+      "tras": "Bologna"
+    },
+    {
+      "g": 12,
+      "casa": "Inter",
+      "gC": 0,
+      "gT": 4,
+      "tras": "Lazio"
+    },
+    {
+      "g": 12,
+      "casa": "Napoli",
+      "gC": 3,
+      "gT": 1,
+      "tras": "Milan"
+    },
+    {
+      "g": 13,
+      "casa": "Milan",
+      "gC": 2,
+      "gT": 2,
+      "tras": "Inter"
+    },
+    {
+      "g": 13,
+      "casa": "Bologna",
+      "gC": 1,
+      "gT": 3,
+      "tras": "Juventus"
+    },
+    {
+      "g": 13,
+      "casa": "Lazio",
+      "gC": 2,
+      "gT": 2,
+      "tras": "Napoli"
+    },
+    {
+      "g": 13,
+      "casa": "Atalanta",
+      "gC": 1,
+      "gT": 0,
+      "tras": "Roma"
+    },
+    {
+      "g": 14,
+      "casa": "Juventus",
+      "gC": 2,
+      "gT": 3,
+      "tras": "Inter"
+    },
+    {
+      "g": 14,
+      "casa": "Milan",
+      "gC": 2,
+      "gT": 3,
+      "tras": "Atalanta"
+    },
+    {
+      "g": 14,
+      "casa": "Roma",
+      "gC": 1,
+      "gT": 3,
+      "tras": "Napoli"
+    },
+    {
+      "g": 14,
+      "casa": "Bologna",
+      "gC": 1,
+      "gT": 3,
+      "tras": "Lazio"
+    },
+    {
+      "g": 15,
+      "casa": "Inter",
+      "gC": 1,
+      "gT": 3,
+      "tras": "Atalanta"
+    },
+    {
+      "g": 15,
+      "casa": "Milan",
+      "gC": 2,
+      "gT": 0,
+      "tras": "Juventus"
+    },
+    {
+      "g": 15,
+      "casa": "Roma",
+      "gC": 2,
+      "gT": 1,
+      "tras": "Lazio"
+    },
+    {
+      "g": 15,
+      "casa": "Napoli",
+      "gC": 0,
+      "gT": 1,
+      "tras": "Bologna"
+    },
+    {
+      "g": 16,
+      "casa": "Inter",
+      "gC": 0,
+      "gT": 1,
+      "tras": "Roma"
+    },
+    {
+      "g": 16,
+      "casa": "Milan",
+      "gC": 0,
+      "gT": 0,
+      "tras": "Bologna"
+    },
+    {
+      "g": 16,
+      "casa": "Lazio",
+      "gC": 0,
+      "gT": 2,
+      "tras": "Juventus"
+    },
+    {
+      "g": 16,
+      "casa": "Atalanta",
+      "gC": 3,
+      "gT": 2,
+      "tras": "Napoli"
+    },
+    {
+      "g": 17,
+      "casa": "Napoli",
+      "gC": 2,
+      "gT": 1,
+      "tras": "Inter"
+    },
+    {
+      "g": 17,
+      "casa": "Milan",
+      "gC": 3,
+      "gT": 1,
+      "tras": "Lazio"
+    },
+    {
+      "g": 17,
+      "casa": "Roma",
+      "gC": 4,
+      "gT": 3,
+      "tras": "Juventus"
+    },
+    {
+      "g": 17,
+      "casa": "Bologna",
+      "gC": 0,
+      "gT": 1,
+      "tras": "Atalanta"
+    },
+    {
+      "g": 18,
+      "casa": "Inter",
+      "gC": 3,
+      "gT": 1,
+      "tras": "Bologna"
+    },
+    {
+      "g": 18,
+      "casa": "Roma",
+      "gC": 1,
+      "gT": 2,
+      "tras": "Milan"
+    },
+    {
+      "g": 18,
+      "casa": "Napoli",
+      "gC": 4,
+      "gT": 2,
+      "tras": "Juventus"
+    },
+    {
+      "g": 18,
+      "casa": "Atalanta",
+      "gC": 1,
+      "gT": 0,
+      "tras": "Lazio"
+    },
+    {
+      "g": 19,
+      "casa": "Lazio",
+      "gC": 1,
+      "gT": 2,
+      "tras": "Inter"
+    },
+    {
+      "g": 19,
+      "casa": "Milan",
+      "gC": 2,
+      "gT": 3,
+      "tras": "Napoli"
+    },
+    {
+      "g": 19,
+      "casa": "Juventus",
+      "gC": 3,
+      "gT": 3,
+      "tras": "Atalanta"
+    },
+    {
+      "g": 19,
+      "casa": "Bologna",
+      "gC": 2,
+      "gT": 1,
+      "tras": "Roma"
+    },
+    {
+      "g": 20,
+      "casa": "Inter",
+      "gC": 3,
+      "gT": 1,
+      "tras": "Milan"
+    },
+    {
+      "g": 20,
+      "casa": "Roma",
+      "gC": 2,
+      "gT": 3,
+      "tras": "Atalanta"
+    },
+    {
+      "g": 20,
+      "casa": "Juventus",
+      "gC": 5,
+      "gT": 2,
+      "tras": "Bologna"
+    },
+    {
+      "g": 20,
+      "casa": "Napoli",
+      "gC": 2,
+      "gT": 1,
+      "tras": "Lazio"
+    },
+    {
+      "g": 21,
+      "casa": "Inter",
+      "gC": 1,
+      "gT": 0,
+      "tras": "Juventus"
+    },
+    {
+      "g": 21,
+      "casa": "Atalanta",
+      "gC": 0,
+      "gT": 1,
+      "tras": "Milan"
+    },
+    {
+      "g": 21,
+      "casa": "Napoli",
+      "gC": 2,
+      "gT": 4,
+      "tras": "Roma"
+    },
+    {
+      "g": 21,
+      "casa": "Lazio",
+      "gC": 1,
+      "gT": 0,
+      "tras": "Bologna"
+    },
+    {
+      "g": 22,
+      "casa": "Atalanta",
+      "gC": 3,
+      "gT": 5,
+      "tras": "Inter"
+    },
+    {
+      "g": 22,
+      "casa": "Juventus",
+      "gC": 5,
+      "gT": 1,
+      "tras": "Milan"
+    },
+    {
+      "g": 22,
+      "casa": "Lazio",
+      "gC": 1,
+      "gT": 2,
+      "tras": "Roma"
+    },
+    {
+      "g": 22,
+      "casa": "Bologna",
+      "gC": 2,
+      "gT": 1,
+      "tras": "Napoli"
+    },
+    {
+      "g": 23,
+      "casa": "Roma",
+      "gC": 0,
+      "gT": 2,
+      "tras": "Inter"
+    },
+    {
+      "g": 23,
+      "casa": "Bologna",
+      "gC": 2,
+      "gT": 3,
+      "tras": "Milan"
+    },
+    {
+      "g": 23,
+      "casa": "Juventus",
+      "gC": 4,
+      "gT": 5,
+      "tras": "Lazio"
+    },
+    {
+      "g": 23,
+      "casa": "Napoli",
+      "gC": 2,
+      "gT": 0,
+      "tras": "Atalanta"
+    },
+    {
+      "g": 24,
+      "casa": "Inter",
+      "gC": 4,
+      "gT": 4,
+      "tras": "Napoli"
+    },
+    {
+      "g": 24,
+      "casa": "Lazio",
+      "gC": 3,
+      "gT": 2,
+      "tras": "Milan"
+    },
+    {
+      "g": 24,
+      "casa": "Juventus",
+      "gC": 4,
+      "gT": 3,
+      "tras": "Roma"
+    },
+    {
+      "g": 24,
+      "casa": "Atalanta",
+      "gC": 3,
+      "gT": 0,
+      "tras": "Bologna"
+    },
+    {
+      "g": 25,
+      "casa": "Bologna",
+      "gC": 1,
+      "gT": 2,
+      "tras": "Inter"
+    },
+    {
+      "g": 25,
+      "casa": "Milan",
+      "gC": 2,
+      "gT": 3,
+      "tras": "Roma"
+    },
+    {
+      "g": 25,
+      "casa": "Juventus",
+      "gC": 4,
+      "gT": 2,
+      "tras": "Napoli"
+    },
+    {
+      "g": 25,
+      "casa": "Lazio",
+      "gC": 0,
+      "gT": 3,
+      "tras": "Atalanta"
+    },
+    {
+      "g": 26,
+      "casa": "Inter",
+      "gC": 3,
+      "gT": 0,
+      "tras": "Lazio"
+    },
+    {
+      "g": 26,
+      "casa": "Napoli",
+      "gC": 3,
+      "gT": 0,
+      "tras": "Milan"
+    },
+    {
+      "g": 26,
+      "casa": "Atalanta",
+      "gC": 1,
+      "gT": 0,
+      "tras": "Juventus"
+    },
+    {
+      "g": 26,
+      "casa": "Roma",
+      "gC": 2,
+      "gT": 0,
+      "tras": "Bologna"
+    }
   ]
 }

@@ -538,9 +538,13 @@ function resetAllSections() {
   document.getElementById("attivitaSection").classList.add("hidden");
   document.getElementById("rankingSection").classList.add("hidden");
   document.getElementById("fasceSection").classList.add("hidden");
+  const s = document.getElementById("stats2526Section");
+  if (s) s.classList.add("hidden");
   document.querySelector(".btn-palmares").innerText = "🏆 PALMARÈS";
   document.querySelector(".btn-attivita").innerText = "👥 ATTIVITÀ";
   document.querySelector(".btn-fasce").innerText = "📊 FASCE";
+  const sb = document.querySelector(".btn-stats2526");
+  if (sb) sb.innerText = "📈 STATISTICHE 25/26";
 }
 
 function togglePalmares() {
@@ -728,7 +732,6 @@ function renderAttivita() {
   container.innerHTML += html;
 }
 
-window.onload = loadData;
 // ── FASCE ──
 
 function toggleFasce() {
@@ -1049,3 +1052,364 @@ function renderFasce() {
   html += "</div>";
   container.innerHTML = html;
 }
+
+// ══════════════════════════════════════════════════════════════
+// SEZIONE STATISTICHE 2025-26: CASA / TRASFERTA / FORMA
+// ══════════════════════════════════════════════════════════════
+
+const RISULTATI_2526 = [
+  // GIORNATA 1
+  { g:1, casa:'Milan',    gC:1, gT:2, tras:'Juventus'  },
+  { g:1, casa:'Napoli',   gC:2, gT:0, tras:'Bologna'   },
+  { g:1, casa:'Roma',     gC:2, gT:0, tras:'Lazio'     },
+  { g:1, casa:'Inter',    gC:4, gT:3, tras:'Atalanta'  },
+  // GIORNATA 2
+  { g:2, casa:'Milan',    gC:2, gT:1, tras:'Bologna'   },
+  { g:2, casa:'Atalanta', gC:0, gT:2, tras:'Napoli'    },
+  { g:2, casa:'Inter',    gC:2, gT:1, tras:'Roma'      },
+  { g:2, casa:'Lazio',    gC:4, gT:1, tras:'Juventus'  },
+  // GIORNATA 3
+  { g:3, casa:'Napoli',   gC:4, gT:3, tras:'Inter'     },
+  { g:3, casa:'Roma',     gC:2, gT:3, tras:'Juventus'  },
+  { g:3, casa:'Milan',    gC:2, gT:0, tras:'Lazio'     },
+  { g:3, casa:'Bologna',  gC:0, gT:3, tras:'Atalanta'  },
+  // GIORNATA 4
+  { g:4, casa:'Roma',     gC:1, gT:3, tras:'Milan'     },
+  { g:4, casa:'Atalanta', gC:3, gT:0, tras:'Lazio'     },
+  { g:4, casa:'Inter',    gC:3, gT:4, tras:'Bologna'   },
+  { g:4, casa:'Napoli',   gC:1, gT:1, tras:'Juventus'  },
+  // GIORNATA 5
+  { g:5, casa:'Juventus', gC:2, gT:2, tras:'Atalanta'  },
+  { g:5, casa:'Bologna',  gC:1, gT:4, tras:'Roma'      },
+  { g:5, casa:'Milan',    gC:3, gT:1, tras:'Napoli'    },
+  { g:5, casa:'Lazio',    gC:3, gT:1, tras:'Inter'     },
+  // GIORNATA 6
+  { g:6, casa:'Roma',     gC:2, gT:2, tras:'Atalanta'  },
+  { g:6, casa:'Napoli',   gC:3, gT:3, tras:'Lazio'     },
+  { g:6, casa:'Juventus', gC:0, gT:5, tras:'Bologna'   },
+  { g:6, casa:'Inter',    gC:5, gT:0, tras:'Milan'     },
+  // GIORNATA 7
+  { g:7, casa:'Napoli',   gC:1, gT:2, tras:'Roma'      },
+  { g:7, casa:'Inter',    gC:1, gT:0, tras:'Juventus'  },
+  { g:7, casa:'Lazio',    gC:0, gT:2, tras:'Bologna'   },
+  { g:7, casa:'Atalanta', gC:0, gT:2, tras:'Milan'     },
+  // GIORNATA 8
+  { g:8, casa:'Atalanta', gC:1, gT:2, tras:'Inter'     },
+  { g:8, casa:'Lazio',    gC:1, gT:1, tras:'Roma'      },
+  { g:8, casa:'Bologna',  gC:3, gT:4, tras:'Napoli'    },
+  { g:8, casa:'Juventus', gC:0, gT:2, tras:'Milan'     },
+  // GIORNATA 9
+  { g:9, casa:'Napoli',   gC:2, gT:3, tras:'Atalanta'  },
+  { g:9, casa:'Bologna',  gC:0, gT:1, tras:'Milan'     },
+  { g:9, casa:'Roma',     gC:1, gT:4, tras:'Inter'     },
+  { g:9, casa:'Juventus', gC:4, gT:0, tras:'Lazio'     },
+  // GIORNATA 10
+  { g:10, casa:'Inter',    gC:1, gT:2, tras:'Napoli'   },
+  { g:10, casa:'Atalanta', gC:0, gT:3, tras:'Bologna'  },
+  { g:10, casa:'Juventus', gC:2, gT:1, tras:'Roma'     },
+  { g:10, casa:'Lazio',    gC:4, gT:3, tras:'Milan'    },
+  // GIORNATA 11
+  { g:11, casa:'Juventus', gC:0, gT:2, tras:'Napoli'   },
+  { g:11, casa:'Milan',    gC:2, gT:0, tras:'Roma'     },
+  { g:11, casa:'Bologna',  gC:1, gT:3, tras:'Inter'    },
+  { g:11, casa:'Lazio',    gC:0, gT:1, tras:'Atalanta' },
+  // GIORNATA 12
+  { g:12, casa:'Atalanta', gC:3, gT:3, tras:'Juventus' },
+  { g:12, casa:'Roma',     gC:5, gT:2, tras:'Bologna'  },
+  { g:12, casa:'Inter',    gC:0, gT:4, tras:'Lazio'    },
+  { g:12, casa:'Napoli',   gC:3, gT:1, tras:'Milan'    },
+  // GIORNATA 13
+  { g:13, casa:'Milan',    gC:2, gT:2, tras:'Inter'    },
+  { g:13, casa:'Bologna',  gC:1, gT:3, tras:'Juventus' },
+  { g:13, casa:'Lazio',    gC:2, gT:2, tras:'Napoli'   },
+  { g:13, casa:'Atalanta', gC:1, gT:0, tras:'Roma'     },
+  // GIORNATA 14
+  { g:14, casa:'Juventus', gC:2, gT:3, tras:'Inter'    },
+  { g:14, casa:'Milan',    gC:2, gT:3, tras:'Atalanta' },
+  { g:14, casa:'Roma',     gC:1, gT:3, tras:'Napoli'   },
+  { g:14, casa:'Bologna',  gC:1, gT:3, tras:'Lazio'    },
+  // GIORNATA 15
+  { g:15, casa:'Inter',    gC:1, gT:3, tras:'Atalanta' },
+  { g:15, casa:'Milan',    gC:2, gT:0, tras:'Juventus' },
+  { g:15, casa:'Roma',     gC:2, gT:1, tras:'Lazio'    },
+  { g:15, casa:'Napoli',   gC:0, gT:1, tras:'Bologna'  },
+  // GIORNATA 16
+  { g:16, casa:'Inter',    gC:0, gT:1, tras:'Roma'     },
+  { g:16, casa:'Milan',    gC:0, gT:0, tras:'Bologna'  },
+  { g:16, casa:'Lazio',    gC:0, gT:2, tras:'Juventus' },
+  { g:16, casa:'Atalanta', gC:3, gT:2, tras:'Napoli'   },
+  // GIORNATA 17
+  { g:17, casa:'Napoli',   gC:2, gT:1, tras:'Inter'    },
+  { g:17, casa:'Milan',    gC:3, gT:1, tras:'Lazio'    },
+  { g:17, casa:'Roma',     gC:4, gT:3, tras:'Juventus' },
+  { g:17, casa:'Bologna',  gC:0, gT:1, tras:'Atalanta' },
+  // GIORNATA 18
+  { g:18, casa:'Inter',    gC:3, gT:1, tras:'Bologna'  },
+  { g:18, casa:'Roma',     gC:1, gT:2, tras:'Milan'    },
+  { g:18, casa:'Napoli',   gC:4, gT:2, tras:'Juventus' },
+  { g:18, casa:'Atalanta', gC:1, gT:0, tras:'Lazio'    },
+  // GIORNATA 19
+  { g:19, casa:'Lazio',    gC:1, gT:2, tras:'Inter'    },
+  { g:19, casa:'Milan',    gC:2, gT:3, tras:'Napoli'   },
+  { g:19, casa:'Juventus', gC:3, gT:3, tras:'Atalanta' },
+  { g:19, casa:'Bologna',  gC:2, gT:1, tras:'Roma'     },
+  // GIORNATA 20
+  { g:20, casa:'Inter',    gC:3, gT:1, tras:'Milan'    },
+  { g:20, casa:'Roma',     gC:2, gT:3, tras:'Atalanta' },
+  { g:20, casa:'Juventus', gC:5, gT:2, tras:'Bologna'  },
+  { g:20, casa:'Napoli',   gC:2, gT:1, tras:'Lazio'    },
+  // GIORNATA 21
+  { g:21, casa:'Inter',    gC:1, gT:0, tras:'Juventus' },
+  { g:21, casa:'Atalanta', gC:0, gT:1, tras:'Milan'    },
+  { g:21, casa:'Napoli',   gC:2, gT:4, tras:'Roma'     },
+  { g:21, casa:'Lazio',    gC:1, gT:0, tras:'Bologna'  },
+  // GIORNATA 22
+  { g:22, casa:'Atalanta', gC:3, gT:5, tras:'Inter'    },
+  { g:22, casa:'Juventus', gC:5, gT:1, tras:'Milan'    },
+  { g:22, casa:'Lazio',    gC:1, gT:2, tras:'Roma'     },
+  { g:22, casa:'Bologna',  gC:2, gT:1, tras:'Napoli'   },
+  // GIORNATA 23
+  { g:23, casa:'Roma',     gC:0, gT:2, tras:'Inter'    },
+  { g:23, casa:'Bologna',  gC:2, gT:3, tras:'Milan'    },
+  { g:23, casa:'Juventus', gC:4, gT:5, tras:'Lazio'    },
+  { g:23, casa:'Napoli',   gC:2, gT:0, tras:'Atalanta' },
+  // GIORNATA 24
+  { g:24, casa:'Inter',    gC:4, gT:4, tras:'Napoli'   },
+  { g:24, casa:'Lazio',    gC:3, gT:2, tras:'Milan'    },
+  { g:24, casa:'Juventus', gC:4, gT:3, tras:'Roma'     },
+  { g:24, casa:'Atalanta', gC:3, gT:0, tras:'Bologna'  },
+  // GIORNATA 25
+  { g:25, casa:'Bologna',  gC:1, gT:2, tras:'Inter'    },
+  { g:25, casa:'Milan',    gC:2, gT:3, tras:'Roma'     },
+  { g:25, casa:'Juventus', gC:4, gT:2, tras:'Napoli'   },
+  { g:25, casa:'Lazio',    gC:0, gT:3, tras:'Atalanta' },
+  // GIORNATA 26
+  { g:26, casa:'Inter',    gC:3, gT:0, tras:'Lazio'    },
+  { g:26, casa:'Napoli',   gC:3, gT:0, tras:'Milan'    },
+  { g:26, casa:'Atalanta', gC:1, gT:0, tras:'Juventus' },
+  { g:26, casa:'Roma',     gC:2, gT:0, tras:'Bologna'  },
+];
+
+// Mappa squadra → fantallenatore
+const TEAM_MISTER = {
+  'Inter':    'Federico Burello',
+  'Napoli':   'Mattia Beltrame',
+  'Atalanta': 'Kevin Di Bernardo',
+  'Milan':    'Lorenzo Moro',
+  'Juventus': 'Denis Mascherin',
+  'Roma':     'Alex Beltrame',
+  'Lazio':    'Cristian Tartaro',
+  'Bologna':  'Nicola Marano',
+};
+
+const TEAM_LOGO = {
+  'Inter':    'images/inter.png',
+  'Napoli':   'images/napoli.png',
+  'Atalanta': 'images/atalanta.png',
+  'Milan':    'images/milan.png',
+  'Juventus': 'images/juventus.png',
+  'Roma':     'images/roma.png',
+  'Lazio':    'images/lazio.png',
+  'Bologna':  'images/bologna.png',
+};
+
+function buildStats2526() {
+  const teams = Object.keys(TEAM_MISTER);
+  const stats = {};
+
+  teams.forEach(t => {
+    stats[t] = {
+      squadra: t, mister: TEAM_MISTER[t], logo: TEAM_LOGO[t],
+      pg:0, v:0, n:0, p:0, pt:0, gf:0, gs:0,
+      pgC:0, vC:0, nC:0, pC:0, ptC:0, gfC:0, gsC:0,
+      pgT:0, vT:0, nT:0, pT:0, ptT:0, gfT:0, gsT:0,
+      ultimi:[],
+    };
+  });
+
+  // Legge dal data.json se disponibile, altrimenti usa array locale
+  const source = (fantaData.risultati2526 && fantaData.risultati2526.length > 0)
+    ? fantaData.risultati2526
+    : RISULTATI_2526;
+
+  const sorted = [...source].sort((a,b) => a.g - b.g);
+
+  sorted.forEach(r => {
+    const c = r.casa;
+    const t = r.tras;
+    const gC = r.gC;
+    const gT = r.gT;
+
+    if (!stats[c] || !stats[t]) return;
+
+    // --- CASA ---
+    stats[c].pg++;
+    stats[c].pgC++;
+    stats[c].gf += gC; stats[c].gfC += gC;
+    stats[c].gs += gT; stats[c].gsC += gT;
+    if (gC > gT) {
+      stats[c].v++; stats[c].vC++; stats[c].pt += 3; stats[c].ptC += 3;
+      stats[c].ultimi.push('W');
+    } else if (gC === gT) {
+      stats[c].n++; stats[c].nC++; stats[c].pt += 1; stats[c].ptC += 1;
+      stats[c].ultimi.push('D');
+    } else {
+      stats[c].p++; stats[c].pC++; stats[c].ultimi.push('L');
+    }
+
+    // --- TRASFERTA ---
+    stats[t].pg++;
+    stats[t].pgT++;
+    stats[t].gf += gT; stats[t].gfT += gT;
+    stats[t].gs += gC; stats[t].gsT += gC;
+    if (gT > gC) {
+      stats[t].v++; stats[t].vT++; stats[t].pt += 3; stats[t].ptT += 3;
+      stats[t].ultimi.push('W');
+    } else if (gT === gC) {
+      stats[t].n++; stats[t].nT++; stats[t].pt += 1; stats[t].ptT += 1;
+      stats[t].ultimi.push('D');
+    } else {
+      stats[t].p++; stats[t].pT++; stats[t].ultimi.push('L');
+    }
+  });
+
+  // Tieni solo gli ultimi 5
+  Object.values(stats).forEach(s => {
+    s.ultimi5 = s.ultimi.slice(-5);
+  });
+
+  return stats;
+}
+
+function getStatsRanked(mode) {
+  const stats = buildStats2526();
+  const arr = Object.values(stats);
+
+  arr.sort((a, b) => {
+    if (mode === 'casa') {
+      if (b.ptC !== a.ptC) return b.ptC - a.ptC;
+      return (b.gfC - b.gsC) - (a.gfC - a.gsC);
+    } else if (mode === 'trasferta') {
+      if (b.ptT !== a.ptT) return b.ptT - a.ptT;
+      return (b.gfT - b.gsT) - (a.gfT - a.gsT);
+    } else {
+      if (b.pt !== a.pt) return b.pt - a.pt;
+      return (b.gf - b.gs) - (a.gf - a.gs);
+    }
+  });
+
+  return arr;
+}
+
+function risultatoBadge(r) {
+  if (r === 'W') return `<span class="ris-badge ris-w">W</span>`;
+  if (r === 'D') return `<span class="ris-badge ris-d">D</span>`;
+  return `<span class="ris-badge ris-l">L</span>`;
+}
+
+function renderStats2526(mode) {
+  const teams = getStatsRanked(mode);
+  const container = document.getElementById('stats2526Body');
+  if (!container) return;
+
+  let html = '';
+
+  if (mode === 'forma') {
+    teams.forEach((t, i) => {
+      const forma = (t.ultimi5 || []).map(risultatoBadge).join('');
+      const pts = t.pt;
+      html += `
+        <tr>
+          <td><span class="pos-num-stats">${i+1}</span></td>
+          <td>
+            <div class="team-cell-stats">
+              <img src="${t.logo}" class="team-logo" onerror="this.src='images/default.png'">
+              <div>
+                <div class="ts-name">${t.squadra}</div>
+                <div class="ts-mister">${t.mister}</div>
+              </div>
+            </div>
+          </td>
+          <td class="pts-bold">${pts}</td>
+          <td>${t.pg}</td>
+          <td><div class="forma-cell-wrapper">${forma}</div></td>
+        </tr>`;
+    });
+  } else {
+    const isC = mode === 'casa';
+    const isT = mode === 'trasferta';
+    teams.forEach((t, i) => {
+      const pg  = isC ? t.pgC  : isT ? t.pgT  : t.pg;
+      const v   = isC ? t.vC   : isT ? t.vT   : t.v;
+      const n   = isC ? t.nC   : isT ? t.nT   : t.n;
+      const p   = isC ? t.pC   : isT ? t.pT   : t.p;
+      const pt  = isC ? t.ptC  : isT ? t.ptT  : t.pt;
+      const gf  = isC ? t.gfC  : isT ? t.gfT  : t.gf;
+      const gs  = isC ? t.gsC  : isT ? t.gsT  : t.gs;
+      const dr  = gf - gs;
+      const drHtml = dr > 0 ? `<span class="dr-pos">+${dr}</span>` : dr < 0 ? `<span class="dr-neg">${dr}</span>` : `<span style="color:#888">0</span>`;
+      html += `
+        <tr>
+          <td><span class="pos-num-stats">${i+1}</span></td>
+          <td>
+            <div class="team-cell-stats">
+              <img src="${t.logo}" class="team-logo" onerror="this.src='images/default.png'">
+              <div>
+                <div class="ts-name">${t.squadra}</div>
+                <div class="ts-mister">${t.mister}</div>
+              </div>
+            </div>
+          </td>
+          <td class="pts-bold">${pt}</td>
+          <td>${pg}</td>
+          <td>${v}</td>
+          <td>${n}</td>
+          <td>${p}</td>
+          <td>${gf}</td>
+          <td>${gs}</td>
+          <td>${drHtml}</td>
+        </tr>`;
+    });
+  }
+
+  container.innerHTML = html;
+
+  // Aggiorna intestazioni colonne
+  const thead = document.getElementById('stats2526Head');
+  if (!thead) return;
+  if (mode === 'forma') {
+    thead.innerHTML = `<tr>
+      <th>#</th><th style="text-align:left">Squadra</th>
+      <th>PT</th><th>PG</th><th>Ultimi 5</th>
+    </tr>`;
+  } else {
+    thead.innerHTML = `<tr>
+      <th>#</th><th style="text-align:left">Squadra</th>
+      <th>PT</th><th>PG</th><th>V</th><th>N</th><th>P</th><th>GF</th><th>GS</th><th>DR</th>
+    </tr>`;
+  }
+}
+
+let currentStatsMode = 'globale';
+
+function setStatsMode(mode) {
+  currentStatsMode = mode;
+  document.querySelectorAll('.stats-tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('statsTab_' + mode).classList.add('active');
+  renderStats2526(mode);
+}
+
+function toggleStats2526() {
+  const isHidden = document.getElementById('stats2526Section').classList.contains('hidden');
+  resetAllSections();
+  if (isHidden) {
+    document.getElementById('stats2526Section').classList.remove('hidden');
+    document.querySelector('.btn-stats2526').innerText = '← Torna alla Classifica';
+    renderStats2526(currentStatsMode);
+  } else {
+    document.getElementById('rankingSection').classList.remove('hidden');
+    document.querySelector('.btn-stats2526').innerText = '📈 STATISTICHE 25/26';
+  }
+}
+
+window.onload = loadData;
