@@ -747,6 +747,9 @@
       ]
     }
   ],
+  "penalita2526": {
+    "Bologna": -2
+  },
   "risultati2526": [
     {
       "g": 1,
@@ -1171,15 +1174,15 @@
     {
       "g": 16,
       "casa": "Inter",
-      "gC": 0,
+      "gC": 2,
       "gT": 1,
       "tras": "Roma"
     },
     {
       "g": 16,
       "casa": "Milan",
-      "gC": 0,
-      "gT": 0,
+      "gC": 3,
+      "gT": 3,
       "tras": "Bologna"
     },
     {

@@ -1134,8 +1134,8 @@ const RISULTATI_2526 = [
   { g:15, casa:'Roma',     gC:2, gT:1, tras:'Lazio'    },
   { g:15, casa:'Napoli',   gC:0, gT:1, tras:'Bologna'  },
   // GIORNATA 16
-  { g:16, casa:'Inter',    gC:0, gT:1, tras:'Roma'     },
-  { g:16, casa:'Milan',    gC:0, gT:0, tras:'Bologna'  },
+  { g:16, casa:'Inter',    gC:2, gT:1, tras:'Roma'     },
+  { g:16, casa:'Milan',    gC:3, gT:3, tras:'Bologna'  },
   { g:16, casa:'Lazio',    gC:0, gT:2, tras:'Juventus' },
   { g:16, casa:'Atalanta', gC:3, gT:2, tras:'Napoli'   },
   // GIORNATA 17
@@ -1270,6 +1270,15 @@ function buildStats2526() {
       stats[t].ultimi.push('D');
     } else {
       stats[t].p++; stats[t].pT++; stats[t].ultimi.push('L');
+    }
+  });
+
+  // Applica penalità dal data.json
+  const penalita = (fantaData.penalita2526) || {};
+  Object.keys(penalita).forEach(team => {
+    if (stats[team]) {
+      stats[team].pt += penalita[team];
+      stats[team].penalita = penalita[team];
     }
   });
 
