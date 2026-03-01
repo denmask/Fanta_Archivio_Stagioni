@@ -392,8 +392,18 @@
           "pos": 8,
           "squadra": "Napoli",
           "logo": "images/napoli.png",
-          "mister": "Mattia Minin",
+          "mister": "Mattia Minin (vice Giacomo Bot)",
           "fase": "Ottavi"
+        },
+        {
+          "pos": 8,
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Giacomo Bot",
+          "punti": null,
+          "vice": true,
+          "fase": "Ottavi",
+          "nota": "Vice di Mattia Minin"
         }
       ]
     }
@@ -408,7 +418,7 @@
           "squadra": "Inter",
           "logo": "images/inter.png",
           "mister": "Federico Burello",
-          "punti": 53,
+          "punti": 54,
           "fp": 1902
         },
         {
@@ -416,7 +426,7 @@
           "squadra": "Napoli",
           "logo": "images/napoli.png",
           "mister": "Mattia Beltrame",
-          "punti": 46,
+          "punti": 47,
           "fp": 1792.5,
           "uscita": true
         },
@@ -425,7 +435,7 @@
           "squadra": "Atalanta",
           "logo": "images/atalanta.png",
           "mister": "Kevin Di Bernardo",
-          "punti": 46,
+          "punti": 47,
           "fp": 1758.5
         },
         {
@@ -433,7 +443,7 @@
           "squadra": "Milan",
           "logo": "images/milan.png",
           "mister": "Lorenzo Moro",
-          "punti": 41,
+          "punti": 42,
           "fp": 1775
         },
         {
@@ -441,7 +451,7 @@
           "squadra": "Juventus",
           "logo": "images/juventus.png",
           "mister": "Denis Mascherin",
-          "punti": 34,
+          "punti": 37,
           "fp": 1841.5
         },
         {
@@ -458,7 +468,7 @@
           "squadra": "Roma",
           "logo": "images/roma.png",
           "mister": "Alex Beltrame",
-          "punti": 32,
+          "punti": 33,
           "fp": 1764
         },
         {
@@ -466,7 +476,7 @@
           "squadra": "Lazio",
           "logo": "images/lazio.png",
           "mister": "Cristian Tartaro",
-          "punti": 27,
+          "punti": 28,
           "fp": 1756.5
         },
         {
@@ -1478,6 +1488,34 @@
       "gC": 2,
       "gT": 0,
       "tras": "Bologna"
+    },
+    {
+      "g": 27,
+      "casa": "Milan",
+      "gC": 2,
+      "gT": 2,
+      "tras": "Inter"
+    },
+    {
+      "g": 27,
+      "casa": "Atalanta",
+      "gC": 0,
+      "gT": 0,
+      "tras": "Roma"
+    },
+    {
+      "g": 27,
+      "casa": "Lazio",
+      "gC": 1,
+      "gT": 1,
+      "tras": "Napoli"
+    },
+    {
+      "g": 27,
+      "casa": "Bologna",
+      "gC": 0,
+      "gT": 1,
+      "tras": "Juventus"
     }
   ]
 }
