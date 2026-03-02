@@ -1516,6 +1516,34 @@
       "gC": 0,
       "gT": 2,
       "tras": "Juventus"
+    },
+{
+      "g": 28,
+      "casa": "Roma",
+      "gC": 0,
+      "gT": 0,
+      "tras": "Napoli"
+    },
+    {
+      "g": 28,
+      "casa": "Milan",
+      "gC": 0,
+      "gT": 0,
+      "tras": "Atalanta"
+    },
+    {
+      "g": 28,
+      "casa": "Juventus",
+      "gC": 0,
+      "gT": 0,
+      "tras": "Inter"
+    },
+    {
+      "g": 28,
+      "casa": "Bologna",
+      "gC": 0,
+      "gT": 0,
+      "tras": "Lazio"
     }
   ]
 }
