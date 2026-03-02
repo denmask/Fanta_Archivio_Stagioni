@@ -1188,6 +1188,11 @@ const RISULTATI_2526 = [
   { g:26, casa:'Napoli',   gC:3, gT:0, tras:'Milan'    },
   { g:26, casa:'Atalanta', gC:1, gT:0, tras:'Juventus' },
   { g:26, casa:'Roma',     gC:2, gT:0, tras:'Bologna'  },
+  // GIORNATA 27
+  { g:27, casa:'Milan',    gC:2, gT:2, tras:'Inter'    },
+  { g:27, casa:'Atalanta', gC:1, gT:3, tras:'Roma'     },
+  { g:27, casa:'Lazio',    gC:1, gT:1, tras:'Napoli'   },
+  { g:27, casa:'Bologna',  gC:0, gT:2, tras:'Juventus' },
 ];
 
 // Mappa squadra → fantallenatore

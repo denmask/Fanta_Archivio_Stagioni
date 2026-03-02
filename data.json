@@ -435,7 +435,7 @@
           "squadra": "Atalanta",
           "logo": "images/atalanta.png",
           "mister": "Kevin Di Bernardo",
-          "punti": 47,
+          "punti": 46,
           "fp": 1758.5
         },
         {
@@ -455,20 +455,11 @@
           "fp": 1841.5
         },
         {
-          "pos": 5,
-          "squadra": "Juventus",
-          "logo": "images/juventus.png",
-          "mister": "Valentina Pozzi",
-          "punti": null,
-          "vice": true,
-          "nota": "Vice di Denis Mascherin (da novembre)"
-        },
-        {
           "pos": 6,
           "squadra": "Roma",
           "logo": "images/roma.png",
           "mister": "Alex Beltrame",
-          "punti": 33,
+          "punti": 35,
           "fp": 1764
         },
         {
@@ -486,6 +477,15 @@
           "mister": "Nicola Marano",
           "punti": 20,
           "fp": 1749.5
+        },
+        {
+          "pos": 5,
+          "squadra": "Juventus",
+          "logo": "images/juventus.png",
+          "mister": "Valentina Pozzi",
+          "punti": null,
+          "vice": true,
+          "nota": "Vice di Denis Mascherin (da novembre)"
         }
       ]
     },
@@ -1499,8 +1499,8 @@
     {
       "g": 27,
       "casa": "Atalanta",
-      "gC": 0,
-      "gT": 0,
+      "gC": 1,
+      "gT": 3,
       "tras": "Roma"
     },
     {
@@ -1514,7 +1514,7 @@
       "g": 27,
       "casa": "Bologna",
       "gC": 0,
-      "gT": 1,
+      "gT": 2,
       "tras": "Juventus"
     }
   ]
