@@ -42,9 +42,34 @@ function renderSeason(anno) {
 
   const useFasce = anno === "2025-26" || anno === "2024-25";
 
-  season.classifica
-    .filter((team) => !team.vice)
-    .forEach((team, i) => {
+  // Per la stagione 2025-26 calcola i punti live dai risultati
+  let liveStats = null;
+  if (anno === "2025-26") {
+    liveStats = buildStats2526();
+  }
+
+  let classifica = season.classifica.filter((team) => !team.vice);
+
+  if (liveStats) {
+    // Ricostruisce la classifica dai dati live e riordina per punti
+    classifica = classifica.map((team) => {
+      const live = liveStats[team.squadra];
+      if (live) {
+        return { ...team, punti: live.pt, fp: team.fp };
+      }
+      return team;
+    });
+    classifica.sort((a, b) => {
+      if (b.punti !== a.punti) return b.punti - a.punti;
+      const la = liveStats[a.squadra];
+      const lb = liveStats[b.squadra];
+      if (la && lb) return (lb.gf - lb.gs) - (la.gf - la.gs);
+      return 0;
+    });
+    classifica = classifica.map((team, i) => ({ ...team, pos: i + 1 }));
+  }
+
+  classifica.forEach((team, i) => {
       let fasciaClass = "";
       if (useFasce) {
         if (team.pos <= 4) fasciaClass = "f1";
@@ -71,7 +96,7 @@ function renderSeason(anno) {
                 <td class="fp-text">${team.fp || "-"}</td>
             </tr>
         `;
-    });
+  });
 }
 
 function renderPalmares() {
@@ -1278,11 +1303,20 @@ function buildStats2526() {
     }
   });
 
+  // Sovrascrivi i punti totali con quelli del data.json (aggiornati manualmente)
+  const stagione2526 = (fantaData.stagioni || []).find(s => s.anno === '2025-26');
+  if (stagione2526) {
+    stagione2526.classifica.filter(t => !t.vice).forEach(t => {
+      if (stats[t.squadra] && t.punti !== null && t.punti !== undefined) {
+        stats[t.squadra].pt = t.punti;
+      }
+    });
+  }
+
   // Applica penalità dal data.json
   const penalita = (fantaData.penalita2526) || {};
   Object.keys(penalita).forEach(team => {
     if (stats[team]) {
-      stats[team].pt += penalita[team];
       stats[team].penalita = penalita[team];
     }
   });
