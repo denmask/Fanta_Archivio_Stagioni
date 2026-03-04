@@ -174,6 +174,38 @@ function buildMisterStats() {
     });
   }
 
+  // Kevin Sandri: vice Bologna 2025-26, poi lasciato completamente a Nicola Marano
+  if (!stats["Kevin Sandri"]) stats["Kevin Sandri"] = { stagioni: [] };
+  if (!stats["Kevin Sandri"].stagioni.find((x) => x.anno === "2025-26" && x.squadra === "Bologna")) {
+    stats["Kevin Sandri"].stagioni.push({
+      anno: "2025-26", annoInizio: 2025,
+      squadra: "Bologna", logo: "images/bologna.png",
+      pos: 8, parziale: false, isVice: true, secondoAllenatore: false,
+      astaSolo: true, // Ha fatto solo l'asta estiva, non conta come stagione piena
+      uscita: false, nota: "Ha svolto l'asta estiva per Nicola Marano (Bologna), lasciando poi la squadra completamente in mano a Nico come 1° allenatore — non ha disputato attivamente il campionato"
+    });
+  }
+
+  // Aidan: vice Lazio 2025-26 (asta estiva a Cristian Tartaro)
+  if (!stats["Aidan"]) stats["Aidan"] = { stagioni: [] };
+  if (!stats["Aidan"].stagioni.find((x) => x.anno === "2025-26" && x.squadra === "Lazio")) {
+    stats["Aidan"].stagioni.push({
+      anno: "2025-26", annoInizio: 2025,
+      squadra: "Lazio", logo: "images/lazio.png",
+      pos: 7, parziale: false, isVice: true, secondoAllenatore: false,
+      uscita: false, nota: "Ha svolto l'asta estiva alla guida della Lazio, diventando viceallenatore di Cristian Tartaro per la stagione 2025/26"
+    });
+  }
+  // Aidan: confermato per stagione 2026-27 come fantallenatore di Serie A
+  if (!stats["Aidan"].stagioni.find((x) => x.anno === "2026-27")) {
+    stats["Aidan"].stagioni.push({
+      anno: "2026-27", annoInizio: 2026,
+      squadra: "TBD", logo: "images/default.png",
+      pos: null, parziale: false, isVice: false, secondoAllenatore: false,
+      futuro: true, nota: "Confermata presenza come fantallenatore di Serie A — squadra ancora da definire"
+    });
+  }
+
   return stats;
 }
 
@@ -249,11 +281,23 @@ function renderHallOfFame(targetContainer) {
   const stats = buildMisterStats();
   let html = '<h2 class="section-title">Hall of Fame Allenatori</h2>';
   html += '<div class="hall-of-fame-grid">';
-  Object.keys(stats)
-    .sort((a, b) => stats[b].stagioni.length - stats[a].stagioni.length)
-    .forEach((m) => {
+
+  const FIXED_ORDER = [
+    "Denis Mascherin", "Mattia Beltrame", "Kevin Di Bernardo", "Federico Burello",
+    "Cristian Tartaro", "Alex Beltrame", "Lorenzo Moro", "Nicola Marano",
+    "Aidan", "Valentina Pozzi", "Kevin Sandri", "Andrea Campagnolo",
+    "Giovanni Bean", "Giacomo Bot", "Mattia Minin", "Riccardo Rella", "Michele Picilli",
+  ];
+  const allNames = Object.keys(stats);
+  const orderedNames = [
+    ...FIXED_ORDER.filter(n => allNames.includes(n)),
+    ...allNames.filter(n => !FIXED_ORDER.includes(n)),
+  ];
+
+  orderedNames.forEach((m) => {
       const data = stats[m];
-      const count = data.stagioni.length;
+      if (!data) return;
+      const count = data.stagioni.filter(s => !s.astaSolo && !s.futuro).length;
       const stagionLabel = count === 1 ? "1 Stagione" : `${count} Stagioni`;
       const stagioni = [...data.stagioni].sort((a, b) => b.annoInizio - a.annoInizio);
 
@@ -264,7 +308,9 @@ function renderHallOfFame(targetContainer) {
             <img src="${s.logo}" class="mister-team-logo" onerror="this.src='images/default.png'" title="${s.squadra}">
             <span class="mister-team-name">${s.squadra}</span>
             <span class="mister-team-pos">${
-              s.isVice ? '<span class="badge-vice">VICE</span>'
+              s.futuro ? '<span class="badge-futuro">🔜 Prossima</span>'
+              : s.astaSolo ? '<span class="badge-asta">🎯 Asta</span>'
+              : s.isVice ? '<span class="badge-vice">VICE</span>'
               : s.parziale ? '<span class="badge-parziale">Parziale</span>'
               : getPosLabel(s.pos)
             }</span>
@@ -326,6 +372,7 @@ function openMisterModal(encodedName) {
       return {
         stagione: c.stagione, squadra: entry.squadra, logo: entry.logo,
         fase: entry.fase, pos: entry.pos, inCorso: c.risultato === "In corso",
+        coppaNote: entry.coppaNote || null,
       };
     })
     .filter(Boolean);
@@ -358,7 +405,7 @@ function openMisterModal(encodedName) {
   const argenti = stagioniFull.filter((s) => s.pos === 2).length;
   const bronzi = stagioniFull.filter((s) => s.pos === 3).length;
   const podi = ori + argenti + bronzi;
-  const partecipazioni = stagioni.length;
+  const partecipazioni = stagioni.filter(s => !s.astaSolo && !s.futuro).length;
 
   const trofeiHtml = titoli.length > 0
     ? titoli.map((t) => `
@@ -383,7 +430,9 @@ function openMisterModal(encodedName) {
         </div>
       </div>
       <span class="modal-season-pos">${
-        s.isVice ? '<span class="badge-vice">VICE</span>'
+        s.futuro ? '<span class="badge-futuro">🔜 Prossima</span>'
+        : s.astaSolo ? '<span class="badge-asta">🎯 Asta</span>'
+        : s.isVice ? '<span class="badge-vice">VICE</span>'
         : getPosLabel(s.pos)
       }</span>
     </div>`).join("");
@@ -431,6 +480,7 @@ function openMisterModal(encodedName) {
             <div class="partecipazione-info">
               <div class="modal-trophy-season">Stagione ${c.stagione}</div>
               <div class="partecipazione-squadra">${c.squadra}</div>
+              ${c.coppaNote ? `<div class="modal-season-nota">${c.coppaNote}</div>` : ""}
             </div>
             <span class="fase-badge ${faseColor}">${c.fase}</span>
           </div>`;
@@ -519,50 +569,66 @@ function renderAttivita() {
   container.innerHTML = '<h2 class="section-title">Attività Fantallenatori</h2>';
   const CURRENT_SEASON = "2025-26";
   const stats = buildMisterStats();
-  const ADMIN_ORDER = { "Denis Mascherin": 0, "Kevin Di Bernardo": 1 };
+  const FUTURE_MISTER = ["Aidan", "Aidan Conti"];
   const USCITA_MISTER = ["Mattia Beltrame"];
 
-  const misterList = Object.keys(stats).sort((a, b) => {
-    const aIsAdmin = a in ADMIN_ORDER;
-    const bIsAdmin = b in ADMIN_ORDER;
-    if (aIsAdmin && bIsAdmin) return ADMIN_ORDER[a] - ADMIN_ORDER[b];
-    if (aIsAdmin) return -1;
-    if (bIsAdmin) return 1;
-    const aMax = [...stats[a].stagioni].sort((x, y) => y.annoInizio - x.annoInizio)[0].anno;
-    const bMax = [...stats[b].stagioni].sort((x, y) => y.annoInizio - x.annoInizio)[0].anno;
-    const aActive = aMax === CURRENT_SEASON;
-    const bActive = bMax === CURRENT_SEASON;
-    if (aActive && !bActive) return -1;
-    if (!aActive && bActive) return 1;
-    const aMin = Math.min(...stats[a].stagioni.map((s) => s.annoInizio));
-    const bMin = Math.min(...stats[b].stagioni.map((s) => s.annoInizio));
-    if (aMin !== bMin) return aMin - bMin;
-    const aOwn = stats[a].stagioni.filter((s) => !s.isVice).length;
-    const bOwn = stats[b].stagioni.filter((s) => !s.isVice).length;
-    if (aOwn !== bOwn) return bOwn - aOwn;
-    return a.localeCompare(b);
-  });
+  // ── ORDINE FISSO DEFINITO DALL'UTENTE ──
+  const FIXED_ORDER = [
+    "Denis Mascherin",
+    "Mattia Beltrame",
+    "Kevin Di Bernardo",
+    "Federico Burello",
+    "Cristian Tartaro",
+    "Alex Beltrame",
+    "Lorenzo Moro",
+    "Nicola Marano",
+    "Aidan",
+    "Valentina Pozzi",
+    "Kevin Sandri",
+    "Andrea Campagnolo",
+    "Giovanni Bean",
+    "Giacomo Bot",
+    "Mattia Minin",
+    "Riccardo Rella",
+    "Michele Picilli",
+  ];
+
+  // Costruisci lista: prima quelli in FIXED_ORDER (nell'ordine dato), poi eventuali extra
+  const allNames = Object.keys(stats);
+  const ordered = [
+    ...FIXED_ORDER.filter(n => allNames.includes(n)),
+    ...allNames.filter(n => !FIXED_ORDER.includes(n)),
+  ];
+
+  // Determina gruppi
+  const ADMIN_SET = new Set(["Denis Mascherin", "Kevin Di Bernardo"]);
 
   let html = '<div class="attivita-list">';
-  let activeHeaderAdded = false;
-  let retiredHeaderAdded = false;
-  html += '<div class="attivita-group-label attivita-group-admin">⚙️ Staff</div>';
+  let staffDone = false, activeDone = false, retiredDone = false;
 
-  misterList.forEach((name) => {
+  ordered.forEach((name) => {
+    if (!stats[name]) return;
     const stagioni = stats[name].stagioni;
     const years = stagioni.map((s) => parseInt(s.anno.split("-")[0]));
     const minYear = Math.min(...years);
-    const maxAnno = [...stagioni].sort((a, b) => b.annoInizio - a.annoInizio)[0].anno;
-    const isActive = maxAnno === CURRENT_SEASON;
-    const isAdmin = name in ADMIN_ORDER;
+    const stagioniFull = stagioni.filter((s) => !s.astaSolo);
+    const stagionForMax = stagioniFull.length > 0 ? stagioniFull : stagioni;
+    const maxAnno = [...stagionForMax].sort((a, b) => b.annoInizio - a.annoInizio)[0].anno;
+    const isActive = maxAnno === CURRENT_SEASON || FUTURE_MISTER.includes(name);
+    const isAdmin = ADMIN_SET.has(name);
     const isUscita = USCITA_MISTER.includes(name);
 
-    if (!isAdmin && isActive && !activeHeaderAdded) {
-      activeHeaderAdded = true;
+    // Group headers
+    if (isAdmin && !staffDone) {
+      staffDone = true;
+      html += '<div class="attivita-group-label attivita-group-admin">⚙️ Staff</div>';
+    }
+    if (!isAdmin && isActive && !activeDone) {
+      activeDone = true;
       html += '<div class="attivita-group-label attivita-group-active">🟢 Attivi</div>';
     }
-    if (!isAdmin && !isActive && !retiredHeaderAdded) {
-      retiredHeaderAdded = true;
+    if (!isAdmin && !isActive && !retiredDone) {
+      retiredDone = true;
       html += '<div class="attivita-group-label attivita-group-retired">🔴 Ritirati</div>';
     }
 
@@ -574,8 +640,8 @@ function renderAttivita() {
     const periodoLabel = `${minYear} – ${endYearStr}`;
     const initiali = name.split(" ").map((p) => p[0]).join("").toUpperCase().slice(0, 2);
     const misterEncoded = encodeURIComponent(name);
-    const numStagioni = stagioni.filter((s) => !s.isVice).length;
-    const isOnlyVice = numStagioni === 0 && stagioni.some((s) => s.isVice);
+    const numStagioni = stagioni.filter((s) => !s.isVice && !s.astaSolo && !s.futuro).length;
+    const isOnlyVice = numStagioni === 0 && stagioni.some((s) => s.isVice || s.astaSolo);
 
     const roleBadge = name === "Denis Mascherin"
       ? '<span class="attivita-role-badge admin">👑 SuperAdmin</span>'
@@ -608,7 +674,7 @@ function renderAttivita() {
       : "🔴 Ritirato";
 
     const stagionLabel = isOnlyVice
-      ? `${stagioni.length} stagion${stagioni.length === 1 ? "e" : "i"} (solo vice)`
+      ? `${stagioni.filter(s=>!s.futuro).length} stagion${stagioni.filter(s=>!s.futuro).length === 1 ? "e" : "i"} (solo vice)`
       : `${numStagioni} stagion${numStagioni === 1 ? "e" : "i"}`;
 
     html += `
@@ -624,7 +690,114 @@ function renderAttivita() {
   });
 
   html += "</div>";
+
+  // ── SEZIONE CLASSIFICA PER STAGIONI (accordion) ──
+  html += buildRankingAccordion(stats);
+
   container.innerHTML += html;
+}
+
+function buildRankingAccordion(stats) {
+  // Raggruppa per numero di stagioni (escludendo vice/asta/futuro)
+  const entries = Object.keys(stats).map(name => {
+    const stagioni = stats[name].stagioni;
+    const numStagioni = stagioni.filter(s => !s.isVice && !s.astaSolo && !s.futuro).length;
+    const stagioniFull = stagioni
+      .filter(s => !s.isVice && !s.astaSolo && !s.futuro)
+      .sort((a, b) => b.annoInizio - a.annoInizio);
+    return { name, numStagioni, stagioniFull, allStagioni: stagioni };
+  });
+
+  // Ordina per stagioni desc, poi per nome
+  entries.sort((a, b) => b.numStagioni !== a.numStagioni
+    ? b.numStagioni - a.numStagioni
+    : a.name.localeCompare(b.name, 'it'));
+
+  // Raggruppa per numStagioni
+  const groups = {};
+  entries.forEach(e => {
+    const k = e.numStagioni;
+    if (!groups[k]) groups[k] = [];
+    groups[k].push(e);
+  });
+
+  let html = `
+    <div class="ranking-accordion-wrap">
+      <h2 class="section-title" style="margin-top:2rem">📊 Classifica per Stagioni</h2>
+      <p class="stats2526-sub" style="margin-bottom:1rem">Clicca su un fantallenatore per vedere le stagioni disputate</p>
+      <div class="ranking-accordion">`;
+
+  const sortedKeys = Object.keys(groups).map(Number).sort((a,b) => b - a);
+
+  sortedKeys.forEach(num => {
+    groups[num].forEach((e, idx) => {
+      const rank = entries.findIndex(x => x.name === e.name) + 1;
+      const initiali = e.name.split(" ").map(p => p[0]).join("").toUpperCase().slice(0, 2);
+      const misterEncoded = encodeURIComponent(e.name);
+      const uid = `acc_${e.name.replace(/\s+/g,'_')}`;
+
+      // Stagioni dropdown rows
+      const stagRows = e.stagioniFull.map(s => {
+        const posLabel = getPosLabel(s.pos);
+        return `
+          <div class="acc-season-row">
+            <span class="acc-season-year">${s.anno}</span>
+            <img src="${s.logo}" class="acc-season-logo" onerror="this.src='images/default.png'">
+            <span class="acc-season-team">${s.squadra}</span>
+            <span class="acc-season-pos">${posLabel}</span>
+          </div>`;
+      }).join("");
+
+      // Vice/asta entries
+      const viceRows = e.allStagioni.filter(s => s.isVice || s.astaSolo).map(s => {
+        const badge = s.astaSolo
+          ? '<span class="badge-asta">🎯 Asta</span>'
+          : '<span class="badge-vice">VICE</span>';
+        return `
+          <div class="acc-season-row acc-vice-row">
+            <span class="acc-season-year">${s.anno}</span>
+            <img src="${s.logo}" class="acc-season-logo" onerror="this.src='images/default.png'">
+            <span class="acc-season-team">${s.squadra}</span>
+            <span class="acc-season-pos">${badge}</span>
+          </div>`;
+      }).join("");
+
+      const totalLabel = e.numStagioni === 1 ? "1 stagione" : `${e.numStagioni} stagioni`;
+
+      html += `
+        <div class="acc-item">
+          <div class="acc-header" onclick="toggleAccordion('${uid}')">
+            <div class="acc-rank-num">${rank}</div>
+            <div class="acc-avatar">${initiali}</div>
+            <div class="acc-name-area">
+              <div class="acc-name">${e.name}</div>
+              <div class="acc-sub">${totalLabel}</div>
+            </div>
+            <div class="acc-stagioni-count">${e.numStagioni}</div>
+            <div class="acc-chevron" id="chev_${uid}">▼</div>
+          </div>
+          <div class="acc-body" id="${uid}" style="display:none">
+            ${stagRows}
+            ${viceRows}
+            <div class="acc-scheda-btn" onclick="event.stopPropagation(); openMisterModal('${misterEncoded}')">
+              👤 Vedi Scheda Completa
+            </div>
+          </div>
+        </div>`;
+    });
+  });
+
+  html += `</div></div>`;
+  return html;
+}
+
+function toggleAccordion(uid) {
+  const body = document.getElementById(uid);
+  const chev = document.getElementById("chev_" + uid);
+  if (!body) return;
+  const isOpen = body.style.display !== "none";
+  body.style.display = isOpen ? "none" : "block";
+  if (chev) chev.textContent = isOpen ? "▼" : "▲";
 }
 
 function toggleFasce() {

@@ -42,7 +42,7 @@
       "vincitore": "TBD", "logo_vincitore": "images/default.png", "mister_vincitore": "TBD",
       "finalista": "TBD", "logo_finalista": "images/default.png", "mister_finalista": "TBD",
       "risultato": "In corso", "marcatore": null,
-      "partecipanti": [{ "mister": "Valentina Pozzi" }],
+      "partecipanti": [{ "mister": "Valentina Pozzi" }, { "mister": "Aidan" }, { "mister": "Kevin Sandri" }],
       "classifica": []
     }
   ],
@@ -76,6 +76,7 @@
         { "pos": 3, "squadra": "Inter", "logo": "images/inter.png", "mister": "Denis Mascherin", "fase": "Semifinale" },
         { "pos": 4, "squadra": "Atalanta", "logo": "images/atalanta.png", "mister": "Cristian Tartaro", "fase": "Quarti" },
         { "pos": 5, "squadra": "Roma", "logo": "images/roma.png", "mister": "Alex Beltrame", "fase": "Quarti" },
+        { "pos": 5, "squadra": "Roma", "logo": "images/roma.png", "mister": "Andrea Campagnolo", "fase": "Quarti", "coppaNote": "Eliminato ai Quarti con la Roma prima di essere sostituito da Alex Beltrame in campionato" },
         { "pos": 6, "squadra": "Juventus", "logo": "images/juventus.png", "mister": "Kevin Sandri", "fase": "Quarti" },
         { "pos": 7, "squadra": "Napoli", "logo": "images/napoli.png", "mister": "Mattia Beltrame", "fase": "Ottavi" },
         { "pos": 8, "squadra": "Genoa", "logo": "images/genoa.png", "mister": "Giovanni Bean", "fase": "Sedicesimi" }

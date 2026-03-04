@@ -574,6 +574,22 @@ tbody tr, .palmares-card, .mister-card, .coppa-card {
     color: #818cf8;
     padding: 2px 6px; border-radius: 9px; white-space: nowrap;
 }
+.badge-futuro {
+    font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.4px; text-transform: uppercase;
+    background: rgba(34,197,94,0.12);
+    border: 1px solid rgba(34,197,94,0.3);
+    color: #4ade80;
+    padding: 2px 6px; border-radius: 9px; white-space: nowrap;
+}
+.badge-asta {
+    font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.4px; text-transform: uppercase;
+    background: rgba(251,191,36,0.12);
+    border: 1px solid rgba(251,191,36,0.3);
+    color: #fbbf24;
+    padding: 2px 6px; border-radius: 9px; white-space: nowrap;
+}
 .modal-season-nota {
     font-size: 0.65rem; color: var(--gold2);
     font-style: italic; margin-top: 2px; opacity: 0.85;
@@ -1248,3 +1264,159 @@ img[src*="juventus"] { filter: brightness(0) invert(1); }
 .ris-w { background: #16a34a; color: #fff; }
 .ris-d { background: #ca8a04; color: #fff; }
 .ris-l { background: #dc2626; color: #fff; }
+/* ══════════════════════════════════════════
+   RANKING ACCORDION (Classifica per Stagioni)
+══════════════════════════════════════════ */
+.ranking-accordion-wrap {
+  margin-top: 1.5rem;
+}
+
+.ranking-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.acc-item {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.acc-item:hover {
+  border-color: var(--gold);
+}
+
+.acc-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.1rem;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s;
+}
+
+.acc-header:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+.acc-rank-num {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--muted);
+  min-width: 22px;
+  text-align: center;
+}
+
+.acc-avatar {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), var(--gold2));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.78rem; font-weight: 800; color: #111;
+  flex-shrink: 0;
+}
+
+.acc-name-area {
+  flex: 1;
+}
+
+.acc-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.acc-sub {
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.acc-stagioni-count {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--gold);
+  min-width: 32px;
+  text-align: center;
+}
+
+.acc-chevron {
+  font-size: 0.75rem;
+  color: var(--muted);
+  transition: transform 0.2s;
+  min-width: 16px;
+  text-align: center;
+}
+
+.acc-body {
+  border-top: 1px solid var(--border);
+  padding: 0.5rem 1rem 0.75rem;
+  animation: fadeInUp 0.15s ease;
+}
+
+.acc-season-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.45rem 0.5rem;
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.acc-season-row:hover {
+  background: rgba(255,255,255,0.04);
+}
+
+.acc-vice-row {
+  opacity: 0.7;
+}
+
+.acc-season-year {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--muted);
+  min-width: 58px;
+}
+
+.acc-season-logo {
+  width: 22px; height: 22px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.acc-season-team {
+  flex: 1;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.acc-season-pos {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--gold);
+  min-width: 40px;
+  text-align: right;
+}
+
+.acc-scheda-btn {
+  margin-top: 0.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gold);
+  cursor: pointer;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(255,196,0,0.3);
+  border-radius: 8px;
+  transition: background 0.15s;
+}
+
+.acc-scheda-btn:hover {
+  background: rgba(255,196,0,0.1);
+}
