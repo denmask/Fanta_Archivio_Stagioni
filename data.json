@@ -104,66 +104,65 @@
     {
       "anno": "2025-26", "sponsor": "Enilive",
       "classifica": [
-        { "pos": 1, "squadra": "Inter", "logo": "images/inter.png", "mister": "Federico Burello", "punti": 54, "fp": 2060 },
-        { "pos": 2, "squadra": "Napoli", "logo": "images/napoli.png", "mister": "Mattia Beltrame", "punti": 46, "fp": 1931 },
-        { "pos": 3, "squadra": "Atalanta", "logo": "images/atalanta.png", "mister": "Kevin Di Bernardo", "punti": 46, "fp": 1895 },
-        { "pos": 4, "squadra": "Milan", "logo": "images/milan.png", "mister": "Lorenzo Moro", "punti": 42, "fp": 1902.5 },
-        { "pos": 5, "squadra": "Juventus", "logo": "images/juventus.png", "mister": "Denis Mascherin", "punti": 37, "fp": 1970, "nomevice": "Valentina Pozzi" },
-        { "pos": 6, "squadra": "Roma", "logo": "images/roma.png", "mister": "Alex Beltrame", "punti": 35, "fp": 1911.5 },
-        { "pos": 7, "squadra": "Lazio", "logo": "images/lazio.png", "mister": "Cristian Tartaro", "punti": 30, "fp": 1895.5 },
-        { "pos": 8, "squadra": "Bologna", "logo": "images/bologna.png", "mister": "Nicola Marano", "punti": 20, "fp": 1880 },
-        { "pos": 5, "squadra": "Juventus", "logo": "images/juventus.png", "mister": "Valentina Pozzi", "isVice": true }
+        { "pos": 1, "squadra": "Inter",     "logo": "images/inter.png",     "mister": "Federico Burello", "punti": 54, "fp": 2060 },
+        { "pos": 2, "squadra": "Napoli",    "logo": "images/napoli.png",    "mister": "Mattia Beltrame",  "punti": 49, "fp": 1931 },
+        { "pos": 3, "squadra": "Atalanta",  "logo": "images/atalanta.png",  "mister": "Kevin Di Bernardo","punti": 47, "fp": 1895 },
+        { "pos": 4, "squadra": "Milan",     "logo": "images/milan.png",     "mister": "Lorenzo Moro",     "punti": 43, "fp": 1902.5 },
+        { "pos": 5, "squadra": "Juventus",  "logo": "images/juventus.png",  "mister": "Denis Mascherin",  "punti": 40, "fp": 1970, "nomevice": "Valentina Pozzi" },
+        { "pos": 6, "squadra": "Roma",      "logo": "images/roma.png",      "mister": "Alex Beltrame",    "punti": 35, "fp": 1911.5 },
+        { "pos": 7, "squadra": "Lazio",     "logo": "images/lazio.png",     "mister": "Cristian Tartaro", "punti": 33, "fp": 1895.5 },
+        { "pos": 8, "squadra": "Bologna",   "logo": "images/bologna.png",   "mister": "Nicola Marano",    "punti": 20, "fp": 1880 }
       ]
     },
     {
       "anno": "2024-25", "sponsor": "Enilive",
       "classifica": [
-        { "pos": 1, "squadra": "Napoli", "logo": "images/napoli.png", "mister": "Mattia Beltrame", "punti": 68, "fp": 2707.5 },
-        { "pos": 2, "squadra": "Milan", "logo": "images/milan.png", "mister": "Kevin Di Bernardo", "punti": 61, "fp": 2561 },
-        { "pos": 3, "squadra": "Inter", "logo": "images/inter.png", "mister": "Denis Mascherin", "punti": 60, "fp": 2784.5 },
-        { "pos": 4, "squadra": "Bologna", "logo": "images/bologna.png", "mister": "Federico Burello", "punti": 60, "fp": 2685, "nomevice": "Giacomo Bot" },
-        { "pos": 4, "squadra": "Bologna", "logo": "images/bologna.png", "mister": "Giacomo Bot", "isVice": true },
-        { "pos": 5, "squadra": "Atalanta", "logo": "images/atalanta.png", "mister": "Cristian Tartaro", "punti": 56, "fp": 2815.5 },
-        { "pos": 6, "squadra": "Juventus", "logo": "images/juventus.png", "mister": "Kevin Sandri", "punti": 50, "fp": 2594 },
-        { "pos": 7, "squadra": "Roma", "logo": "images/roma.png", "mister": "Andrea Campagnolo", "punti": 33, "fp": 2428.5, "parziale": true, "nota": "1° allenatore nel girone d'andata, poi sostituito da Alex Beltrame (suo vice) nel girone di ritorno" },
-        { "pos": 7, "squadra": "Roma", "logo": "images/roma.png", "mister": "Alex Beltrame", "punti": 33, "fp": 2428.5, "parziale": true, "nota": "Subentrato ad Andrea Campagnolo nel girone di ritorno, divenendo 1° allenatore", "secondoAllenatore": true },
-        { "pos": 8, "squadra": "Genoa", "logo": "images/genoa.png", "mister": "Giovanni Bean", "punti": 30, "fp": 2383 }
+        { "pos": 1, "squadra": "Napoli",   "logo": "images/napoli.png",   "mister": "Mattia Beltrame",   "punti": 68, "fp": 2707.5 },
+        { "pos": 2, "squadra": "Milan",    "logo": "images/milan.png",    "mister": "Kevin Di Bernardo", "punti": 61, "fp": 2561 },
+        { "pos": 3, "squadra": "Inter",    "logo": "images/inter.png",    "mister": "Denis Mascherin",   "punti": 60, "fp": 2784.5 },
+        { "pos": 4, "squadra": "Bologna",  "logo": "images/bologna.png",  "mister": "Federico Burello",  "punti": 60, "fp": 2685, "nomevice": "Giacomo Bot" },
+        { "pos": 4, "squadra": "Bologna",  "logo": "images/bologna.png",  "mister": "Giacomo Bot", "isVice": true },
+        { "pos": 5, "squadra": "Atalanta", "logo": "images/atalanta.png", "mister": "Cristian Tartaro",  "punti": 56, "fp": 2815.5 },
+        { "pos": 6, "squadra": "Juventus", "logo": "images/juventus.png", "mister": "Kevin Sandri",      "punti": 50, "fp": 2594 },
+        { "pos": 7, "squadra": "Roma",     "logo": "images/roma.png",     "mister": "Andrea Campagnolo", "punti": 33, "fp": 2428.5, "parziale": true, "nota": "1° allenatore nel girone d'andata, poi sostituito da Alex Beltrame (suo vice) nel girone di ritorno" },
+        { "pos": 7, "squadra": "Roma",     "logo": "images/roma.png",     "mister": "Alex Beltrame",     "punti": 33, "fp": 2428.5, "parziale": true, "nota": "Subentrato ad Andrea Campagnolo nel girone di ritorno, divenendo 1° allenatore", "secondoAllenatore": true },
+        { "pos": 8, "squadra": "Genoa",    "logo": "images/genoa.png",    "mister": "Giovanni Bean",     "punti": 30, "fp": 2383 }
       ]
     },
     {
       "anno": "2023-24", "sponsor": "TIM",
       "classifica": [
-        { "pos": 1, "squadra": "Inter", "logo": "images/inter.png", "mister": "Mattia Beltrame", "punti": 71, "fp": 2911 },
-        { "pos": 2, "squadra": "Atalanta", "logo": "images/atalanta.png", "mister": "Cristian Tartaro", "punti": 66, "fp": 2898.5, "nomevice": "Federico Burello" },
-        { "pos": 2, "squadra": "Atalanta", "logo": "images/atalanta.png", "mister": "Federico Burello", "isVice": true },
-        { "pos": 3, "squadra": "Milan", "logo": "images/milan.png", "mister": "Giovanni Bean", "punti": 56, "fp": 2691.5 },
-        { "pos": 4, "squadra": "Fiorentina", "logo": "images/fiorentina.png", "mister": "Kevin Di Bernardo", "punti": 53, "fp": 2644.5 },
-        { "pos": 5, "squadra": "Lazio", "logo": "images/lazio.png", "mister": "Kevin Sandri", "punti": 52, "fp": 2631 },
-        { "pos": 6, "squadra": "Juventus", "logo": "images/juventus.png", "mister": "Denis Mascherin", "punti": 51, "fp": 2752.5 },
-        { "pos": 7, "squadra": "Roma", "logo": "images/roma.png", "mister": "Andrea Campagnolo", "punti": 45, "fp": 2636.5 },
-        { "pos": 8, "squadra": "Napoli", "logo": "images/napoli.png", "mister": "Mattia Minin", "punti": 36, "fp": 2522.5, "nomevice": "Giacomo Bot" },
-        { "pos": 8, "squadra": "Napoli", "logo": "images/napoli.png", "mister": "Giacomo Bot", "isVice": true }
+        { "pos": 1, "squadra": "Inter",       "logo": "images/inter.png",       "mister": "Mattia Beltrame",   "punti": 71, "fp": 2911 },
+        { "pos": 2, "squadra": "Atalanta",    "logo": "images/atalanta.png",    "mister": "Cristian Tartaro",  "punti": 66, "fp": 2898.5, "nomevice": "Federico Burello" },
+        { "pos": 2, "squadra": "Atalanta",    "logo": "images/atalanta.png",    "mister": "Federico Burello",  "isVice": true },
+        { "pos": 3, "squadra": "Milan",       "logo": "images/milan.png",       "mister": "Giovanni Bean",     "punti": 56, "fp": 2691.5 },
+        { "pos": 4, "squadra": "Fiorentina",  "logo": "images/fiorentina.png",  "mister": "Kevin Di Bernardo", "punti": 53, "fp": 2644.5 },
+        { "pos": 5, "squadra": "Lazio",       "logo": "images/lazio.png",       "mister": "Kevin Sandri",      "punti": 52, "fp": 2631 },
+        { "pos": 6, "squadra": "Juventus",    "logo": "images/juventus.png",    "mister": "Denis Mascherin",   "punti": 51, "fp": 2752.5 },
+        { "pos": 7, "squadra": "Roma",        "logo": "images/roma.png",        "mister": "Andrea Campagnolo", "punti": 45, "fp": 2636.5 },
+        { "pos": 8, "squadra": "Napoli",      "logo": "images/napoli.png",      "mister": "Mattia Minin",      "punti": 36, "fp": 2522.5, "nomevice": "Giacomo Bot" },
+        { "pos": 8, "squadra": "Napoli",      "logo": "images/napoli.png",      "mister": "Giacomo Bot", "isVice": true }
       ]
     },
     {
       "anno": "2022-23", "sponsor": "TIM",
       "classifica": [
-        { "pos": 1, "squadra": "Inter", "logo": "images/inter.png", "mister": "Mattia Beltrame", "punti": 55, "fp": 2741 },
-        { "pos": 2, "squadra": "Roma", "logo": "images/roma.png", "mister": "Andrea Campagnolo", "punti": 54, "fp": 2593 },
-        { "pos": 3, "squadra": "Napoli", "logo": "images/napoli.png", "mister": "Riccardo Rella", "punti": 54, "fp": 2727 },
-        { "pos": 4, "squadra": "Milan", "logo": "images/milan.png", "mister": "Denis Mascherin", "punti": 54, "fp": 2674 },
-        { "pos": 5, "squadra": "Lazio", "logo": "images/lazio.png", "mister": "Kevin Sandri", "punti": 52, "fp": 2766.5 },
-        { "pos": 6, "squadra": "Juventus", "logo": "images/juventus.png", "mister": "Giovanni Bean", "punti": 46, "fp": 2637 }
+        { "pos": 1, "squadra": "Inter",    "logo": "images/inter.png",    "mister": "Mattia Beltrame",   "punti": 55, "fp": 2741 },
+        { "pos": 2, "squadra": "Roma",     "logo": "images/roma.png",     "mister": "Andrea Campagnolo", "punti": 54, "fp": 2593 },
+        { "pos": 3, "squadra": "Napoli",   "logo": "images/napoli.png",   "mister": "Riccardo Rella",    "punti": 54, "fp": 2727 },
+        { "pos": 4, "squadra": "Milan",    "logo": "images/milan.png",    "mister": "Denis Mascherin",   "punti": 54, "fp": 2674 },
+        { "pos": 5, "squadra": "Lazio",    "logo": "images/lazio.png",    "mister": "Kevin Sandri",      "punti": 52, "fp": 2766.5 },
+        { "pos": 6, "squadra": "Juventus", "logo": "images/juventus.png", "mister": "Giovanni Bean",     "punti": 46, "fp": 2637 }
       ]
     },
     {
       "anno": "2021-22", "sponsor": "TIM",
       "classifica": [
-        { "pos": 1, "squadra": "Roma", "logo": "images/roma.png", "mister": "Denis Mascherin", "punti": 70 },
-        { "pos": 2, "squadra": "Udinese", "logo": "images/udinese.png", "mister": "Michele Picilli", "punti": 65, "parziale": true, "nota": "1° allenatore nel girone d'andata, dimissioni nel gennaio 2022 con la squadra all'ultimo posto (4°/4). Sostituito da Riccardo Rella." },
-        { "pos": 2, "squadra": "Udinese", "logo": "images/udinese.png", "mister": "Riccardo Rella", "punti": 65, "parziale": true, "nota": "Subentrato a Michele Picilli nel gennaio 2022, ha portato l'Udinese dal 4° al 2° posto a fine stagione.", "secondoAllenatore": true },
-        { "pos": 3, "squadra": "H. Verona", "logo": "images/verona.png", "mister": "Mattia Beltrame", "punti": 47 },
-        { "pos": 4, "squadra": "Vicenza", "logo": "images/vicenza.png", "mister": "Kevin Sandri", "punti": 44 }
+        { "pos": 1, "squadra": "Roma",     "logo": "images/roma.png",     "mister": "Denis Mascherin", "punti": 70 },
+        { "pos": 2, "squadra": "Udinese",  "logo": "images/udinese.png",  "mister": "Michele Picilli", "punti": 65, "parziale": true, "nota": "1° allenatore nel girone d'andata, dimissioni nel gennaio 2022 con la squadra all'ultimo posto (4°/4). Sostituito da Riccardo Rella." },
+        { "pos": 2, "squadra": "Udinese",  "logo": "images/udinese.png",  "mister": "Riccardo Rella",  "punti": 65, "parziale": true, "nota": "Subentrato a Michele Picilli nel gennaio 2022, ha portato l'Udinese dal 4° al 2° posto a fine stagione.", "secondoAllenatore": true },
+        { "pos": 3, "squadra": "H. Verona","logo": "images/verona.png",   "mister": "Mattia Beltrame", "punti": 47 },
+        { "pos": 4, "squadra": "Vicenza",  "logo": "images/vicenza.png",  "mister": "Kevin Sandri",    "punti": 44 }
       ]
     }
   ]
