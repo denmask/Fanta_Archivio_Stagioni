@@ -35,7 +35,6 @@ function renderSeason(anno) {
   let liveStats = null;
   if (anno === "2025-26") liveStats = buildStats2526();
 
-  // Escludi isVice e secondoAllenatore dalla classifica principale
   let classifica = season.classifica.filter((team) => !team.isVice && !team.secondoAllenatore);
 
   if (liveStats) {
@@ -123,7 +122,6 @@ function buildMisterStats() {
       const cleanName = m.split("(")[0].trim();
       if (!stats[cleanName]) stats[cleanName] = { stagioni: [] };
 
-      // Evita duplicati
       const alreadyExists = stats[cleanName].stagioni.find(
         (x) => x.anno === s.anno && x.squadra === t.squadra && x.isVice === !!t.isVice
       );
@@ -144,7 +142,6 @@ function buildMisterStats() {
     });
   });
 
-  // Valentina Pozzi: vice Juve 2025-26 (già nel data.json come isVice, ma aggiungiamo FantaCoppa e FantaMondiale)
   if (!stats["Valentina Pozzi"]) stats["Valentina Pozzi"] = { stagioni: [] };
   if (!stats["Valentina Pozzi"].stagioni.find((x) => x.anno === "2025-26" && x.squadra === "Juventus")) {
     stats["Valentina Pozzi"].stagioni.push({
@@ -155,7 +152,6 @@ function buildMisterStats() {
     });
   }
 
-  // Giacomo Bot: vice Napoli 23-24 e vice Bologna 24-25 (già nel data.json come isVice)
   if (!stats["Giacomo Bot"]) stats["Giacomo Bot"] = { stagioni: [] };
   if (!stats["Giacomo Bot"].stagioni.find((x) => x.anno === "2023-24" && x.squadra === "Napoli")) {
     stats["Giacomo Bot"].stagioni.push({
@@ -174,19 +170,17 @@ function buildMisterStats() {
     });
   }
 
-  // Kevin Sandri: vice Bologna 2025-26, poi lasciato completamente a Nicola Marano
   if (!stats["Kevin Sandri"]) stats["Kevin Sandri"] = { stagioni: [] };
   if (!stats["Kevin Sandri"].stagioni.find((x) => x.anno === "2025-26" && x.squadra === "Bologna")) {
     stats["Kevin Sandri"].stagioni.push({
       anno: "2025-26", annoInizio: 2025,
       squadra: "Bologna", logo: "images/bologna.png",
       pos: 8, parziale: false, isVice: true, secondoAllenatore: false,
-      astaSolo: true, // Ha fatto solo l'asta estiva, non conta come stagione piena
+      astaSolo: true,
       uscita: false, nota: "Ha svolto l'asta estiva per Nicola Marano (Bologna), lasciando poi la squadra completamente in mano a Nico come 1° allenatore — non ha disputato attivamente il campionato"
     });
   }
 
-  // Aidan: vice Lazio 2025-26 (asta estiva a Cristian Tartaro)
   if (!stats["Aidan"]) stats["Aidan"] = { stagioni: [] };
   if (!stats["Aidan"].stagioni.find((x) => x.anno === "2025-26" && x.squadra === "Lazio")) {
     stats["Aidan"].stagioni.push({
@@ -196,7 +190,6 @@ function buildMisterStats() {
       uscita: false, nota: "Ha svolto l'asta estiva alla guida della Lazio, diventando viceallenatore di Cristian Tartaro per la stagione 2025/26"
     });
   }
-  // Aidan: confermato per stagione 2026-27 come fantallenatore di Serie A
   if (!stats["Aidan"].stagioni.find((x) => x.anno === "2026-27")) {
     stats["Aidan"].stagioni.push({
       anno: "2026-27", annoInizio: 2026,
@@ -399,7 +392,6 @@ function openMisterModal(encodedName) {
     })
     .filter(Boolean);
 
-  // Conteggio medaglie: solo stagioni NON vice e NON parziale
   const stagioniFull = stagioni.filter((s) => !s.isVice && !s.parziale);
   const ori = stagioniFull.filter((s) => s.pos === 1).length;
   const argenti = stagioniFull.filter((s) => s.pos === 2).length;
@@ -418,7 +410,6 @@ function openMisterModal(encodedName) {
         </div>`).join("")
     : `<div class="modal-no-trophies">Nessun titolo ancora</div>`;
 
-  // Storico stagioni nel modale: parziale NON mostra il badge, solo la nota sotto
   const stagionDetailHtml = stagioni.map((s) => `
     <div class="modal-season-row">
       <span class="modal-season-year">${s.anno}</span>
@@ -572,35 +563,19 @@ function renderAttivita() {
   const FUTURE_MISTER = ["Aidan", "Aidan Conti"];
   const USCITA_MISTER = ["Mattia Beltrame"];
 
-  // ── ORDINE FISSO DEFINITO DALL'UTENTE ──
   const FIXED_ORDER = [
-    "Denis Mascherin",
-    "Mattia Beltrame",
-    "Kevin Di Bernardo",
-    "Federico Burello",
-    "Cristian Tartaro",
-    "Alex Beltrame",
-    "Lorenzo Moro",
-    "Nicola Marano",
-    "Aidan",
-    "Valentina Pozzi",
-    "Kevin Sandri",
-    "Andrea Campagnolo",
-    "Giovanni Bean",
-    "Giacomo Bot",
-    "Mattia Minin",
-    "Riccardo Rella",
-    "Michele Picilli",
+    "Denis Mascherin", "Mattia Beltrame", "Kevin Di Bernardo", "Federico Burello",
+    "Cristian Tartaro", "Alex Beltrame", "Lorenzo Moro", "Nicola Marano",
+    "Aidan", "Valentina Pozzi", "Kevin Sandri", "Andrea Campagnolo",
+    "Giovanni Bean", "Giacomo Bot", "Mattia Minin", "Riccardo Rella", "Michele Picilli",
   ];
 
-  // Costruisci lista: prima quelli in FIXED_ORDER (nell'ordine dato), poi eventuali extra
   const allNames = Object.keys(stats);
   const ordered = [
     ...FIXED_ORDER.filter(n => allNames.includes(n)),
     ...allNames.filter(n => !FIXED_ORDER.includes(n)),
   ];
 
-  // Determina gruppi
   const ADMIN_SET = new Set(["Denis Mascherin", "Kevin Di Bernardo"]);
 
   let html = '<div class="attivita-list">';
@@ -618,7 +593,6 @@ function renderAttivita() {
     const isAdmin = ADMIN_SET.has(name);
     const isUscita = USCITA_MISTER.includes(name);
 
-    // Group headers
     if (isAdmin && !staffDone) {
       staffDone = true;
       html += '<div class="attivita-group-label attivita-group-admin">⚙️ Staff</div>';
@@ -690,15 +664,11 @@ function renderAttivita() {
   });
 
   html += "</div>";
-
-  // ── SEZIONE CLASSIFICA PER STAGIONI (accordion) ──
   html += buildRankingAccordion(stats);
-
   container.innerHTML += html;
 }
 
 function buildRankingAccordion(stats) {
-  // Raggruppa per numero di stagioni (escludendo vice/asta/futuro)
   const entries = Object.keys(stats).map(name => {
     const stagioni = stats[name].stagioni;
     const numStagioni = stagioni.filter(s => !s.isVice && !s.astaSolo && !s.futuro).length;
@@ -708,12 +678,10 @@ function buildRankingAccordion(stats) {
     return { name, numStagioni, stagioniFull, allStagioni: stagioni };
   });
 
-  // Ordina per stagioni desc, poi per nome
   entries.sort((a, b) => b.numStagioni !== a.numStagioni
     ? b.numStagioni - a.numStagioni
     : a.name.localeCompare(b.name, 'it'));
 
-  // Raggruppa per numStagioni
   const groups = {};
   entries.forEach(e => {
     const k = e.numStagioni;
@@ -730,13 +698,12 @@ function buildRankingAccordion(stats) {
   const sortedKeys = Object.keys(groups).map(Number).sort((a,b) => b - a);
 
   sortedKeys.forEach(num => {
-    groups[num].forEach((e, idx) => {
+    groups[num].forEach((e) => {
       const rank = entries.findIndex(x => x.name === e.name) + 1;
       const initiali = e.name.split(" ").map(p => p[0]).join("").toUpperCase().slice(0, 2);
       const misterEncoded = encodeURIComponent(e.name);
       const uid = `acc_${e.name.replace(/\s+/g,'_')}`;
 
-      // Stagioni dropdown rows
       const stagRows = e.stagioniFull.map(s => {
         const posLabel = getPosLabel(s.pos);
         return `
@@ -748,7 +715,6 @@ function buildRankingAccordion(stats) {
           </div>`;
       }).join("");
 
-      // Vice/asta entries
       const viceRows = e.allStagioni.filter(s => s.isVice || s.astaSolo).map(s => {
         const badge = s.astaSolo
           ? '<span class="badge-asta">🎯 Asta</span>'
@@ -1091,12 +1057,13 @@ const RISULTATI_2526 = [
   { g:26, casa:'Roma',     gC:2, gT:0, tras:'Bologna'   },
   { g:27, casa:'Milan',    gC:2, gT:2, tras:'Inter'     },
   { g:27, casa:'Atalanta', gC:1, gT:3, tras:'Roma'      },
-  { g:27, casa:'Lazio',    gC:1, gT:1, tras:'Napoli'    },
+  { g:27, casa:'Lazio',    gC:2, gT:1, tras:'Napoli'    },
   { g:27, casa:'Bologna',  gC:0, gT:2, tras:'Juventus'  },
-  { g:28, casa: 'Roma', gC:1, gT:2, tras:'Napoli'},
-  { g:28, casa: 'Milan', gC:3, gT:3, tras:'Atalanta'},
-  { g:28, casa: 'Juventus', gC:4, gT:0, tras:'Inter'},
-  { g:28, casa: 'Bologna', gC:0, gT:3, tras:'Lazio'},
+  // ✅ G28 CORRETTA
+  { g:28, casa:'Roma',     gC:1, gT:2, tras:'Napoli'    },
+  { g:28, casa:'Milan',    gC:3, gT:3, tras:'Atalanta'  },
+  { g:28, casa:'Juventus', gC:4, gT:0, tras:'Inter'     },
+  { g:28, casa:'Bologna',  gC:0, gT:3, tras:'Lazio'     },
 ];
 
 const TEAM_MISTER = {
