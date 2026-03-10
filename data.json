@@ -105,11 +105,11 @@
       "anno": "2025-26", "sponsor": "Enilive",
       "classifica": [
         { "pos": 1, "squadra": "Inter",     "logo": "images/inter.png",     "mister": "Federico Burello", "punti": 54, "fp": 2060 },
-        { "pos": 2, "squadra": "Napoli",    "logo": "images/napoli.png",    "mister": "Mattia Beltrame",  "punti": 49, "fp": 1931 },
+        { "pos": 2, "squadra": "Napoli",    "logo": "images/napoli.png",    "mister": "Mattia Beltrame",  "punti": 47, "fp": 1931 },
         { "pos": 3, "squadra": "Atalanta",  "logo": "images/atalanta.png",  "mister": "Kevin Di Bernardo","punti": 47, "fp": 1895 },
         { "pos": 4, "squadra": "Milan",     "logo": "images/milan.png",     "mister": "Lorenzo Moro",     "punti": 43, "fp": 1902.5 },
         { "pos": 5, "squadra": "Juventus",  "logo": "images/juventus.png",  "mister": "Denis Mascherin",  "punti": 40, "fp": 1970, "nomevice": "Valentina Pozzi" },
-        { "pos": 6, "squadra": "Roma",      "logo": "images/roma.png",      "mister": "Alex Beltrame",    "punti": 35, "fp": 1911.5 },
+        { "pos": 6, "squadra": "Roma",      "logo": "images/roma.png",      "mister": "Alex Beltrame",    "punti": 36, "fp": 1911.5 },
         { "pos": 7, "squadra": "Lazio",     "logo": "images/lazio.png",     "mister": "Cristian Tartaro", "punti": 33, "fp": 1895.5 },
         { "pos": 8, "squadra": "Bologna",   "logo": "images/bologna.png",   "mister": "Nicola Marano",    "punti": 20, "fp": 1880 },
         { "pos": 5, "squadra": "Juventus",  "logo": "images/juventus.png",  "mister": "Valentina Pozzi",  "isVice": true }
