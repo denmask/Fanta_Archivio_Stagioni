@@ -104,9 +104,9 @@
     {
       "anno": "2025-26", "sponsor": "Enilive",
       "classifica": [
-        { "pos": 1, "squadra": "Inter",     "logo": "images/inter.png",     "mister": "Federico Burello", "punti": 55, "fp": 2118.5 },
+        { "pos": 1, "squadra": "Inter",     "logo": "images/inter.png",     "mister": "Federico Burello", "punti": 54, "fp": 2118.5 },
         { "pos": 2, "squadra": "Napoli",    "logo": "images/napoli.png",    "mister": "Mattia Beltrame",  "punti": 50, "fp": 2007.5 },
-        { "pos": 3, "squadra": "Atalanta",  "logo": "images/atalanta.png",  "mister": "Kevin Di Bernardo","punti": 48, "fp": 1972.5 },
+        { "pos": 3, "squadra": "Atalanta",  "logo": "images/atalanta.png",  "mister": "Kevin Di Bernardo","punti": 50, "fp": 1972.5 },
         { "pos": 4, "squadra": "Juventus",  "logo": "images/juventus.png",  "mister": "Denis Mascherin",  "punti": 43, "fp": 1982, "nomevice":"Valentina Pozzi" },
         { "pos": 5, "squadra": "Milan",     "logo": "images/milan.png",     "mister": "Lorenzo Moro",     "punti": 43, "fp": 2054},
         { "pos": 6, "squadra": "Roma",      "logo": "images/roma.png",      "mister": "Alex Beltrame",    "punti": 39, "fp": 1974 },
