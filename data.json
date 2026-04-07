@@ -104,14 +104,14 @@
     {
       "anno": "2025-26", "sponsor": "Enilive",
       "classifica": [
-        { "pos": 1, "squadra": "Inter",     "logo": "images/inter.png",     "mister": "Federico Burello", "punti": 58, "fp": 2257 },
-        { "pos": 2, "squadra": "Atalanta",  "logo": "images/atalanta.png",  "mister": "Kevin Di Bernardo","punti": 56, "fp": 2117.5 },
-        { "pos": 3, "squadra": "Napoli",    "logo": "images/napoli.png",    "mister": "Mattia Beltrame",  "punti": 50, "fp": 2145.5 },
-        { "pos": 4, "squadra": "Milan",     "logo": "images/milan.png",     "mister": "Lorenzo Moro",     "punti": 46, "fp": 2124, "nomevice":"Valentina Pozzi" },
-        { "pos": 5, "squadra": "Juventus",  "logo": "images/juventus.png",  "mister": "Denis Mascherin",  "punti": 45, "fp": 2206.5},
-        { "pos": 6, "squadra": "Roma",      "logo": "images/roma.png",      "mister": "Alex Beltrame",    "punti": 41, "fp": 2117.5 },
-        { "pos": 7, "squadra": "Lazio",     "logo": "images/lazio.png",     "mister": "Cristian Tartaro", "punti": 37, "fp": 2136.5 },
-        { "pos": 8, "squadra": "Bologna",   "logo": "images/bologna.png",   "mister": "Nicola Marano",    "punti": 20, "fp": 2073 },
+        { "pos": 1, "squadra": "Inter",     "logo": "images/inter.png",     "mister": "Federico Burello", "punti": 58, "fp": 2351.5 },
+        { "pos": 2, "squadra": "Atalanta",  "logo": "images/atalanta.png",  "mister": "Kevin Di Bernardo","punti": 56, "fp": 2193 },
+        { "pos": 3, "squadra": "Napoli",    "logo": "images/napoli.png",    "mister": "Mattia Beltrame",  "punti": 50, "fp": 2204 },
+        { "pos": 4, "squadra": "Milan",     "logo": "images/milan.png",     "mister": "Lorenzo Moro",     "punti": 46, "fp": 2185, "nomevice":"Valentina Pozzi" },
+        { "pos": 5, "squadra": "Juventus",  "logo": "images/juventus.png",  "mister": "Denis Mascherin",  "punti": 45, "fp": 2276},
+        { "pos": 6, "squadra": "Roma",      "logo": "images/roma.png",      "mister": "Alex Beltrame",    "punti": 41, "fp": 2185 },
+        { "pos": 7, "squadra": "Lazio",     "logo": "images/lazio.png",     "mister": "Cristian Tartaro", "punti": 37, "fp": 2209 },
+        { "pos": 8, "squadra": "Bologna",   "logo": "images/bologna.png",   "mister": "Nicola Marano",    "punti": 20, "fp": 2147 },
         { "pos": 5, "squadra": "Juventus",  "logo": "images/juventus.png",  "mister": "Valentina Pozzi",  "isVice": true }
       ]
     },
