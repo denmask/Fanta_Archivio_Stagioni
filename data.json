@@ -1,182 +1,877 @@
 {
   "palmares": [
-    { "stagione": "2025-26", "vincitore": "TBD", "logo": "images/default.png", "allenatore": "In corso" },
-    { "stagione": "2024-25", "vincitore": "Napoli", "logo": "images/napoli.png", "allenatore": "Mattia Beltrame" },
-    { "stagione": "2023-24", "vincitore": "Inter", "logo": "images/inter.png", "allenatore": "Mattia Beltrame" },
-    { "stagione": "2022-23", "vincitore": "Inter", "logo": "images/inter.png", "allenatore": "Mattia Beltrame" },
-    { "stagione": "2021-22", "vincitore": "Roma", "logo": "images/roma.png", "allenatore": "Denis Mascherin" }
+    {
+      "stagione": "2025-26",
+      "vincitore": "TBD",
+      "logo": "images/default.png",
+      "allenatore": "In corso"
+    },
+    {
+      "stagione": "2024-25",
+      "vincitore": "Napoli",
+      "logo": "images/napoli.png",
+      "allenatore": "Mattia Beltrame"
+    },
+    {
+      "stagione": "2023-24",
+      "vincitore": "Inter",
+      "logo": "images/inter.png",
+      "allenatore": "Mattia Beltrame"
+    },
+    {
+      "stagione": "2022-23",
+      "vincitore": "Inter",
+      "logo": "images/inter.png",
+      "allenatore": "Mattia Beltrame"
+    },
+    {
+      "stagione": "2021-22",
+      "vincitore": "Roma",
+      "logo": "images/roma.png",
+      "allenatore": "Denis Mascherin"
+    }
   ],
   "tornei": [
     {
-      "tipo": "FantaMundial", "edizione": "Qatar 2022", "stagione": "2022-23",
-      "vincitore": "Argentina", "logo_vincitore": "images/argentina.png", "mister_vincitore": "Kevin Sandri",
-      "finalista": "Francia", "logo_finalista": "images/francia.png", "mister_finalista": "Denis Mascherin",
-      "risultato": "7-5 d.c.r.", "marcatore": null,
+      "tipo": "FantaMundial",
+      "edizione": "Qatar 2022",
+      "stagione": "2022-23",
+      "vincitore": "Argentina",
+      "logo_vincitore": "images/argentina.png",
+      "mister_vincitore": "Kevin Sandri",
+      "finalista": "Francia",
+      "logo_finalista": "images/francia.png",
+      "mister_finalista": "Denis Mascherin",
+      "risultato": "7-5 d.c.r.",
+      "marcatore": null,
       "classifica": [
-        { "pos": 1, "nazione": "Argentina", "logo": "images/argentina.png", "mister": "Kevin Sandri", "punti": 12, "fase": "Campione" },
-        { "pos": 2, "nazione": "Francia", "logo": "images/francia.png", "mister": "Denis Mascherin", "punti": 9, "fase": "Finale" },
-        { "pos": 3, "nazione": "Brasile", "logo": "images/brasile.png", "mister": "Mattia Beltrame", "punti": 9, "fase": "Quarti" },
-        { "pos": 4, "nazione": "Portogallo", "logo": "images/portogallo.png", "mister": "Giovanni Bean", "punti": 9, "fase": "Quarti" },
-        { "pos": 5, "nazione": "Spagna", "logo": "images/spagna.png", "mister": "Riccardo Rella", "punti": 7, "fase": "Ottavi" },
-        { "pos": 6, "nazione": "Germania", "logo": "images/germania.png", "mister": "Andrea Campagnolo", "punti": 3, "fase": "Gironi" }
+        {
+          "pos": 1,
+          "nazione": "Argentina",
+          "logo": "images/argentina.png",
+          "mister": "Kevin Sandri",
+          "punti": 12,
+          "fase": "Campione"
+        },
+        {
+          "pos": 2,
+          "nazione": "Francia",
+          "logo": "images/francia.png",
+          "mister": "Denis Mascherin",
+          "punti": 9,
+          "fase": "Finale"
+        },
+        {
+          "pos": 3,
+          "nazione": "Brasile",
+          "logo": "images/brasile.png",
+          "mister": "Mattia Beltrame",
+          "punti": 9,
+          "fase": "Quarti"
+        },
+        {
+          "pos": 4,
+          "nazione": "Portogallo",
+          "logo": "images/portogallo.png",
+          "mister": "Giovanni Bean",
+          "punti": 9,
+          "fase": "Quarti"
+        },
+        {
+          "pos": 5,
+          "nazione": "Spagna",
+          "logo": "images/spagna.png",
+          "mister": "Riccardo Rella",
+          "punti": 7,
+          "fase": "Ottavi"
+        },
+        {
+          "pos": 6,
+          "nazione": "Germania",
+          "logo": "images/germania.png",
+          "mister": "Andrea Campagnolo",
+          "punti": 3,
+          "fase": "Gironi"
+        }
       ]
     },
     {
-      "tipo": "FantaEuropeo", "edizione": "Germany 2024", "stagione": "2023-24",
-      "vincitore": "Spagna", "logo_vincitore": "images/spagna.png", "mister_vincitore": "Cristian Tartaro",
-      "finalista": "Inghilterra", "logo_finalista": "images/inghilterra.png", "mister_finalista": "Kevin Sandri",
-      "risultato": "2-1", "marcatore": null,
+      "tipo": "FantaEuropeo",
+      "edizione": "Germany 2024",
+      "stagione": "2023-24",
+      "vincitore": "Spagna",
+      "logo_vincitore": "images/spagna.png",
+      "mister_vincitore": "Cristian Tartaro",
+      "finalista": "Inghilterra",
+      "logo_finalista": "images/inghilterra.png",
+      "mister_finalista": "Kevin Sandri",
+      "risultato": "2-1",
+      "marcatore": null,
       "classifica": [
-        { "pos": 1, "nazione": "Spagna", "logo": "images/spagna.png", "mister": "Cristian Tartaro", "punti": 19, "fase": "Campione" },
-        { "pos": 2, "nazione": "Inghilterra", "logo": "images/inghilterra.png", "mister": "Kevin Sandri", "punti": 14, "fase": "Finale" },
-        { "pos": 3, "nazione": "Germania", "logo": "images/germania.png", "mister": "Denis Mascherin", "punti": 12, "fase": "Quarti" },
-        { "pos": 4, "nazione": "Francia", "logo": "images/francia.png", "mister": "Mattia Beltrame", "punti": 9, "fase": "Quarti" },
-        { "pos": 5, "nazione": "Portogallo", "logo": "images/portogallo.png", "mister": "Federico Burello", "punti": 9, "fase": "Quarti" },
-        { "pos": 6, "nazione": "Italia", "logo": "images/italia.png", "mister": "Kevin Di Bernardo", "punti": 7, "fase": "Ottavi" },
-        { "pos": 7, "nazione": "Belgio", "logo": "images/belgio.png", "mister": "Andrea Campagnolo", "punti": 7, "fase": "Ottavi" },
-        { "pos": 8, "nazione": "Croazia", "logo": "images/croazia.png", "mister": "Giacomo Bot", "punti": 4, "fase": "Gironi" }
+        {
+          "pos": 1,
+          "nazione": "Spagna",
+          "logo": "images/spagna.png",
+          "mister": "Cristian Tartaro",
+          "punti": 19,
+          "fase": "Campione"
+        },
+        {
+          "pos": 2,
+          "nazione": "Inghilterra",
+          "logo": "images/inghilterra.png",
+          "mister": "Kevin Sandri",
+          "punti": 14,
+          "fase": "Finale"
+        },
+        {
+          "pos": 3,
+          "nazione": "Germania",
+          "logo": "images/germania.png",
+          "mister": "Denis Mascherin",
+          "punti": 12,
+          "fase": "Quarti"
+        },
+        {
+          "pos": 4,
+          "nazione": "Francia",
+          "logo": "images/francia.png",
+          "mister": "Mattia Beltrame",
+          "punti": 9,
+          "fase": "Quarti"
+        },
+        {
+          "pos": 5,
+          "nazione": "Portogallo",
+          "logo": "images/portogallo.png",
+          "mister": "Federico Burello",
+          "punti": 9,
+          "fase": "Quarti"
+        },
+        {
+          "pos": 6,
+          "nazione": "Italia",
+          "logo": "images/italia.png",
+          "mister": "Kevin Di Bernardo",
+          "punti": 7,
+          "fase": "Ottavi"
+        },
+        {
+          "pos": 7,
+          "nazione": "Belgio",
+          "logo": "images/belgio.png",
+          "mister": "Andrea Campagnolo",
+          "punti": 7,
+          "fase": "Ottavi"
+        },
+        {
+          "pos": 8,
+          "nazione": "Croazia",
+          "logo": "images/croazia.png",
+          "mister": "Giacomo Bot",
+          "punti": 4,
+          "fase": "Gironi"
+        }
       ]
     },
     {
-      "tipo": "FantaMundiale", "edizione": "USA/Canada/Messico 2026", "stagione": "2025-26",
-      "vincitore": "TBD", "logo_vincitore": "images/default.png", "mister_vincitore": "TBD",
-      "finalista": "TBD", "logo_finalista": "images/default.png", "mister_finalista": "TBD",
-      "risultato": "In corso", "marcatore": null,
-      "partecipanti": [
-        { "mister": "Valentina Pozzi",     "nazione": "Netherlands", "bandiera": "🇳🇱" },
-        { "mister": "Nicola Marano",       "nazione": "Germany",     "bandiera": "🇩🇪" },
-        { "mister": "Andrea Campagnolo",   "nazione": "Spain",       "bandiera": "🇪🇸" },
-        { "mister": "Federico Burello",    "nazione": "Brazil",      "bandiera": "🇧🇷" },
-        { "mister": "Cristian Tartaro",    "nazione": "Croatia",     "bandiera": "🇭🇷" },
-        { "mister": "Kevin Di Bernardo",   "nazione": "Norway",      "bandiera": "🇳🇴" },
-        { "mister": "Lorenzo Moro",        "nazione": "Belgium",     "bandiera": "🇧🇪" },
-        { "mister": "Aidan Conti",         "nazione": "Morocco",     "bandiera": "🇲🇦" },
-        { "mister": "Kevin Sandri",        "nazione": "France",      "bandiera": "🇫🇷" },
-        { "mister": "Mattia Beltrame",     "nazione": "Argentina",   "bandiera": "🇦🇷" },
-        { "mister": "Denis Mascherin",     "nazione": "England",     "bandiera": "🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
-        { "mister": "Alex Beltrame",       "nazione": "Portugal",    "bandiera": "🇵🇹" }
-      ],
-      "classifica": []
+      "tipo": "FantaMundial",
+      "edizione": "USA/MEX/CAN 2026",
+      "stagione": "2025-26",
+      "vincitore": "",
+      "logo_vincitore": "",
+      "mister_vincitore": "",
+      "finalista": "",
+      "logo_finalista": "",
+      "mister_finalista": "",
+      "risultato": "",
+      "marcatore": null,
+      "classifica": [
+        {
+          "pos": 1,
+          "nazione": "Argentina",
+          "logo": "images/argentina.png",
+          "mister": "Mattia Beltrame",
+          "punti": 0,
+          "fase": ""
+        },
+        {
+          "pos": 2,
+          "nazione": "Francia",
+          "logo": "images/francia.png",
+          "mister": "Kevin Sandri",
+          "punti": 0,
+          "fase": ""
+        },
+        {
+          "pos": 3,
+          "nazione": "Brasile",
+          "logo": "images/brasile.png",
+          "mister": "Federico Burello",
+          "punti": 0,
+          "fase": ""
+        },
+        {
+          "pos": 4,
+          "nazione": "Portogallo",
+          "logo": "images/portogallo.png",
+          "mister": "Alex Beltrame",
+          "punti": 0,
+          "fase": ""
+        },
+        {
+          "pos": 5,
+          "nazione": "Spagna",
+          "logo": "images/spagna.png",
+          "mister": "Andrea Campagnolo",
+          "punti": 0,
+          "fase": ""
+        },
+        {
+          "pos": 6,
+          "nazione": "Germania",
+          "logo": "images/germania.png",
+          "mister": "Nicola Marano",
+          "punti": 0,
+          "fase": ""
+        },
+        {
+          "pos": 7,
+          "nazione": "Belgio",
+          "logo": "images/belgio.png",
+          "mister": "Lorenzo Moro",
+          "punti": 0,
+          "fase": ""
+        },
+        {
+          "pos": 8,
+          "nazione": "Marocco",
+          "logo": "images/marocco.png",
+          "mister": "Aidan Conti",
+          "punti": 0,
+          "fase": ""
+        },
+        {
+          "pos": 9,
+          "nazione": "Inghilterra",
+          "logo": "images/inghilterra.png",
+          "mister": "Denis Mascherin",
+          "punti": 0,
+          "fase": ""
+        },
+        {
+          "pos": 10,
+          "nazione": "Norvegia",
+          "logo": "images/norvegia.png",
+          "mister": "Kevin Di Bernardo",
+          "punti": 0,
+          "fase": ""
+        },
+        {
+          "pos": 11,
+          "nazione": "Croazia",
+          "logo": "images/croazia.png",
+          "mister": "Cristian Tartaro",
+          "punti": 0,
+          "fase": ""
+        },
+        {
+          "pos": 12,
+          "nazione": "Olanda",
+          "logo": "images/olanda.png",
+          "mister": "Valentina Pozzi",
+          "punti": 0,
+          "fase": ""
+        }
+      ]
     }
   ],
   "coppa": [
     {
       "stagione": "2025-26",
-      "vincitore": "TBD", "logo_vincitore": "images/default.png", "mister_vincitore": "In corso",
-      "finalista": "TBD", "logo_finalista": "images/default.png", "mister_finalista": "In corso",
-      "risultato": "In corso", "marcatore": null,
+      "vincitore": "TBD",
+      "logo_vincitore": "images/default.png",
+      "mister_vincitore": "In corso",
+      "finalista": "TBD",
+      "logo_finalista": "images/default.png",
+      "mister_finalista": "In corso",
+      "risultato": "In corso",
+      "marcatore": null,
       "classifica": [
-        { "pos": 1, "squadra": "Atalanta", "logo": "images/atalanta.png", "mister": "Kevin Di Bernardo", "fase": "Semifinale" },
-        { "pos": 2, "squadra": "Lazio", "logo": "images/lazio.png", "mister": "Cristian Tartaro", "fase": "Semifinale" },
-        { "pos": 3, "squadra": "Inter", "logo": "images/inter.png", "mister": "Federico Burello", "fase": "Semifinale" },
-        { "pos": 4, "squadra": "Napoli", "logo": "images/napoli.png", "mister": "Mattia Beltrame", "fase": "Quarti" },
-        { "pos": 5, "squadra": "Bologna", "logo": "images/bologna.png", "mister": "Nicola Marano", "fase": "Quarti" },
-        { "pos": 6, "squadra": "Juventus", "logo": "images/juventus.png", "mister": "Denis Mascherin", "fase": "Quarti" },
-        { "pos": 7, "squadra": "Milan", "logo": "images/milan.png", "mister": "Lorenzo Moro", "fase": "Ottavi" },
-        { "pos": 8, "squadra": "Roma", "logo": "images/roma.png", "mister": "Alex Beltrame", "fase": "Ottavi" },
-        { "pos": 9, "squadra": "Udinese", "logo": "images/udinese.png", "mister": "Kevin Sandri", "fase": "Ottavi" },
-        { "pos": 10, "squadra": "Fiorentina", "logo": "images/fiorentina.png", "mister": "Valentina Pozzi", "fase": "Ottavi" }
+        {
+          "pos": 1,
+          "squadra": "Atalanta",
+          "logo": "images/atalanta.png",
+          "mister": "Kevin Di Bernardo",
+          "fase": "Semifinale"
+        },
+        {
+          "pos": 2,
+          "squadra": "Lazio",
+          "logo": "images/lazio.png",
+          "mister": "Cristian Tartaro",
+          "fase": "Semifinale"
+        },
+        {
+          "pos": 3,
+          "squadra": "Inter",
+          "logo": "images/inter.png",
+          "mister": "Federico Burello",
+          "fase": "Semifinale"
+        },
+        {
+          "pos": 4,
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Mattia Beltrame",
+          "fase": "Quarti"
+        },
+        {
+          "pos": 5,
+          "squadra": "Bologna",
+          "logo": "images/bologna.png",
+          "mister": "Nicola Marano",
+          "fase": "Quarti"
+        },
+        {
+          "pos": 6,
+          "squadra": "Juventus",
+          "logo": "images/juventus.png",
+          "mister": "Denis Mascherin",
+          "fase": "Quarti"
+        },
+        {
+          "pos": 7,
+          "squadra": "Milan",
+          "logo": "images/milan.png",
+          "mister": "Lorenzo Moro",
+          "fase": "Ottavi"
+        },
+        {
+          "pos": 8,
+          "squadra": "Roma",
+          "logo": "images/roma.png",
+          "mister": "Alex Beltrame",
+          "fase": "Ottavi"
+        },
+        {
+          "pos": 9,
+          "squadra": "Udinese",
+          "logo": "images/udinese.png",
+          "mister": "Kevin Sandri",
+          "fase": "Ottavi"
+        },
+        {
+          "pos": 10,
+          "squadra": "Fiorentina",
+          "logo": "images/fiorentina.png",
+          "mister": "Valentina Pozzi",
+          "fase": "Ottavi"
+        }
       ]
     },
     {
       "stagione": "2024-25",
-      "vincitore": "Bologna", "logo_vincitore": "images/bologna.png", "mister_vincitore": "Federico Burello",
-      "finalista": "Milan", "logo_finalista": "images/milan.png", "mister_finalista": "Kevin Di Bernardo",
-      "risultato": "0-1", "marcatore": "Ndoye",
+      "vincitore": "Bologna",
+      "logo_vincitore": "images/bologna.png",
+      "mister_vincitore": "Federico Burello",
+      "finalista": "Milan",
+      "logo_finalista": "images/milan.png",
+      "mister_finalista": "Kevin Di Bernardo",
+      "risultato": "0-1",
+      "marcatore": "Ndoye",
       "classifica": [
-        { "pos": 1, "squadra": "Bologna", "logo": "images/bologna.png", "mister": "Federico Burello", "fase": "Campione" },
-        { "pos": 2, "squadra": "Milan", "logo": "images/milan.png", "mister": "Kevin Di Bernardo", "fase": "Finale" },
-        { "pos": 3, "squadra": "Inter", "logo": "images/inter.png", "mister": "Denis Mascherin", "fase": "Semifinale" },
-        { "pos": 4, "squadra": "Atalanta", "logo": "images/atalanta.png", "mister": "Cristian Tartaro", "fase": "Quarti" },
-        { "pos": 5, "squadra": "Roma", "logo": "images/roma.png", "mister": "Alex Beltrame", "fase": "Quarti" },
-        { "pos": 5, "squadra": "Roma", "logo": "images/roma.png", "mister": "Andrea Campagnolo", "fase": "Quarti", "coppaNote": "Eliminato ai Quarti con la Roma prima di essere sostituito da Alex Beltrame in campionato" },
-        { "pos": 6, "squadra": "Juventus", "logo": "images/juventus.png", "mister": "Kevin Sandri", "fase": "Quarti" },
-        { "pos": 7, "squadra": "Napoli", "logo": "images/napoli.png", "mister": "Mattia Beltrame", "fase": "Ottavi" },
-        { "pos": 8, "squadra": "Genoa", "logo": "images/genoa.png", "mister": "Giovanni Bean", "fase": "Sedicesimi" }
+        {
+          "pos": 1,
+          "squadra": "Bologna",
+          "logo": "images/bologna.png",
+          "mister": "Federico Burello",
+          "fase": "Campione"
+        },
+        {
+          "pos": 2,
+          "squadra": "Milan",
+          "logo": "images/milan.png",
+          "mister": "Kevin Di Bernardo",
+          "fase": "Finale"
+        },
+        {
+          "pos": 3,
+          "squadra": "Inter",
+          "logo": "images/inter.png",
+          "mister": "Denis Mascherin",
+          "fase": "Semifinale"
+        },
+        {
+          "pos": 4,
+          "squadra": "Atalanta",
+          "logo": "images/atalanta.png",
+          "mister": "Cristian Tartaro",
+          "fase": "Quarti"
+        },
+        {
+          "pos": 5,
+          "squadra": "Roma",
+          "logo": "images/roma.png",
+          "mister": "Alex Beltrame",
+          "fase": "Quarti"
+        },
+        {
+          "pos": 5,
+          "squadra": "Roma",
+          "logo": "images/roma.png",
+          "mister": "Andrea Campagnolo",
+          "fase": "Quarti",
+          "coppaNote": "Eliminato ai Quarti con la Roma prima di essere sostituito da Alex Beltrame in campionato"
+        },
+        {
+          "pos": 6,
+          "squadra": "Juventus",
+          "logo": "images/juventus.png",
+          "mister": "Kevin Sandri",
+          "fase": "Quarti"
+        },
+        {
+          "pos": 7,
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Mattia Beltrame",
+          "fase": "Ottavi"
+        },
+        {
+          "pos": 8,
+          "squadra": "Genoa",
+          "logo": "images/genoa.png",
+          "mister": "Giovanni Bean",
+          "fase": "Sedicesimi"
+        }
       ]
     },
     {
       "stagione": "2023-24",
-      "vincitore": "Juventus", "logo_vincitore": "images/juventus.png", "mister_vincitore": "Denis Mascherin",
-      "finalista": "Atalanta", "logo_finalista": "images/atalanta.png", "mister_finalista": "Cristian Tartaro",
-      "risultato": "0-1", "marcatore": "Vlahovic",
+      "vincitore": "Juventus",
+      "logo_vincitore": "images/juventus.png",
+      "mister_vincitore": "Denis Mascherin",
+      "finalista": "Atalanta",
+      "logo_finalista": "images/atalanta.png",
+      "mister_finalista": "Cristian Tartaro",
+      "risultato": "0-1",
+      "marcatore": "Vlahovic",
       "classifica": [
-        { "pos": 1, "squadra": "Juventus", "logo": "images/juventus.png", "mister": "Denis Mascherin", "fase": "Campione" },
-        { "pos": 2, "squadra": "Atalanta", "logo": "images/atalanta.png", "mister": "Cristian Tartaro", "fase": "Finale" },
-        { "pos": 3, "squadra": "Fiorentina", "logo": "images/fiorentina.png", "mister": "Kevin Di Bernardo", "fase": "Semifinale" },
-        { "pos": 4, "squadra": "Lazio", "logo": "images/lazio.png", "mister": "Kevin Sandri", "fase": "Semifinale" },
-        { "pos": 5, "squadra": "Milan", "logo": "images/milan.png", "mister": "Giovanni Bean", "fase": "Quarti" },
-        { "pos": 6, "squadra": "Roma", "logo": "images/roma.png", "mister": "Andrea Campagnolo", "fase": "Quarti" },
-        { "pos": 7, "squadra": "Inter", "logo": "images/inter.png", "mister": "Mattia Beltrame", "fase": "Ottavi" },
-        { "pos": 8, "squadra": "Napoli", "logo": "images/napoli.png", "mister": "Mattia Minin", "fase": "Ottavi" }
+        {
+          "pos": 1,
+          "squadra": "Juventus",
+          "logo": "images/juventus.png",
+          "mister": "Denis Mascherin",
+          "fase": "Campione"
+        },
+        {
+          "pos": 2,
+          "squadra": "Atalanta",
+          "logo": "images/atalanta.png",
+          "mister": "Cristian Tartaro",
+          "fase": "Finale"
+        },
+        {
+          "pos": 3,
+          "squadra": "Fiorentina",
+          "logo": "images/fiorentina.png",
+          "mister": "Kevin Di Bernardo",
+          "fase": "Semifinale"
+        },
+        {
+          "pos": 4,
+          "squadra": "Lazio",
+          "logo": "images/lazio.png",
+          "mister": "Kevin Sandri",
+          "fase": "Semifinale"
+        },
+        {
+          "pos": 5,
+          "squadra": "Milan",
+          "logo": "images/milan.png",
+          "mister": "Giovanni Bean",
+          "fase": "Quarti"
+        },
+        {
+          "pos": 6,
+          "squadra": "Roma",
+          "logo": "images/roma.png",
+          "mister": "Andrea Campagnolo",
+          "fase": "Quarti"
+        },
+        {
+          "pos": 7,
+          "squadra": "Inter",
+          "logo": "images/inter.png",
+          "mister": "Mattia Beltrame",
+          "fase": "Ottavi"
+        },
+        {
+          "pos": 8,
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Mattia Minin",
+          "fase": "Ottavi"
+        }
       ]
     }
   ],
   "penalita2526": { "Bologna": -2 },
   "stagioni": [
     {
-      "anno": "2025-26", "sponsor": "Enilive",
+      "anno": "2025-26",
+      "sponsor": "Enilive",
       "classifica": [
-        { "pos": 1, "squadra": "Inter",     "logo": "images/inter.png",     "mister": "Federico Burello", "punti": 61, "fp": 2437.5 },
-        { "pos": 2, "squadra": "Atalanta",  "logo": "images/atalanta.png",  "mister": "Kevin Di Bernardo","punti": 56, "fp": 2249.5 },
-        { "pos": 3, "squadra": "Napoli",    "logo": "images/napoli.png",    "mister": "Mattia Beltrame",  "punti": 50, "fp": 2272 },
-        { "pos": 4, "squadra": "Juventus",  "logo": "images/juventus.png",   "mister": "Denis Mascherin",  "punti": 48, "fp": 2349, "nomevice":"Valentina Pozzi" },
-        { "pos": 5, "squadra": "Milan",     "logo": "images/milan.png",      "mister": "Lorenzo Moro",    "punti": 46, "fp": 2244.5},
-        { "pos": 6, "squadra": "Roma",      "logo": "images/roma.png",      "mister": "Alex Beltrame",    "punti": 44, "fp": 2273 },
-        { "pos": 7, "squadra": "Lazio",     "logo": "images/lazio.png",     "mister": "Cristian Tartaro", "punti": 40, "fp": 2287.5 },
-        { "pos": 8, "squadra": "Bologna",   "logo": "images/bologna.png",   "mister": "Nicola Marano",    "punti": 20, "fp": 2222.5 },
-        { "pos": 5, "squadra": "Juventus",  "logo": "images/juventus.png",  "mister": "Valentina Pozzi",  "isVice": true }
+        {
+          "pos": 1,
+          "squadra": "Inter",
+          "logo": "images/inter.png",
+          "mister": "Federico Burello",
+          "punti": 61,
+          "fp": 2437.5
+        },
+        {
+          "pos": 2,
+          "squadra": "Atalanta",
+          "logo": "images/atalanta.png",
+          "mister": "Kevin Di Bernardo",
+          "punti": 56,
+          "fp": 2249.5
+        },
+        {
+          "pos": 3,
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Mattia Beltrame",
+          "punti": 50,
+          "fp": 2272
+        },
+        {
+          "pos": 4,
+          "squadra": "Juventus",
+          "logo": "images/juventus.png",
+          "mister": "Denis Mascherin",
+          "punti": 48,
+          "fp": 2349,
+          "nomevice": "Valentina Pozzi"
+        },
+        {
+          "pos": 5,
+          "squadra": "Milan",
+          "logo": "images/milan.png",
+          "mister": "Lorenzo Moro",
+          "punti": 46,
+          "fp": 2244.5
+        },
+        {
+          "pos": 6,
+          "squadra": "Roma",
+          "logo": "images/roma.png",
+          "mister": "Alex Beltrame",
+          "punti": 44,
+          "fp": 2273
+        },
+        {
+          "pos": 7,
+          "squadra": "Lazio",
+          "logo": "images/lazio.png",
+          "mister": "Cristian Tartaro",
+          "punti": 40,
+          "fp": 2287.5
+        },
+        {
+          "pos": 8,
+          "squadra": "Bologna",
+          "logo": "images/bologna.png",
+          "mister": "Nicola Marano",
+          "punti": 20,
+          "fp": 2222.5
+        },
+        {
+          "pos": 5,
+          "squadra": "Juventus",
+          "logo": "images/juventus.png",
+          "mister": "Valentina Pozzi",
+          "isVice": true
+        }
       ]
     },
     {
-      "anno": "2024-25", "sponsor": "Enilive",
+      "anno": "2024-25",
+      "sponsor": "Enilive",
       "classifica": [
-        { "pos": 1, "squadra": "Napoli",   "logo": "images/napoli.png",   "mister": "Mattia Beltrame",   "punti": 68, "fp": 2707.5 },
-        { "pos": 2, "squadra": "Milan",    "logo": "images/milan.png",    "mister": "Kevin Di Bernardo", "punti": 61, "fp": 2561 },
-        { "pos": 3, "squadra": "Inter",    "logo": "images/inter.png",    "mister": "Denis Mascherin",   "punti": 60, "fp": 2784.5 },
-        { "pos": 4, "squadra": "Bologna",  "logo": "images/bologna.png",  "mister": "Federico Burello",  "punti": 60, "fp": 2685, "nomevice": "Giacomo Bot" },
-        { "pos": 4, "squadra": "Bologna",  "logo": "images/bologna.png",  "mister": "Giacomo Bot", "isVice": true },
-        { "pos": 5, "squadra": "Atalanta", "logo": "images/atalanta.png", "mister": "Cristian Tartaro",  "punti": 56, "fp": 2815.5 },
-        { "pos": 6, "squadra": "Juventus", "logo": "images/juventus.png", "mister": "Kevin Sandri",      "punti": 50, "fp": 2594 },
-        { "pos": 7, "squadra": "Roma",     "logo": "images/roma.png",     "mister": "Andrea Campagnolo", "punti": 33, "fp": 2428.5, "parziale": true, "nota": "1° allenatore nel girone d'andata, poi sostituito da Alex Beltrame (suo vice) nel girone di ritorno" },
-        { "pos": 7, "squadra": "Roma",     "logo": "images/roma.png",     "mister": "Alex Beltrame",     "punti": 33, "fp": 2428.5, "parziale": true, "nota": "Subentrato ad Andrea Campagnolo nel girone di ritorno, divenendo 1° allenatore", "secondoAllenatore": true },
-        { "pos": 8, "squadra": "Genoa",    "logo": "images/genoa.png",    "mister": "Giovanni Bean",     "punti": 30, "fp": 2383 }
+        {
+          "pos": 1,
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Mattia Beltrame",
+          "punti": 68,
+          "fp": 2707.5
+        },
+        {
+          "pos": 2,
+          "squadra": "Milan",
+          "logo": "images/milan.png",
+          "mister": "Kevin Di Bernardo",
+          "punti": 61,
+          "fp": 2561
+        },
+        {
+          "pos": 3,
+          "squadra": "Inter",
+          "logo": "images/inter.png",
+          "mister": "Denis Mascherin",
+          "punti": 60,
+          "fp": 2784.5
+        },
+        {
+          "pos": 4,
+          "squadra": "Bologna",
+          "logo": "images/bologna.png",
+          "mister": "Federico Burello",
+          "punti": 60,
+          "fp": 2685,
+          "nomevice": "Giacomo Bot"
+        },
+        {
+          "pos": 4,
+          "squadra": "Bologna",
+          "logo": "images/bologna.png",
+          "mister": "Giacomo Bot",
+          "isVice": true
+        },
+        {
+          "pos": 5,
+          "squadra": "Atalanta",
+          "logo": "images/atalanta.png",
+          "mister": "Cristian Tartaro",
+          "punti": 56,
+          "fp": 2815.5
+        },
+        {
+          "pos": 6,
+          "squadra": "Juventus",
+          "logo": "images/juventus.png",
+          "mister": "Kevin Sandri",
+          "punti": 50,
+          "fp": 2594
+        },
+        {
+          "pos": 7,
+          "squadra": "Roma",
+          "logo": "images/roma.png",
+          "mister": "Andrea Campagnolo",
+          "punti": 33,
+          "fp": 2428.5,
+          "parziale": true,
+          "nota": "1° allenatore nel girone d'andata, poi sostituito da Alex Beltrame (suo vice) nel girone di ritorno"
+        },
+        {
+          "pos": 7,
+          "squadra": "Roma",
+          "logo": "images/roma.png",
+          "mister": "Alex Beltrame",
+          "punti": 33,
+          "fp": 2428.5,
+          "parziale": true,
+          "nota": "Subentrato ad Andrea Campagnolo nel girone di ritorno, divenendo 1° allenatore",
+          "secondoAllenatore": true
+        },
+        {
+          "pos": 8,
+          "squadra": "Genoa",
+          "logo": "images/genoa.png",
+          "mister": "Giovanni Bean",
+          "punti": 30,
+          "fp": 2383
+        }
       ]
     },
     {
-      "anno": "2023-24", "sponsor": "TIM",
+      "anno": "2023-24",
+      "sponsor": "TIM",
       "classifica": [
-        { "pos": 1, "squadra": "Inter",       "logo": "images/inter.png",       "mister": "Mattia Beltrame",   "punti": 71, "fp": 2911 },
-        { "pos": 2, "squadra": "Atalanta",    "logo": "images/atalanta.png",    "mister": "Cristian Tartaro",  "punti": 66, "fp": 2898.5, "nomevice": "Federico Burello" },
-        { "pos": 2, "squadra": "Atalanta",    "logo": "images/atalanta.png",    "mister": "Federico Burello",  "isVice": true },
-        { "pos": 3, "squadra": "Milan",       "logo": "images/milan.png",       "mister": "Giovanni Bean",     "punti": 56, "fp": 2691.5 },
-        { "pos": 4, "squadra": "Fiorentina",  "logo": "images/fiorentina.png",  "mister": "Kevin Di Bernardo", "punti": 53, "fp": 2644.5 },
-        { "pos": 5, "squadra": "Lazio",       "logo": "images/lazio.png",       "mister": "Kevin Sandri",      "punti": 52, "fp": 2631 },
-        { "pos": 6, "squadra": "Juventus",    "logo": "images/juventus.png",    "mister": "Denis Mascherin",   "punti": 51, "fp": 2752.5 },
-        { "pos": 7, "squadra": "Roma",        "logo": "images/roma.png",        "mister": "Andrea Campagnolo", "punti": 45, "fp": 2636.5 },
-        { "pos": 8, "squadra": "Napoli",      "logo": "images/napoli.png",      "mister": "Mattia Minin",      "punti": 36, "fp": 2522.5, "nomevice": "Giacomo Bot" },
-        { "pos": 8, "squadra": "Napoli",      "logo": "images/napoli.png",      "mister": "Giacomo Bot", "isVice": true }
+        {
+          "pos": 1,
+          "squadra": "Inter",
+          "logo": "images/inter.png",
+          "mister": "Mattia Beltrame",
+          "punti": 71,
+          "fp": 2911
+        },
+        {
+          "pos": 2,
+          "squadra": "Atalanta",
+          "logo": "images/atalanta.png",
+          "mister": "Cristian Tartaro",
+          "punti": 66,
+          "fp": 2898.5,
+          "nomevice": "Federico Burello"
+        },
+        {
+          "pos": 2,
+          "squadra": "Atalanta",
+          "logo": "images/atalanta.png",
+          "mister": "Federico Burello",
+          "isVice": true
+        },
+        {
+          "pos": 3,
+          "squadra": "Milan",
+          "logo": "images/milan.png",
+          "mister": "Giovanni Bean",
+          "punti": 56,
+          "fp": 2691.5
+        },
+        {
+          "pos": 4,
+          "squadra": "Fiorentina",
+          "logo": "images/fiorentina.png",
+          "mister": "Kevin Di Bernardo",
+          "punti": 53,
+          "fp": 2644.5
+        },
+        {
+          "pos": 5,
+          "squadra": "Lazio",
+          "logo": "images/lazio.png",
+          "mister": "Kevin Sandri",
+          "punti": 52,
+          "fp": 2631
+        },
+        {
+          "pos": 6,
+          "squadra": "Juventus",
+          "logo": "images/juventus.png",
+          "mister": "Denis Mascherin",
+          "punti": 51,
+          "fp": 2752.5
+        },
+        {
+          "pos": 7,
+          "squadra": "Roma",
+          "logo": "images/roma.png",
+          "mister": "Andrea Campagnolo",
+          "punti": 45,
+          "fp": 2636.5
+        },
+        {
+          "pos": 8,
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Mattia Minin",
+          "punti": 36,
+          "fp": 2522.5,
+          "nomevice": "Giacomo Bot"
+        },
+        {
+          "pos": 8,
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Giacomo Bot",
+          "isVice": true
+        }
       ]
     },
     {
-      "anno": "2022-23", "sponsor": "TIM",
+      "anno": "2022-23",
+      "sponsor": "TIM",
       "classifica": [
-        { "pos": 1, "squadra": "Inter",    "logo": "images/inter.png",    "mister": "Mattia Beltrame",   "punti": 55, "fp": 2741 },
-        { "pos": 2, "squadra": "Roma",     "logo": "images/roma.png",     "mister": "Andrea Campagnolo", "punti": 54, "fp": 2593 },
-        { "pos": 3, "squadra": "Napoli",   "logo": "images/napoli.png",   "mister": "Riccardo Rella",    "punti": 54, "fp": 2727 },
-        { "pos": 4, "squadra": "Milan",    "logo": "images/milan.png",    "mister": "Denis Mascherin",   "punti": 54, "fp": 2674 },
-        { "pos": 5, "squadra": "Lazio",    "logo": "images/lazio.png",    "mister": "Kevin Sandri",      "punti": 52, "fp": 2766.5 },
-        { "pos": 6, "squadra": "Juventus", "logo": "images/juventus.png", "mister": "Giovanni Bean",     "punti": 46, "fp": 2637 }
+        {
+          "pos": 1,
+          "squadra": "Inter",
+          "logo": "images/inter.png",
+          "mister": "Mattia Beltrame",
+          "punti": 55,
+          "fp": 2741
+        },
+        {
+          "pos": 2,
+          "squadra": "Roma",
+          "logo": "images/roma.png",
+          "mister": "Andrea Campagnolo",
+          "punti": 54,
+          "fp": 2593
+        },
+        {
+          "pos": 3,
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Riccardo Rella",
+          "punti": 54,
+          "fp": 2727
+        },
+        {
+          "pos": 4,
+          "squadra": "Milan",
+          "logo": "images/milan.png",
+          "mister": "Denis Mascherin",
+          "punti": 54,
+          "fp": 2674
+        },
+        {
+          "pos": 5,
+          "squadra": "Lazio",
+          "logo": "images/lazio.png",
+          "mister": "Kevin Sandri",
+          "punti": 52,
+          "fp": 2766.5
+        },
+        {
+          "pos": 6,
+          "squadra": "Juventus",
+          "logo": "images/juventus.png",
+          "mister": "Giovanni Bean",
+          "punti": 46,
+          "fp": 2637
+        }
       ]
     },
     {
-      "anno": "2021-22", "sponsor": "TIM",
+      "anno": "2021-22",
+      "sponsor": "TIM",
       "classifica": [
-        { "pos": 1, "squadra": "Roma",     "logo": "images/roma.png",     "mister": "Denis Mascherin", "punti": 70 },
-        { "pos": 2, "squadra": "Udinese",  "logo": "images/udinese.png",  "mister": "Michele Picilli", "punti": 65, "parziale": true, "nota": "1° allenatore nel girone d'andata, dimissioni nel gennaio 2022 con la squadra all'ultimo posto (4°/4). Sostituito da Riccardo Rella." },
-        { "pos": 2, "squadra": "Udinese",  "logo": "images/udinese.png",  "mister": "Riccardo Rella",  "punti": 65, "parziale": true, "nota": "Subentrato a Michele Picilli nel gennaio 2022, ha portato l'Udinese dal 4° al 2° posto a fine stagione.", "secondoAllenatore": true },
-        { "pos": 3, "squadra": "H. Verona","logo": "images/verona.png",   "mister": "Mattia Beltrame", "punti": 47 },
-        { "pos": 4, "squadra": "Vicenza",  "logo": "images/vicenza.png",  "mister": "Kevin Sandri",    "punti": 44 }
+        {
+          "pos": 1,
+          "squadra": "Roma",
+          "logo": "images/roma.png",
+          "mister": "Denis Mascherin",
+          "punti": 70
+        },
+        {
+          "pos": 2,
+          "squadra": "Udinese",
+          "logo": "images/udinese.png",
+          "mister": "Michele Picilli",
+          "punti": 65,
+          "parziale": true,
+          "nota": "1° allenatore nel girone d'andata, dimissioni nel gennaio 2022 con la squadra all'ultimo posto (4°/4). Sostituito da Riccardo Rella."
+        },
+        {
+          "pos": 2,
+          "squadra": "Udinese",
+          "logo": "images/udinese.png",
+          "mister": "Riccardo Rella",
+          "punti": 65,
+          "parziale": true,
+          "nota": "Subentrato a Michele Picilli nel gennaio 2022, ha portato l'Udinese dal 4° al 2° posto a fine stagione.",
+          "secondoAllenatore": true
+        },
+        {
+          "pos": 3,
+          "squadra": "H. Verona",
+          "logo": "images/verona.png",
+          "mister": "Mattia Beltrame",
+          "punti": 47
+        },
+        {
+          "pos": 4,
+          "squadra": "Vicenza",
+          "logo": "images/vicenza.png",
+          "mister": "Kevin Sandri",
+          "punti": 44
+        }
       ]
     }
   ]

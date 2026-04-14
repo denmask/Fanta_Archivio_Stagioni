@@ -235,13 +235,13 @@ function buildMisterStats() {
     });
   }
 
-  if (!stats["Aidan"]) stats["Aidan"] = { stagioni: [] };
+  if (!stats["Aidan Conti"]) stats["Aidan Conti"] = { stagioni: [] };
   if (
-    !stats["Aidan"].stagioni.find(
+    !stats["Aidan Conti"].stagioni.find(
       (x) => x.anno === "2025-26" && x.squadra === "Lazio",
     )
   ) {
-    stats["Aidan"].stagioni.push({
+    stats["Aidan Conti"].stagioni.push({
       anno: "2025-26",
       annoInizio: 2025,
       squadra: "Lazio",
@@ -254,8 +254,8 @@ function buildMisterStats() {
       nota: "Ha svolto l'asta estiva alla guida della Lazio, diventando viceallenatore di Cristian Tartaro per la stagione 2025/26",
     });
   }
-  if (!stats["Aidan"].stagioni.find((x) => x.anno === "2026-27")) {
-    stats["Aidan"].stagioni.push({
+  if (!stats["Aidan Conti"].stagioni.find((x) => x.anno === "2026-27")) {
+    stats["Aidan Conti"].stagioni.push({
       anno: "2026-27",
       annoInizio: 2026,
       squadra: "TBD",
@@ -358,7 +358,7 @@ function renderHallOfFame(targetContainer) {
     "Alex Beltrame",
     "Lorenzo Moro",
     "Nicola Marano",
-    "Aidan",
+    "Aidan Conti",
     "Valentina Pozzi",
     "Kevin Sandri",
     "Andrea Campagnolo",
@@ -728,7 +728,7 @@ function renderAttivita() {
     '<h2 class="section-title">Attività Fantallenatori</h2>';
   const CURRENT_SEASON = "2025-26";
   const stats = buildMisterStats();
-  const FUTURE_MISTER = ["Aidan", "Aidan Conti"];
+  const FUTURE_MISTER = ["Aidan Conti", "Aidan Conti Conti"];
   const USCITA_MISTER = ["Mattia Beltrame"];
 
   const FIXED_ORDER = [
@@ -740,7 +740,7 @@ function renderAttivita() {
     "Alex Beltrame",
     "Lorenzo Moro",
     "Nicola Marano",
-    "Aidan",
+    "Aidan Conti",
     "Valentina Pozzi",
     "Kevin Sandri",
     "Andrea Campagnolo",
