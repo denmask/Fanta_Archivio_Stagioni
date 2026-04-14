@@ -42,7 +42,20 @@
       "vincitore": "TBD", "logo_vincitore": "images/default.png", "mister_vincitore": "TBD",
       "finalista": "TBD", "logo_finalista": "images/default.png", "mister_finalista": "TBD",
       "risultato": "In corso", "marcatore": null,
-      "partecipanti": [{ "mister": "Valentina Pozzi" }, { "mister": "Aidan" }, { "mister": "Kevin Sandri" }],
+      "partecipanti": [
+        { "mister": "Valentina Pozzi",     "nazione": "Netherlands", "bandiera": "🇳🇱" },
+        { "mister": "Nicola Marano",       "nazione": "Germany",     "bandiera": "🇩🇪" },
+        { "mister": "Andrea Campagnolo",   "nazione": "Spain",       "bandiera": "🇪🇸" },
+        { "mister": "Federico Burello",    "nazione": "Brazil",      "bandiera": "🇧🇷" },
+        { "mister": "Cristian Tartaro",    "nazione": "Croatia",     "bandiera": "🇭🇷" },
+        { "mister": "Kevin Di Bernardo",   "nazione": "Norway",      "bandiera": "🇳🇴" },
+        { "mister": "Lorenzo Moro",        "nazione": "Belgium",     "bandiera": "🇧🇪" },
+        { "mister": "Aidan Conti",         "nazione": "Morocco",     "bandiera": "🇲🇦" },
+        { "mister": "Kevin Sandri",        "nazione": "France",      "bandiera": "🇫🇷" },
+        { "mister": "Mattia Beltrame",     "nazione": "Argentina",   "bandiera": "🇦🇷" },
+        { "mister": "Denis Mascherin",     "nazione": "England",     "bandiera": "🏴󠁧󠁢󠁥󠁮󠁧󠁿" },
+        { "mister": "Alex Beltrame",       "nazione": "Portugal",    "bandiera": "🇵🇹" }
+      ],
       "classifica": []
     }
   ],
