@@ -528,7 +528,7 @@
           "squadra": "Inter",
           "logo": "images/inter.png",
           "mister": "Federico Burello",
-          "punti": 61,
+          "punti": 64,
           "fp": 2437.5
         },
         {
@@ -541,27 +541,27 @@
         },
         {
           "pos": 3,
+          "squadra": "Juventus",
+          "logo": "images/juventus.png",
+          "mister": "Denis Mascherin",
+          "punti": 51,
+          "fp": 2272,
+          "nomevice": "Valentina Pozzi"
+        },
+        {
+          "pos": 4,
           "squadra": "Napoli",
           "logo": "images/napoli.png",
           "mister": "Mattia Beltrame",
           "punti": 50,
-          "fp": 2272
-        },
-        {
-          "pos": 4,
-          "squadra": "Juventus",
-          "logo": "images/juventus.png",
-          "mister": "Denis Mascherin",
-          "punti": 48,
-          "fp": 2349,
-          "nomevice": "Valentina Pozzi"
+          "fp": 2349  
         },
         {
           "pos": 5,
           "squadra": "Milan",
           "logo": "images/milan.png",
           "mister": "Lorenzo Moro",
-          "punti": 46,
+          "punti": 49,
           "fp": 2244.5
         },
         {
@@ -569,7 +569,7 @@
           "squadra": "Roma",
           "logo": "images/roma.png",
           "mister": "Alex Beltrame",
-          "punti": 44,
+          "punti": 47,
           "fp": 2273
         },
         {

@@ -1364,6 +1364,12 @@ const RISULTATI_2526 = [
   { g: 32, casa: "Napoli", gC: 1, gT: 2, tras: "Juventus"},
   { g: 32, casa: "Inter", gC: 5, gT: 3, tras: "Bologna"},
   { g: 32, casa: "Atalanta", gC: 0, gT: 3, tras: "Lazio"},
+  { g: 33, casa: "Lazio", gC: 1, gT: 3, tras: "Inter"},
+  { g: 33, casa: "Milan", gC: 2, gT: 0, tras: "Napoli"},
+  { g: 33, casa: "Juventus", gC: 2, gT: 1, tras: "Atalanta"},
+  { g: 33, casa: "Bologna", gC: 0, gT: 1, tras: "Roma"},
+  
+
 ];
 
 const TEAM_MISTER = {
