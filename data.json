@@ -310,14 +310,14 @@
           "squadra": "Lazio",
           "logo": "images/lazio.png",
           "mister": "Cristian Tartaro",
-          "fase": "Semifinale"
+          "fase": "Finale"
         },
         {
           "pos": 3,
           "squadra": "Inter",
           "logo": "images/inter.png",
           "mister": "Federico Burello",
-          "fase": "Semifinale"
+          "fase": "Finale"
         },
         {
           "pos": 4,
@@ -528,7 +528,7 @@
           "squadra": "Inter",
           "logo": "images/inter.png",
           "mister": "Federico Burello",
-          "punti": 64,
+          "punti": 67,
           "fp": 2518.5
         },
         {
@@ -541,35 +541,36 @@
         },
         {
           "pos": 3,
-          "squadra": "Juventus",
-          "logo": "images/juventus.png",
-          "mister": "Denis Mascherin",
-          "punti": 51,
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Mattia Beltrame",
+          "punti": 53,
           "fp": 2426.5,
           "nomevice": "Valentina Pozzi"
         },
         {
           "pos": 4,
-          "squadra": "Napoli",
-          "logo": "images/napoli.png",
-          "mister": "Mattia Beltrame",
-          "punti": 50,
-          "fp": 2332  
+          "squadra": "Juventus",
+          "logo": "images/juventus.png",
+          "mister": "Denis Mascherin",
+          "punti": 52,
+          "fp": 2332,
+          "nomevice": "Valentina Pozzi"  
         },
         {
           "pos": 5,
-          "squadra": "Milan",
-          "logo": "images/milan.png",
-          "mister": "Lorenzo Moro",
-          "punti": 49,
+          "squadra": "Roma",
+          "logo": "images/roma.png",
+          "mister": "Alex Beltrame",
+          "punti": 50,
           "fp": 2318.5
         },
         {
           "pos": 6,
-          "squadra": "Roma",
-          "logo": "images/roma.png",
-          "mister": "Alex Beltrame",
-          "punti": 47,
+          "squadra": "Milan",
+          "logo": "images/milan.png",
+          "mister": "Lorenzo Moro",
+          "punti": 49,
           "fp": 2342.5
         },
         {
@@ -585,7 +586,7 @@
           "squadra": "Bologna",
           "logo": "images/bologna.png",
           "mister": "Nicola Marano",
-          "punti": 20,
+          "punti": 21,
           "fp": 2277.5
         },
         {
