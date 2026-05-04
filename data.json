@@ -528,7 +528,7 @@
           "squadra": "Inter",
           "logo": "images/inter.png",
           "mister": "Federico Burello",
-          "punti": 67,
+          "punti": 68,
           "fp": 2582
         },
         {
@@ -536,32 +536,32 @@
           "squadra": "Atalanta",
           "logo": "images/atalanta.png",
           "mister": "Kevin Di Bernardo",
-          "punti": 56,
+          "punti": 57,
           "fp": 2383
         },
         {
           "pos": 3,
-          "squadra": "Napoli",
-          "logo": "images/napoli.png",
-          "mister": "Mattia Beltrame",
+          "squadra": "Juventus",
+          "logo": "images/juventus.png",
+          "mister": "Denis Mascherin",
+          "nomevice":"Valentina Pozzi",
           "punti": 53,
           "fp": 2406
         },
         {
           "pos": 4,
-          "squadra": "Juventus",
-          "logo": "images/juventus.png",
-          "mister": "Denis Mascherin",
-          "punti": 52,
-          "fp": 2496,
-          "nomevice": "Valentina Pozzi"  
-        },
-        {
-          "pos": 5,
           "squadra": "Roma",
           "logo": "images/roma.png",
           "mister": "Alex Beltrame",
-          "punti": 50,
+          "punti": 53,
+          "fp": 2496  
+        },
+        {
+          "pos": 5,
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Mattia Beltrame",
+          "punti": 53,
           "fp": 2412.5
         },
         {
@@ -569,7 +569,7 @@
           "squadra": "Milan",
           "logo": "images/milan.png",
           "mister": "Lorenzo Moro",
-          "punti": 49,
+          "punti": 50,
           "fp": 2379
         },
         {
@@ -577,7 +577,7 @@
           "squadra": "Lazio",
           "logo": "images/lazio.png",
           "mister": "Cristian Tartaro",
-          "punti": 40,
+          "punti": 41,
           "fp": 2419
         },
         {
@@ -585,7 +585,7 @@
           "squadra": "Bologna",
           "logo": "images/bologna.png",
           "mister": "Nicola Marano",
-          "punti": 21,
+          "punti": 22,
           "fp": 2345.5
         },
         {
