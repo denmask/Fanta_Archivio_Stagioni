@@ -1022,6 +1022,7 @@ function buildStats2526() {
   if (stagione2526) {
     stagione2526.classifica.filter((t) => !t.isVice && !t.secondoAllenatore).forEach((t) => {
       if (stats[t.squadra] && t.punti !== null && t.punti !== undefined) stats[t.squadra].pt = t.punti;
+      if (stats[t.squadra] && t.pos !== null && t.pos !== undefined) stats[t.squadra].pos = t.pos;
     });
   }
   const penalita = fantaData.penalita2526 || {};
@@ -1035,7 +1036,7 @@ function getStatsRanked(mode) {
   arr.sort((a, b) => {
     if (mode === "casa") return b.ptC !== a.ptC ? b.ptC - a.ptC : b.gfC - b.gsC - (a.gfC - a.gsC);
     if (mode === "trasferta") return b.ptT !== a.ptT ? b.ptT - a.ptT : b.gfT - b.gsT - (a.gfT - a.gsT);
-    return b.pt !== a.pt ? b.pt - a.pt : b.gf - b.gs - (a.gf - a.gs);
+    return b.pt !== a.pt ? b.pt - a.pt : (a.pos || 99) - (b.pos || 99);
   });
   return arr;
 }
