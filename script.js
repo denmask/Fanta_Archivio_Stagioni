@@ -43,12 +43,11 @@ function renderSeason(anno) {
       if (live) return { ...team, punti: live.pt, fp: team.fp };
       return team;
     });
+    // Ordina per punti; in caso di parità rispetta l'ordine manuale del data.json (scontri diretti)
     classifica.sort((a, b) => {
       if (b.punti !== a.punti) return b.punti - a.punti;
-      const la = liveStats[a.squadra];
-      const lb = liveStats[b.squadra];
-      if (la && lb) return lb.gf - lb.gs - (la.gf - la.gs);
-      return 0;
+      // Parità: mantieni l'ordine definito in data.json (pos già assegnata manualmente)
+      return a.pos - b.pos;
     });
     classifica = classifica.map((team, i) => ({ ...team, pos: i + 1 }));
   }
@@ -982,10 +981,10 @@ const RISULTATI_2526 = [
   { g: 34, casa: "Inter", gC: 1, gT: 0, tras: "Milan" },
   { g: 34, casa: "Roma", gC: 2, gT: 1, tras: "Atalanta" },
   { g: 34, casa: "Napoli", gC: 3, gT: 0, tras: "Lazio" },
-  { g: 35, casa: "Atalanta", gC: 0, gT: 0, tras: "Milan" },
+  { g: 35, casa: "Atalanta", gC: 1, gT: 0, tras: "Milan" },
   { g: 35, casa: "Inter", gC: 1, gT: 1, tras: "Juventus" },
-  { g: 35, casa: "Lazio", gC: 0, gT: 0, tras: "Bologna" },
-  { g: 35, casa: "Napoli", gC: 1, gT: 2, tras: "Roma" },
+  { g: 35, casa: "Lazio", gC: 1, gT: 0, tras: "Bologna" },
+  { g: 35, casa: "Napoli", gC: 1, gT: 6, tras: "Roma" },
 ];
 
 const TEAM_MISTER = {
