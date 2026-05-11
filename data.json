@@ -536,26 +536,27 @@
           "squadra": "Atalanta",
           "logo": "images/atalanta.png",
           "mister": "Kevin Di Bernardo",
-          "punti": 59,
+          "punti": 62,
           "fp": 2450
         },
         {
           "pos": 3,
+          "squadra": "Roma",
+          "logo": "images/roma.png",
+          "mister": "Alex Beltrame",
+          "punti": 56,
+          "fp": 2511  
+        },
+        {
+          "pos": 4,
           "squadra": "Juventus",
           "logo": "images/juventus.png",
           "mister": "Denis Mascherin",
           "nomevice":"Valentina Pozzi",
-          "punti": 53,
+          "punti": 54,
           "fp": 2565
         },
-        {
-          "pos": 4,
-          "squadra": "Roma",
-          "logo": "images/roma.png",
-          "mister": "Alex Beltrame",
-          "punti": 53,
-          "fp": 2511  
-        },
+        
         {
           "pos": 5,
           "squadra": "Napoli",
@@ -569,7 +570,7 @@
           "squadra": "Milan",
           "logo": "images/milan.png",
           "mister": "Lorenzo Moro",
-          "punti": 49,
+          "punti": 50,
           "fp": 2435
         },
         {
@@ -585,7 +586,7 @@
           "squadra": "Bologna",
           "logo": "images/bologna.png",
           "mister": "Nicola Marano",
-          "punti": 21,
+          "punti": 24,
           "fp": 2410
         },
         {
