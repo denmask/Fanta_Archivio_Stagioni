@@ -529,7 +529,7 @@
           "logo": "images/inter.png",
           "mister": "Federico Burello",
           "punti": 68,
-          "fp": 2654.5
+          "fp": 2733.5
         },
         {
           "pos": 2,
@@ -537,7 +537,7 @@
           "logo": "images/atalanta.png",
           "mister": "Kevin Di Bernardo",
           "punti": 62,
-          "fp": 2450
+          "fp": 2539
         },
         {
           "pos": 3,
@@ -545,7 +545,7 @@
           "logo": "images/roma.png",
           "mister": "Alex Beltrame",
           "punti": 56,
-          "fp": 2511  
+          "fp": 2585.5  
         },
         {
           "pos": 4,
@@ -554,7 +554,7 @@
           "mister": "Denis Mascherin",
           "nomevice":"Valentina Pozzi",
           "punti": 54,
-          "fp": 2565
+          "fp": 2641.5
         },
         
         {
@@ -563,7 +563,7 @@
           "logo": "images/napoli.png",
           "mister": "Mattia Beltrame",
           "punti": 53,
-          "fp": 2474
+          "fp": 2520
         },
         {
           "pos": 6,
@@ -571,7 +571,7 @@
           "logo": "images/milan.png",
           "mister": "Lorenzo Moro",
           "punti": 50,
-          "fp": 2435
+          "fp": 2499
         },
         {
           "pos": 7,
@@ -579,7 +579,7 @@
           "logo": "images/lazio.png",
           "mister": "Cristian Tartaro",
           "punti": 43,
-          "fp": 2480.5
+          "fp": 2531.5
         },
         {
           "pos": 8,
@@ -587,7 +587,7 @@
           "logo": "images/bologna.png",
           "mister": "Nicola Marano",
           "punti": 24,
-          "fp": 2410
+          "fp": 2485
         },
         {
           "pos": 5,

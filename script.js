@@ -988,7 +988,7 @@ const RISULTATI_2526 = [
   { g: 35, casa: "Atalanta", gC: 5, gT: 2, tras: "Inter" },
   { g: 35, casa: "Juventus", gC: 2, gT: 2, tras: "Milan" },
   { g: 35, casa: "Lazio", gC: 0, gT: 3, tras: "Roma" },
-  { g: 35, casa: "Bologna", gC: 1, gT: 0, tras: "Napoli" },
+  { g: 35, casa: "Bologna", gC: 3, gT: 0, tras: "Napoli" },
 
 ];
 
