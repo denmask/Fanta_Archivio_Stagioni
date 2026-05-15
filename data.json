@@ -289,14 +289,14 @@
   "coppa": [
     {
       "stagione": "2025-26",
-      "vincitore": "TBD",
-      "logo_vincitore": "images/default.png",
-      "mister_vincitore": "In corso",
-      "finalista": "TBD",
-      "logo_finalista": "images/default.png",
-      "mister_finalista": "In corso",
-      "risultato": "In corso",
-      "marcatore": null,
+      "vincitore": "Inter",
+      "logo_vincitore": "images/inter.png",
+      "mister_vincitore": "Federico Burello",
+      "finalista": "Lazio",
+      "logo_finalista": "images/lazio.png",
+      "mister_finalista": "Cristian Tartaro",
+      "risultato": "0-2",
+      "marcatore": "Aut.Marusic, Martinez L.",
       "classifica": [
         {
           "pos": 1,
