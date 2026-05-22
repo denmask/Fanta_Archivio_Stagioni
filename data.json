@@ -517,8 +517,85 @@
       ]
     }
   ],
-  "penalita2526": { "Bologna": -2 },
   "stagioni": [
+    {
+      "anno": "2026-27",
+      "sponsor": "Enilive",
+      "classifica": [
+        {
+          "pos": "",
+          "squadra": "Milan",
+          "logo": "images/milan.png",
+          "mister": "Federico Burello",
+          "punti": "",
+          "fp": ""
+        },
+        {
+          "pos": "",
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Kevin Di Bernardo",
+          "punti": "",
+          "fp": ""
+        },
+        {
+          "pos": "",
+          "squadra": "Inter",
+          "logo": "images/inter.png",
+          "mister": "Alex Beltrame",
+          "punti": "",
+          "fp":  ""
+        },
+        
+        {
+          "pos": "",
+          "squadra": "Roma",
+          "logo": "images/roma.png",
+          "mister": "Denis Mascherin",
+          "punti": "",
+          "fp": ""
+        },
+        {
+          "pos": "",
+          "squadra": "Como",
+          "logo": "images/como.png",
+          "mister": "Kevin Sandri",
+          "punti": "",
+          "fp": ""
+        },
+        {
+          "pos": "",
+          "squadra": "Juventus",
+          "logo": "images/juventus.png",
+          "mister": "Cristian Tartaro",
+          "punti": "",
+          "fp": ""
+        },
+        {
+          "pos": "",
+          "squadra": "Atalanta",
+          "logo": "images/atalanta.png",
+          "mister": "Nicola Marano",
+          "punti": "",
+          "fp": ""
+        },
+        {
+          "pos": "",
+          "squadra": "Bologna",
+          "logo": "images/bologna.png",
+          "mister": "Aidan Conti",
+          "punti": "",
+          "fp": ""
+        },
+        {
+          "pos": "",
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Mattia Beltrame",
+          "isVice": true
+        }
+      ]
+    },
     {
       "anno": "2025-26",
       "sponsor": "Enilive",
@@ -529,7 +606,7 @@
           "logo": "images/inter.png",
           "mister": "Federico Burello",
           "punti": 68,
-          "fp": 2733.5
+          "fp": 2797.5
         },
         {
           "pos": 2,
@@ -537,49 +614,49 @@
           "logo": "images/atalanta.png",
           "mister": "Kevin Di Bernardo",
           "punti": 62,
-          "fp": 2539
+          "fp": 2601
         },
         {
           "pos": 3,
           "squadra": "Roma",
           "logo": "images/roma.png",
           "mister": "Alex Beltrame",
-          "punti": 56,
-          "fp": 2585.5  
+          "punti": 59,
+          "fp": 2670  
         },
+        
         {
           "pos": 4,
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Mattia Beltrame",
+          "punti": 56,
+          "fp": 2595
+        },
+        {
+          "pos": 5,
           "squadra": "Juventus",
           "logo": "images/juventus.png",
           "mister": "Denis Mascherin",
           "nomevice":"Valentina Pozzi",
           "punti": 54,
-          "fp": 2641.5
-        },
-        
-        {
-          "pos": 5,
-          "squadra": "Napoli",
-          "logo": "images/napoli.png",
-          "mister": "Mattia Beltrame",
-          "punti": 53,
-          "fp": 2520
+          "fp": 2699
         },
         {
           "pos": 6,
           "squadra": "Milan",
           "logo": "images/milan.png",
           "mister": "Lorenzo Moro",
-          "punti": 50,
-          "fp": 2499
+          "punti": 53,
+          "fp": 2569.5
         },
         {
           "pos": 7,
           "squadra": "Lazio",
           "logo": "images/lazio.png",
           "mister": "Cristian Tartaro",
-          "punti": 43,
-          "fp": 2531.5
+          "punti": 46,
+          "fp": 2596
         },
         {
           "pos": 8,
@@ -587,7 +664,7 @@
           "logo": "images/bologna.png",
           "mister": "Nicola Marano",
           "punti": 24,
-          "fp": 2485
+          "fp": 2553
         },
         {
           "pos": 5,
