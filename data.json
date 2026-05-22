@@ -1,6 +1,12 @@
 {
   "palmares": [
     {
+      "stagione": "2026-27",
+      "vincitore": "",
+      "logo": "images/.png",
+      "allenatore": ""
+    },
+    {
       "stagione": "2025-26",
       "vincitore": "Inter",
       "logo": "images/inter.png",
@@ -287,6 +293,17 @@
     }
   ],
   "coppa": [
+    {
+      "stagione": "2026-27",
+      "vincitore": "",
+      "logo_vincitore": "images/.png",
+      "mister_vincitore": "",
+      "finalista": "",
+      "logo_finalista": "images/.png",
+      "mister_finalista": "",
+      "risultato": "",
+      "marcatore": ""
+    },
     {
       "stagione": "2025-26",
       "vincitore": "Inter",
