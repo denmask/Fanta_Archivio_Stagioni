@@ -541,8 +541,8 @@
       "classifica": [
         {
           "pos": "",
-          "squadra": "Milan",
-          "logo": "images/milan.png",
+          "squadra": "Inter",
+          "logo": "images/inter.png",
           "mister": "Federico Burello",
           "punti": "",
           "fp": ""
@@ -557,8 +557,8 @@
         },
         {
           "pos": "",
-          "squadra": "Inter",
-          "logo": "images/inter.png",
+          "squadra": "Como",
+          "logo": "images/como.png",
           "mister": "Alex Beltrame",
           "punti": "",
           "fp":  ""
@@ -574,9 +574,9 @@
         },
         {
           "pos": "",
-          "squadra": "Como",
-          "logo": "images/como.png",
-          "mister": "Kevin Sandri",
+          "squadra": "Milan",
+          "logo": "images/milan.png",
+          "mister": "Nicola Marano",
           "punti": "",
           "fp": ""
         },
@@ -592,7 +592,7 @@
           "pos": "",
           "squadra": "Atalanta",
           "logo": "images/atalanta.png",
-          "mister": "Nicola Marano",
+          "mister": "Kevin Sandri",
           "punti": "",
           "fp": ""
         },
@@ -622,8 +622,8 @@
           "squadra": "Inter",
           "logo": "images/inter.png",
           "mister": "Federico Burello",
-          "punti": 68,
-          "fp": 2797.5
+          "punti": 71,
+          "fp": 2858.5
         },
         {
           "pos": 2,
@@ -631,7 +631,7 @@
           "logo": "images/atalanta.png",
           "mister": "Kevin Di Bernardo",
           "punti": 62,
-          "fp": 2601
+          "fp": 2656
         },
         {
           "pos": 3,
@@ -639,49 +639,49 @@
           "logo": "images/roma.png",
           "mister": "Alex Beltrame",
           "punti": 59,
-          "fp": 2670  
+          "fp": 2740.5  
         },
-        
         {
           "pos": 4,
+          "squadra": "Juventus",
+          "logo": "images/juventus.png",
+          "mister": "Denis Mascherin",
+          "nomevice":"Valentina Pozzi",
+          "punti": 57,
+          "fp": 2785.5
+        },
+        {
+          "pos": 5,
           "squadra": "Napoli",
           "logo": "images/napoli.png",
           "mister": "Mattia Beltrame",
           "punti": 56,
           "fp": 2595
         },
-        {
-          "pos": 5,
-          "squadra": "Juventus",
-          "logo": "images/juventus.png",
-          "mister": "Denis Mascherin",
-          "nomevice":"Valentina Pozzi",
-          "punti": 54,
-          "fp": 2699
-        },
+        
         {
           "pos": 6,
           "squadra": "Milan",
           "logo": "images/milan.png",
           "mister": "Lorenzo Moro",
           "punti": 53,
-          "fp": 2569.5
+          "fp": 2633
         },
         {
           "pos": 7,
           "squadra": "Lazio",
           "logo": "images/lazio.png",
           "mister": "Cristian Tartaro",
-          "punti": 46,
-          "fp": 2596
+          "punti": 49,
+          "fp": 2664.5
         },
         {
           "pos": 8,
           "squadra": "Bologna",
           "logo": "images/bologna.png",
           "mister": "Nicola Marano",
-          "punti": 24,
-          "fp": 2553
+          "punti": 27,
+          "fp": 2627
         },
         {
           "pos": 5,

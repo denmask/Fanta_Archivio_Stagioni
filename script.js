@@ -993,6 +993,10 @@ const RISULTATI_2526 = [
   { g: 37, casa: "Roma", gC: 5, gT: 1, tras: "Inter" },
   { g: 37, casa: "Napoli", gC: 3, gT: 0, tras: "Atalanta" },
   { g: 37, casa: "Bologna", gC: 0, gT: 3, tras: "Milan" },
+  { g: 38, casa: "Atalanta", gC: 1, gT: 2, tras: "Bologna" },
+  { g: 38, casa: "Inter", gC: 3, gT: 0, tras: "Napoli" },
+  { g: 38, casa: "Lazio", gC: 2, gT: 1, tras: "Milan" },
+  { g: 38, casa: "Juventus", gC: 2, gT: 1, tras: "Roma" },
 
 
 ];
