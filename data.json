@@ -551,6 +551,15 @@
           "pos": "",
           "squadra": "Napoli",
           "logo": "images/napoli.png",
+          "mister": "Alex Beltrame",
+          "punti": "",
+          "fp": ""
+        },
+        
+        {
+          "pos": "",
+          "squadra": "Roma",
+          "logo": "images/roma.png",
           "mister": "Kevin Di Bernardo",
           "punti": "",
           "fp": ""
@@ -559,18 +568,9 @@
           "pos": "",
           "squadra": "Como",
           "logo": "images/como.png",
-          "mister": "Alex Beltrame",
-          "punti": "",
-          "fp":  ""
-        },
-        
-        {
-          "pos": "",
-          "squadra": "Roma",
-          "logo": "images/roma.png",
           "mister": "Denis Mascherin",
           "punti": "",
-          "fp": ""
+          "fp":  ""
         },
         {
           "pos": "",
@@ -606,8 +606,8 @@
         },
         {
           "pos": "",
-          "squadra": "Napoli",
-          "logo": "images/napoli.png",
+          "squadra": "Roma",
+          "logo": "images/roma.png",
           "mister": "Mattia Beltrame",
           "isVice": true
         }
