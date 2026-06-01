@@ -3,7 +3,7 @@
     {
       "stagione": "2026-27",
       "vincitore": "",
-      "logo": "images/.png",
+      "logo": "",
       "allenatore": ""
     },
     {
@@ -296,10 +296,10 @@
     {
       "stagione": "2026-27",
       "vincitore": "",
-      "logo_vincitore": "images/.png",
+      "logo_vincitore": "",
       "mister_vincitore": "",
       "finalista": "",
-      "logo_finalista": "images/.png",
+      "logo_finalista": "",
       "mister_finalista": "",
       "risultato": "",
       "marcatore": ""
@@ -537,6 +537,7 @@
   "stagioni": [
     {
       "anno": "2026-27",
+      "status": "active",
       "sponsor": "Enilive",
       "classifica": [
         {
@@ -555,7 +556,6 @@
           "punti": "",
           "fp": ""
         },
-        
         {
           "pos": "",
           "squadra": "Roma",
@@ -570,7 +570,7 @@
           "logo": "images/como.png",
           "mister": "Denis Mascherin",
           "punti": "",
-          "fp":  ""
+          "fp": ""
         },
         {
           "pos": "",
@@ -615,6 +615,8 @@
     },
     {
       "anno": "2025-26",
+      "status": "archived",
+      "nextSeason": "2026-27",
       "sponsor": "Enilive",
       "classifica": [
         {
@@ -639,14 +641,14 @@
           "logo": "images/roma.png",
           "mister": "Alex Beltrame",
           "punti": 59,
-          "fp": 2740.5  
+          "fp": 2740.5
         },
         {
           "pos": 4,
           "squadra": "Juventus",
           "logo": "images/juventus.png",
           "mister": "Denis Mascherin",
-          "nomevice":"Valentina Pozzi",
+          "nomevice": "Valentina Pozzi",
           "punti": 57,
           "fp": 2785.5
         },
@@ -658,7 +660,6 @@
           "punti": 56,
           "fp": 2595
         },
-        
         {
           "pos": 6,
           "squadra": "Milan",

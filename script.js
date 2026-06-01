@@ -43,10 +43,8 @@ function renderSeason(anno) {
       if (live) return { ...team, punti: live.pt, fp: team.fp };
       return team;
     });
-    // Ordina per punti; in caso di parità rispetta l'ordine manuale del data.json (scontri diretti)
     classifica.sort((a, b) => {
       if (b.punti !== a.punti) return b.punti - a.punti;
-      // Parità: mantieni l'ordine definito in data.json (pos già assegnata manualmente)
       return a.pos - b.pos;
     });
     classifica = classifica.map((team, i) => ({ ...team, pos: i + 1 }));
@@ -86,23 +84,6 @@ function renderSeason(anno) {
 // ══════════════════════════════════════════════════════════════
 // CONFIGURAZIONE FASCE — modifica qui senza toccare altro codice
 // ══════════════════════════════════════════════════════════════
-//
-// fasciaPartenza:     la fascia di partenza assegnata prima della stagione
-// fasciaDestinazione: la fascia proiettata a fine stagione (aggiorna qui ogni settimana)
-// notePartenza:       note opzionali sulla fascia di partenza (mostrate sotto il badge)
-// noteDestinazione:   note opzionali sulla proiezione (mostrate sotto il badge proiettato)
-//
-// obiettivoOverride:  [OPZIONALE] forza un messaggio obiettivo personalizzato per un mister.
-//   Utile quando la logica automatica non basta (es. "promosso ma non abbastanza").
-//   Formato: { classe: "...", html: "..." }
-//   Classi disponibili: "obiettivo-superato" | "obiettivo-in-corso" | "obiettivo-ko" | "obiettivo-ok"
-//   Esempio:
-//     "Lorenzo Moro": {
-//       classe: "obiettivo-parziale",
-//       html: `<span class="dot-obj dot-gold"></span> Promosso (+1 fascia)`
-//     }
-//
-// ──────────────────────────────────────────────────────────────
 
 const FASCE_EXTRA = {
   "2024-25": {
@@ -112,7 +93,6 @@ const FASCE_EXTRA = {
   "2025-26": {
     startNote: "Stagione in corso. Fasce di partenza assegnate ufficialmente prima del campionato.",
 
-    // ── FASCE DI PARTENZA ─────────────────────────────────────
     fasciaPartenza: {
       "Federico Burello":  "f1",
       "Kevin Di Bernardo": "f1",
@@ -129,19 +109,15 @@ const FASCE_EXTRA = {
       "Lorenzo Moro":  "Prima stagione — partito da Fascia 3.",
     },
 
-    // ── PROIEZIONE PROSSIMA STAGIONE ──────────────────────────
-    // Aggiorna queste righe ogni settimana in base alla classifica attuale.
-    // La logica calcola automaticamente se è Promozione / Retrocessione / Invariata
-    // e se l'obiettivo è "In linea", "A rischio" o "Superato (+2 fasce)".
     fasciaDestinazione: {
-      "Federico Burello":  "campione", // 1° → Campione
-      "Kevin Di Bernardo": "f1",       // 2° → Fascia 1 (invariata)
-      "Denis Mascherin":   "f1",       // 3° → Fascia 1 (invariata) ✓ CORRETTO
-      "Alex Beltrame":     "f1",       // 4° → Fascia 1 (promozione da F2) ✓ CORRETTO
-      "Mattia Beltrame":   "f2",       // 5° → Fascia 2 (retrocessione da F1) ✓ CORRETTO
-      "Cristian Tartaro":  "f2",       // 6° → Fascia 2 (invariata)
-      "Lorenzo Moro":      "f2",       // 6°/7° → Fascia 2 (non fa il doppio salto a F1) ✓ CORRETTO
-      "Nicola Marano":     "f3",       // 8° → Fascia 3 (invariata)
+      "Federico Burello":  "campione",
+      "Kevin Di Bernardo": "f1",
+      "Denis Mascherin":   "f1",
+      "Alex Beltrame":     "f1",
+      "Mattia Beltrame":   "f2",
+      "Cristian Tartaro":  "f2",
+      "Lorenzo Moro":      "f2",
+      "Nicola Marano":     "f3",
     },
 
     noteDestinazione: {
@@ -149,12 +125,9 @@ const FASCE_EXTRA = {
       "Cristian Tartaro":  "Al momento 7° con la Lazio → rimarrebbe in Fascia 2.",
       "Alex Beltrame":     "Al momento 4° con la Roma → promosso in Fascia 1.",
       "Mattia Beltrame":   "Al momento 5° con il Napoli → retrocede in Fascia 2.",
-      "Lorenzo Moro":      "Al momento 6° con il Milan → promosso in Fascia 2. Non raggiunge il doppio salto in Fascia 1.",
+      "Lorenzo Moro":      "Al momento 6° con il Milan → promosso in Fascia 2.",
     },
 
-    // ── OBIETTIVI PERSONALIZZATI ──────────────────────────────
-    // Lascia vuoto {} per usare la logica automatica.
-    // Aggiungere un mister qui sovrascrive completamente il calcolo automatico.
     obiettivoOverride: {
       "Lorenzo Moro": {
         classe: "obiettivo-parziale",
@@ -165,8 +138,6 @@ const FASCE_EXTRA = {
     inCorso: true,
   },
 };
-
-// ══════════════════════════════════════════════════════════════
 
 function renderPalmares() {
   const container = document.getElementById("palmaresGrid");
@@ -538,11 +509,23 @@ function toggleAttivita() {
 function renderAttivita() {
   const container = document.getElementById("attivitaGrid");
   container.innerHTML = '<h2 class="section-title">Attività Fantallenatori</h2>';
-  const CURRENT_SEASON = "2025-26";
+  
+  // 🔁 stagione attiva = 2026-27
+  const CURRENT_SEASON = "2026-27";
+  
+  // Lista dei mister attivi nella stagione 2026/27 (da data.json)
+  const season202627 = fantaData.stagioni.find(s => s.anno === "2026-27");
+  const ACTIVE_MISTERS = season202627 
+    ? season202627.classifica
+        .filter(t => !t.isVice && !t.secondoAllenatore)
+        .map(t => t.mister)
+    : [];
+  
+  const FUTURE_MISTER = [];
+  const USCITA_MISTER = [];
+  
   const stats = buildMisterStats();
-  const FUTURE_MISTER = ["Aidan Conti", "Aidan Conti Conti"];
-  const USCITA_MISTER = ["Mattia Beltrame"];
-
+  
   const FIXED_ORDER = ["Denis Mascherin","Kevin Di Bernardo","Mattia Beltrame","Federico Burello","Cristian Tartaro","Alex Beltrame","Lorenzo Moro","Nicola Marano","Aidan Conti","Valentina Pozzi","Kevin Sandri","Andrea Campagnolo","Giovanni Bean","Giacomo Bot","Mattia Minin","Riccardo Rella","Michele Picilli"];
   const allNames = Object.keys(stats);
   const ordered = [...FIXED_ORDER.filter((n) => allNames.includes(n)), ...allNames.filter((n) => !FIXED_ORDER.includes(n))];
@@ -559,7 +542,9 @@ function renderAttivita() {
     const stagioniFull = stagioni.filter((s) => !s.astaSolo);
     const stagionForMax = stagioniFull.length > 0 ? stagioniFull : stagioni;
     const maxAnno = [...stagionForMax].sort((a, b) => b.annoInizio - a.annoInizio)[0].anno;
-    const isActive = maxAnno === CURRENT_SEASON || FUTURE_MISTER.includes(name);
+    
+    // 🔁 attivo se compare nella classifica 2026/27
+    const isActive = ACTIVE_MISTERS.includes(name);
     const isAdmin = ADMIN_SET.has(name);
     const isUscita = USCITA_MISTER.includes(name);
 
@@ -700,17 +685,12 @@ function getStripClass(fascia) {
   return map[fascia] || "strip-f3";
 }
 
-// ── LOGICA OBIETTIVO ──────────────────────────────────────────
-// Calcola automaticamente l'html dell'obiettivo in base a partenza/destinazione.
-// Se è presente un obiettivoOverride per il mister, quello ha la precedenza.
 function buildObiettivoHtml(mister, fp, fd, inCorso, extra) {
-  // 1. Override manuale → priorità assoluta
   if (extra.obiettivoOverride && extra.obiettivoOverride[mister]) {
     const ov = extra.obiettivoOverride[mister];
     return `<span class="${ov.classe}">${ov.html}</span>`;
   }
 
-  // 2. Calcolo automatico
   if (!fp || !fd) return "—";
   const ord = { campione: 0, f1: 1, f2: 2, f3: 3, ultimo: 4 };
   const diff = ord[fd] - ord[fp];
@@ -805,7 +785,6 @@ function renderFasce() {
           : "<td>—</td>";
       }
 
-      // Calcolo obiettivo tramite funzione centralizzata
       const obiettivoHtml = extra.fasciaPartenza
         ? buildObiettivoHtml(
             team.mister,
@@ -997,8 +976,6 @@ const RISULTATI_2526 = [
   { g: 38, casa: "Inter", gC: 3, gT: 0, tras: "Napoli" },
   { g: 38, casa: "Lazio", gC: 2, gT: 1, tras: "Milan" },
   { g: 38, casa: "Juventus", gC: 2, gT: 1, tras: "Roma" },
-
-
 ];
 
 const TEAM_MISTER = {
