@@ -195,99 +195,100 @@
       "classifica": [
         {
           "pos": 1,
-          "nazione": "Argentina",
-          "logo": "images/argentina.png",
-          "mister": "Mattia Beltrame",
-          "punti": 0,
-          "fase": ""
-        },
-        {
-          "pos": 2,
           "nazione": "Francia",
           "logo": "images/francia.png",
           "mister": "Kevin Sandri",
-          "punti": 0,
-          "fase": ""
+          "punti": 13,
+          "fase": "Semifinale"
+        },
+        {
+          "pos": 2,
+          "nazione": "Argentina",
+          "logo": "images/argentina.png",
+          "mister": "Mattia Beltrame",
+          "punti": 11,
+          "fase": "Semifinale"
         },
         {
           "pos": 3,
-          "nazione": "Brasile",
-          "logo": "images/brasile.png",
-          "mister": "Federico Burello",
-          "punti": 0,
-          "fase": ""
-        },
-        {
-          "pos": 4,
-          "nazione": "Portogallo",
-          "logo": "images/portogallo.png",
-          "mister": "Alex Beltrame",
-          "punti": 0,
-          "fase": ""
-        },
-        {
-          "pos": 5,
-          "nazione": "Spagna",
-          "logo": "images/spagna.png",
-          "mister": "Andrea Campagnolo",
-          "punti": 0,
-          "fase": ""
-        },
-        {
-          "pos": 6,
-          "nazione": "Germania",
-          "logo": "images/germania.png",
-          "mister": "Nicola Marano",
-          "punti": 0,
-          "fase": ""
-        },
-        {
-          "pos": 7,
-          "nazione": "Belgio",
-          "logo": "images/belgio.png",
-          "mister": "Lorenzo Moro",
-          "punti": 0,
-          "fase": ""
-        },
-        {
-          "pos": 8,
-          "nazione": "Marocco",
-          "logo": "images/marocco.png",
-          "mister": "Aidan Conti",
-          "punti": 0,
-          "fase": ""
-        },
-        {
-          "pos": 9,
-          "nazione": "Inghilterra",
-          "logo": "images/inghilterra.png",
-          "mister": "Denis Mascherin",
-          "punti": 0,
-          "fase": ""
-        },
-        {
-          "pos": 10,
           "nazione": "Norvegia",
           "logo": "images/norvegia.png",
           "mister": "Kevin Di Bernardo",
-          "punti": 0,
-          "fase": ""
+          "punti": 10,
+          "fase": "Quarti"
         },
+  
         {
-          "pos": 11,
-          "nazione": "Croazia",
-          "logo": "images/croazia.png",
-          "mister": "Cristian Tartaro",
-          "punti": 0,
-          "fase": ""
-        },
-        {
-          "pos": 12,
+          "pos": 4,
           "nazione": "Olanda",
           "logo": "images/olanda.png",
           "mister": "Valentina Pozzi",
-          "punti": 0,
-          "fase": ""
+          "punti": 10,
+          "fase": "Sedicesimi"
+        },
+        {
+          "pos": 5,
+          "nazione": "Belgio",
+          "logo": "images/belgio.png",
+          "mister": "Lorenzo Moro",
+          "punti": 9,
+          "fase": "Quarti"
+        },
+        {
+          "pos": 6,
+          "nazione": "Inghilterra",
+          "logo": "images/inghilterra.png",
+          "mister": "Denis Mascherin",
+          "punti": 9,
+          "fase": "Semifinale"
+        },
+        {
+          "pos": 7,
+          "nazione": "Marocco",
+          "logo": "images/marocco.png",
+          "mister": "Aidan Conti",
+          "punti": 8,
+          "fase": "Quarti"
+        },
+        {
+          "pos": 8,
+          "nazione": "Spagna",
+          "logo": "images/spagna.png",
+          "mister": "Andrea Campagnolo",
+          "punti": 8,
+          "fase": "Semifinale"
+        },
+        {
+          "pos": 9,
+          "nazione": "Brasile",
+          "logo": "images/brasile.png",
+          "mister": "Federico Burello",
+          "punti": 6,
+          "fase": "Ottavi"
+        },
+        {
+          "pos": 10,
+          "nazione": "Portogallo",
+          "logo": "images/portogallo.png",
+          "mister": "Alex Beltrame",
+          "punti": 6,
+          "fase": "Ottavi"
+        },
+        {
+          "pos": 11,
+          "nazione": "Germania",
+          "logo": "images/germania.png",
+          "mister": "Nicola Marano",
+          "punti": 3,
+          "fase": "Sedicesimi"
+        },
+        {
+          "pos": 12,
+          "nazione": "Croazia",
+          "logo": "images/croazia.png",
+          "mister": "Cristian Tartaro",
+          "punti": 3,
+          "fase": "Sedicesimi"
         }
       ]
     }
