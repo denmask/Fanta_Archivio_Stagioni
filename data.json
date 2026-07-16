@@ -184,17 +184,33 @@
       "tipo": "FantaMundial",
       "edizione": "USA/MEX/CAN 2026",
       "stagione": "2025-26",
-      "vincitore": "",
-      "logo_vincitore": "",
-      "mister_vincitore": "",
-      "finalista": "",
-      "logo_finalista": "",
-      "mister_finalista": "",
+      "vincitore": "Spagna",
+      "logo_vincitore": "images/spagna.png",
+      "mister_vincitore": "Andrea Campagnolo",
+      "finalista": "Argentina",
+      "logo_finalista": "images/argentina.png",
+      "mister_finalista": "Mattia Beltrame",
       "risultato": "",
       "marcatore": null,
       "classifica": [
         {
           "pos": 1,
+          "nazione": "Argentina",
+          "logo": "images/argentina.png",
+          "mister": "Mattia Beltrame",
+          "punti": 14,
+          "fase": "Finale"
+        },
+        {
+          "pos": 2,
+          "nazione": "Spagna",
+          "logo": "images/spagna.png",
+          "mister": "Andrea Campagnolo",
+          "punti": 14,
+          "fase": "Finale"
+        },
+        {
+          "pos": 3,
           "nazione": "Francia",
           "logo": "images/francia.png",
           "mister": "Kevin Sandri",
@@ -202,15 +218,15 @@
           "fase": "Semifinale"
         },
         {
-          "pos": 2,
-          "nazione": "Argentina",
-          "logo": "images/argentina.png",
-          "mister": "Mattia Beltrame",
-          "punti": 11,
+          "pos": 4,
+          "nazione": "Inghilterra",
+          "logo": "images/inghilterra.png",
+          "mister": "Denis Mascherin",
+          "punti": 10,
           "fase": "Semifinale"
         },
         {
-          "pos": 3,
+          "pos": 5,
           "nazione": "Norvegia",
           "logo": "images/norvegia.png",
           "mister": "Kevin Di Bernardo",
@@ -219,7 +235,7 @@
         },
   
         {
-          "pos": 4,
+          "pos": 6,
           "nazione": "Olanda",
           "logo": "images/olanda.png",
           "mister": "Valentina Pozzi",
@@ -227,37 +243,23 @@
           "fase": "Sedicesimi"
         },
         {
-          "pos": 5,
+          "pos": 7,
           "nazione": "Belgio",
           "logo": "images/belgio.png",
           "mister": "Lorenzo Moro",
           "punti": 9,
           "fase": "Quarti"
         },
+        
         {
-          "pos": 6,
-          "nazione": "Inghilterra",
-          "logo": "images/inghilterra.png",
-          "mister": "Denis Mascherin",
-          "punti": 9,
-          "fase": "Semifinale"
-        },
-        {
-          "pos": 7,
+          "pos": 8,
           "nazione": "Marocco",
           "logo": "images/marocco.png",
           "mister": "Aidan Conti",
           "punti": 8,
           "fase": "Quarti"
         },
-        {
-          "pos": 8,
-          "nazione": "Spagna",
-          "logo": "images/spagna.png",
-          "mister": "Andrea Campagnolo",
-          "punti": 8,
-          "fase": "Semifinale"
-        },
+        
         {
           "pos": 9,
           "nazione": "Brasile",
