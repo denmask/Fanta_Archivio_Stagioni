@@ -544,71 +544,72 @@
       "sponsor": "Enilive",
       "classifica": [
         {
-          "pos": "",
-          "squadra": "Inter",
-          "logo": "images/inter.png",
-          "mister": "Federico Burello",
-          "punti": "",
-          "fp": ""
-        },
-        {
-          "pos": "",
-          "squadra": "Napoli",
-          "logo": "images/napoli.png",
-          "mister": "Alex Beltrame",
-          "punti": "",
-          "fp": ""
-        },
-        {
-          "pos": "",
+          "pos": "1",
           "squadra": "Roma",
           "logo": "images/roma.png",
           "mister": "Kevin Di Bernardo",
-          "punti": "",
-          "fp": ""
+          "punti": "12",
+          "fp": "400"
         },
         {
-          "pos": "",
+          "pos": "2",
           "squadra": "Como",
           "logo": "images/como.png",
           "mister": "Denis Mascherin",
-          "punti": "",
-          "fp": ""
+          "punti": "9",
+          "fp": "341.5"
         },
         {
-          "pos": "",
-          "squadra": "Milan",
-          "logo": "images/milan.png",
-          "mister": "Nicola Marano",
-          "punti": "",
-          "fp": ""
-        },
-        {
-          "pos": "",
+          "pos": "3",
           "squadra": "Juventus",
           "logo": "images/juventus.png",
           "mister": "Cristian Tartaro",
-          "punti": "",
-          "fp": ""
+          "punti": "9",
+          "fp": "370"
         },
         {
-          "pos": "",
+          "pos": "4",
+          "squadra": "Inter",
+          "logo":"images/inter.png",
+          "mister": "Federico Burello",
+          "punti": "9",
+          "fp":"389.5"
+        },
+        {
+          "pos": "5",
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Alex Beltrame",
+          "punti": "7",
+          "fp": "341.5"
+        },
+    
+        {
+          "pos": "6",
           "squadra": "Atalanta",
           "logo": "images/atalanta.png",
           "mister": "Kevin Sandri",
-          "punti": "",
-          "fp": ""
+          "punti": "4",
+          "fp": "315.5"
         },
         {
-          "pos": "",
+          "pos": "7",
+          "squadra": "Milan",
+          "logo": "images/milan.png",
+          "mister": "Nicola Marano",
+          "punti": "4",
+          "fp": "373"
+        },
+        {
+          "pos": "8",
           "squadra": "Bologna",
           "logo": "images/bologna.png",
           "mister": "Aidan Conti",
-          "punti": "",
-          "fp": ""
+          "punti": "4",
+          "fp": "329.5"
         },
         {
-          "pos": "",
+          "pos": "1",
           "squadra": "Roma",
           "logo": "images/roma.png",
           "mister": "Mattia Beltrame",
