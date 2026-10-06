@@ -34,6 +34,7 @@ function renderSeason(anno) {
   const useFasce = anno === "2025-26" || anno === "2024-25";
   let liveStats = null;
   if (anno === "2025-26") liveStats = buildStats2526();
+  if (anno === "2026-27") liveStats = buildStats2627();
 
   let classifica = season.classifica.filter((team) => !team.isVice && !team.secondoAllenatore);
 
@@ -44,8 +45,8 @@ function renderSeason(anno) {
       return team;
     });
     classifica.sort((a, b) => {
-      if (b.punti !== a.punti) return b.punti - a.punti;
-      return a.pos - b.pos;
+      if (Number(b.punti) !== Number(a.punti)) return Number(b.punti) - Number(a.punti);
+      return Number(a.pos) - Number(b.pos);
     });
     classifica = classifica.map((team, i) => ({ ...team, pos: i + 1 }));
   }
@@ -489,7 +490,7 @@ function resetAllSections() {
   document.querySelector(".btn-attivita").innerText = "👥 ATTIVITÀ";
   document.querySelector(".btn-fasce").innerText = "📊 FASCE";
   const sb = document.querySelector(".btn-stats2526");
-  if (sb) sb.innerText = "📈 STATISTICHE 25/26";
+  if (sb) sb.innerText = "📈 STATISTICHE 26/27";
 }
 
 function togglePalmares() {
@@ -978,28 +979,42 @@ const RISULTATI_2526 = [
   { g: 38, casa: "Juventus", gC: 2, gT: 1, tras: "Roma" },
 ];
 
-const TEAM_MISTER = {
-  Inter: "Federico Burello", Napoli: "Mattia Beltrame", Atalanta: "Kevin Di Bernardo",
-  Juventus: "Denis Mascherin", Milan: "Lorenzo Moro", Roma: "Alex Beltrame",
-  Lazio: "Cristian Tartaro", Bologna: "Nicola Marano",
-};
+function getSeasonTeams(anno) {
+  const season = (fantaData.stagioni || []).find((x) => x.anno === anno);
+  if (!season) return [];
+  return season.classifica.filter((t) => !t.isVice && !t.secondoAllenatore);
+}
 
-const TEAM_LOGO = {
-  Inter: "images/inter.png", Napoli: "images/napoli.png", Atalanta: "images/atalanta.png",
-  Juventus: "images/juventus.png", Milan: "images/milan.png", Roma: "images/roma.png",
-  Lazio: "images/lazio.png", Bologna: "images/bologna.png",
-};
+function isNum(x) {
+  return typeof x === "number" && isFinite(x);
+}
 
-function buildStats2526() {
-  const teams = Object.keys(TEAM_MISTER);
+function applyBlock(s, suffix, blk) {
+  if (!blk || !isNum(blk.v) || !isNum(blk.n) || !isNum(blk.p)) return false;
+  s["v" + suffix] = blk.v;
+  s["n" + suffix] = blk.n;
+  s["p" + suffix] = blk.p;
+  s["gf" + suffix] = isNum(blk.gf) ? blk.gf : 0;
+  s["gs" + suffix] = isNum(blk.gs) ? blk.gs : 0;
+  s["goals" + suffix] = isNum(blk.gf) && isNum(blk.gs);
+  s["pg" + suffix] = isNum(blk.pg) ? blk.pg : blk.v + blk.n + blk.p;
+  s["pt" + suffix] = blk.v * 3 + blk.n;
+  return true;
+}
+
+function buildStatsFor(anno) {
+  const key = anno === "2025-26" ? "2526" : "2627";
   const stats = {};
-  teams.forEach((t) => {
-    stats[t] = { squadra: t, mister: TEAM_MISTER[t], logo: TEAM_LOGO[t], pg: 0, v: 0, n: 0, p: 0, pt: 0, gf: 0, gs: 0, pgC: 0, vC: 0, nC: 0, pC: 0, ptC: 0, gfC: 0, gsC: 0, pgT: 0, vT: 0, nT: 0, pT: 0, ptT: 0, gfT: 0, gsT: 0, ultimi: [] };
+  getSeasonTeams(anno).forEach((t) => {
+    stats[t.squadra] = { squadra: t.squadra, mister: t.mister, logo: t.logo, pg: 0, v: 0, n: 0, p: 0, pt: 0, gf: 0, gs: 0, pgC: 0, vC: 0, nC: 0, pC: 0, ptC: 0, gfC: 0, gsC: 0, pgT: 0, vT: 0, nT: 0, pT: 0, ptT: 0, gfT: 0, gsT: 0, ultimi: [], hasResults: false, hasManual: false, maxG: 0 };
   });
-  const source = fantaData.risultati2526 && fantaData.risultati2526.length > 0 ? fantaData.risultati2526 : RISULTATI_2526;
+  let source = fantaData["risultati" + key] || [];
+  if (anno === "2025-26" && source.length === 0) source = RISULTATI_2526;
   [...source].sort((a, b) => a.g - b.g).forEach((r) => {
-    const c = r.casa, t = r.tras, gC = r.gC, gT = r.gT;
+    const c = r.casa, t = r.tras, gC = Number(r.gC), gT = Number(r.gT);
     if (!stats[c] || !stats[t]) return;
+    stats[c].hasResults = true; stats[t].hasResults = true;
+    stats[c].maxG = Math.max(stats[c].maxG, r.g); stats[t].maxG = Math.max(stats[t].maxG, r.g);
     stats[c].pg++; stats[c].pgC++; stats[c].gf += gC; stats[c].gfC += gC; stats[c].gs += gT; stats[c].gsC += gT;
     if (gC > gT) { stats[c].v++; stats[c].vC++; stats[c].pt += 3; stats[c].ptC += 3; stats[c].ultimi.push("W"); }
     else if (gC === gT) { stats[c].n++; stats[c].nC++; stats[c].pt += 1; stats[c].ptC += 1; stats[c].ultimi.push("D"); }
@@ -1009,51 +1024,103 @@ function buildStats2526() {
     else if (gT === gC) { stats[t].n++; stats[t].nT++; stats[t].pt += 1; stats[t].ptT += 1; stats[t].ultimi.push("D"); }
     else { stats[t].p++; stats[t].pT++; stats[t].ultimi.push("L"); }
   });
-  const stagione2526 = (fantaData.stagioni || []).find((s) => s.anno === "2025-26");
-  if (stagione2526) {
-    stagione2526.classifica.filter((t) => !t.isVice && !t.secondoAllenatore).forEach((t) => {
-      if (stats[t.squadra] && t.punti !== null && t.punti !== undefined) stats[t.squadra].pt = t.punti;
-      if (stats[t.squadra] && t.pos !== null && t.pos !== undefined) stats[t.squadra].pos = t.pos;
-    });
-  }
-  const penalita = fantaData.penalita2526 || {};
+  const manual = fantaData["stats" + key] || {};
+  getSeasonTeams(anno).forEach((t) => {
+    const s = stats[t.squadra];
+    if (!s) return;
+    const m = manual[t.squadra];
+    if (m) {
+      if (applyBlock(s, "", m)) { s.hasManual = true; s.hasResults = true; }
+      applyBlock(s, "C", m.casa);
+      applyBlock(s, "T", m.trasferta);
+      if (typeof m.forma === "string" && m.forma.trim() !== "") {
+        s.ultimi = m.forma.toUpperCase().replace(/[^VPSWDL]/g, "").split("").map((c) => (c === "V" ? "W" : c === "P" ? "D" : c === "S" ? "L" : c));
+      }
+      if (s.hasManual && isNum(m.penalita)) s.pt -= m.penalita;
+    }
+    const punti = Number(t.punti);
+    const pos = Number(t.pos);
+    if (!s.hasManual && t.punti !== null && t.punti !== undefined && t.punti !== "" && !isNaN(punti)) s.pt = punti;
+    if (t.pos !== null && t.pos !== undefined && t.pos !== "" && !isNaN(pos)) s.pos = pos;
+    s.fp = parseFloat(t.fp) || 0;
+  });
+  const penalita = fantaData["penalita" + key] || {};
   Object.keys(penalita).forEach((team) => { if (stats[team]) stats[team].penalita = penalita[team]; });
   Object.values(stats).forEach((s) => { s.ultimi5 = s.ultimi.slice(-5); });
   return stats;
 }
 
+function buildStats2526() {
+  return buildStatsFor("2025-26");
+}
+
+function buildStats2627() {
+  return buildStatsFor("2026-27");
+}
+
 function getStatsRanked(mode) {
-  const arr = Object.values(buildStats2526());
+  const arr = Object.values(buildStats2627());
+  const anyC = arr.some((t) => t.pgC > 0);
+  const anyT = arr.some((t) => t.pgT > 0);
   arr.sort((a, b) => {
-    if (mode === "casa") return b.ptC !== a.ptC ? b.ptC - a.ptC : b.gfC - b.gsC - (a.gfC - a.gsC);
-    if (mode === "trasferta") return b.ptT !== a.ptT ? b.ptT - a.ptT : b.gfT - b.gsT - (a.gfT - a.gsT);
-    return b.pt !== a.pt ? b.pt - a.pt : (a.pos || 99) - (b.pos || 99);
+    if (anyC && mode === "casa") return b.ptC !== a.ptC ? b.ptC - a.ptC : b.gfC - b.gsC - (a.gfC - a.gsC) || (a.pos || 99) - (b.pos || 99);
+    if (anyT && mode === "trasferta") return b.ptT !== a.ptT ? b.ptT - a.ptT : b.gfT - b.gsT - (a.gfT - a.gsT) || (a.pos || 99) - (b.pos || 99);
+    if (b.pt !== a.pt) return b.pt - a.pt;
+    return (a.pos || 99) - (b.pos || 99);
   });
+  if (mode === "casa") return arr.filter((t) => t.pgC > 0);
+  if (mode === "trasferta") return arr.filter((t) => t.pgT > 0);
   return arr;
 }
 
 function risultatoBadge(r) {
-  if (r === "W") return `<span class="ris-badge ris-w">W</span>`;
-  if (r === "D") return `<span class="ris-badge ris-d">D</span>`;
-  return `<span class="ris-badge ris-l">L</span>`;
+  if (r === "W") return `<span class="ris-badge ris-w">V</span>`;
+  if (r === "D") return `<span class="ris-badge ris-d">P</span>`;
+  return `<span class="ris-badge ris-l">S</span>`;
 }
 
 function renderStats2526(mode) {
+  const all = Object.values(buildStats2627());
+  const showC = all.some((t) => t.pgC > 0);
+  const showT = all.some((t) => t.pgT > 0);
+  const showF = all.some((t) => (t.ultimi5 || []).length > 0);
+  const tabC = document.getElementById("statsTab_casa");
+  const tabT = document.getElementById("statsTab_trasferta");
+  const tabF = document.getElementById("statsTab_forma");
+  if (tabC) tabC.style.display = showC ? "" : "none";
+  if (tabT) tabT.style.display = showT ? "" : "none";
+  if (tabF) tabF.style.display = showF ? "" : "none";
+  if ((mode === "casa" && !showC) || (mode === "trasferta" && !showT) || (mode === "forma" && !showF)) mode = "globale";
+  currentStatsMode = mode;
+  document.querySelectorAll(".stats-tab-btn").forEach((b) => b.classList.remove("active"));
+  const activeTab = document.getElementById("statsTab_" + mode);
+  if (activeTab) activeTab.classList.add("active");
   const teams = getStatsRanked(mode);
   const container = document.getElementById("stats2526Body");
   if (!container) return;
+  const maxG = teams.reduce((m, t) => Math.max(m, t.maxG || 0, t.hasManual ? t.pg : 0), 0);
+  const ttl = document.querySelector(".stats2526-header .section-title");
+  if (ttl) ttl.innerText = "📈 Statistiche Stagione 2026/27";
+  const sub = document.querySelector(".stats2526-sub");
+  if (sub) sub.innerText = maxG > 0 ? `Lega Privata Udinese 1896 · Aggiornate alla Giornata ${maxG}` : "Lega Privata Udinese 1896 · Classifica attuale";
   let html = "";
+  let showGoals = true;
+  const teamCell = (t) => `<td><div class="team-cell-stats"><img src="${t.logo}" class="team-logo" onerror="this.src='images/default.png'"><div><div class="ts-name">${t.squadra}</div><div class="ts-mister">${t.mister}</div></div></div></td>`;
   if (mode === "forma") {
     teams.forEach((t, i) => {
       const forma = (t.ultimi5 || []).map(risultatoBadge).join("");
-      html += `<tr><td><span class="pos-num-stats">${i + 1}</span></td><td><div class="team-cell-stats"><img src="${t.logo}" class="team-logo" onerror="this.src='images/default.png'"><div><div class="ts-name">${t.squadra}</div><div class="ts-mister">${t.mister}</div></div></div></td><td class="pts-bold">${t.pt}</td><td>${t.pg}</td><td><div class="forma-cell-wrapper">${forma}</div></td></tr>`;
+      html += `<tr><td><span class="pos-num-stats">${i + 1}</span></td>${teamCell(t)}<td class="pts-bold">${t.pt}</td><td>${t.pg}</td><td><div class="forma-cell-wrapper">${forma}</div></td></tr>`;
     });
   } else {
     const isC = mode === "casa", isT = mode === "trasferta";
+    showGoals = mode === "globale" || teams.every((t) => (isC ? t.goalsC : t.goalsT));
     teams.forEach((t, i) => {
       const pg = isC ? t.pgC : isT ? t.pgT : t.pg, v = isC ? t.vC : isT ? t.vT : t.v, n = isC ? t.nC : isT ? t.nT : t.n, p = isC ? t.pC : isT ? t.pT : t.p, pt = isC ? t.ptC : isT ? t.ptT : t.pt, gf = isC ? t.gfC : isT ? t.gfT : t.gf, gs = isC ? t.gsC : isT ? t.gsT : t.gs, dr = gf - gs;
+      const has = isC ? t.pgC > 0 : isT ? t.pgT > 0 : t.hasResults;
+      const cell = (x) => x;
       const drHtml = dr > 0 ? `<span class="dr-pos">+${dr}</span>` : dr < 0 ? `<span class="dr-neg">${dr}</span>` : `<span style="color:#888">0</span>`;
-      html += `<tr><td><span class="pos-num-stats">${i + 1}</span></td><td><div class="team-cell-stats"><img src="${t.logo}" class="team-logo" onerror="this.src='images/default.png'"><div><div class="ts-name">${t.squadra}</div><div class="ts-mister">${t.mister}</div></div></div></td><td class="pts-bold">${pt}</td><td>${pg}</td><td>${v}</td><td>${n}</td><td>${p}</td><td>${gf}</td><td>${gs}</td><td>${drHtml}</td></tr>`;
+      const ptCell = pt;
+      html += `<tr><td><span class="pos-num-stats">${i + 1}</span></td>${teamCell(t)}<td class="pts-bold">${ptCell}</td><td>${cell(pg)}</td><td>${cell(v)}</td><td>${cell(n)}</td><td>${cell(p)}</td>${showGoals ? `<td>${cell(gf)}</td><td>${cell(gs)}</td><td>${drHtml}</td>` : ""}</tr>`;
     });
   }
   container.innerHTML = html;
@@ -1061,7 +1128,7 @@ function renderStats2526(mode) {
   if (!thead) return;
   thead.innerHTML = mode === "forma"
     ? `<tr><th>#</th><th style="text-align:left">Squadra</th><th>PT</th><th>PG</th><th>Ultimi 5</th></tr>`
-    : `<tr><th>#</th><th style="text-align:left">Squadra</th><th>PT</th><th>PG</th><th>V</th><th>N</th><th>P</th><th>GF</th><th>GS</th><th>DR</th></tr>`;
+    : `<tr><th>#</th><th style="text-align:left">Squadra</th><th>PT</th><th>PG</th><th>V</th><th>N</th><th>P</th>${showGoals ? "<th>GF</th><th>GS</th><th>DR</th>" : ""}</tr>`;
 }
 
 let currentStatsMode = "globale";
@@ -1082,7 +1149,7 @@ function toggleStats2526() {
     renderStats2526(currentStatsMode);
   } else {
     document.getElementById("rankingSection").classList.remove("hidden");
-    document.querySelector(".btn-stats2526").innerText = "📈 STATISTICHE 25/26";
+    document.querySelector(".btn-stats2526").innerText = "📈 STATISTICHE 26/27";
   }
 }
 

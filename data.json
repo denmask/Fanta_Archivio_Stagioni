@@ -1,4 +1,183 @@
 {
+  "risultati2627": [],
+  "stats2627": {
+    "Roma": {
+      "pg": 5,
+      "v": 4,
+      "n": 0,
+      "p": 1,
+      "gf": 18,
+      "gs": 9,
+      "penalita": 0,
+      "forma": "VVVSV",
+      "casa": {
+        "pg": 2,
+        "v": 2,
+        "n": 0,
+        "p": 0
+      },
+      "trasferta": {
+        "pg": 3,
+        "v": 2,
+        "n": 0,
+        "p": 1
+      }
+    },
+    "Como": {
+      "pg": 5,
+      "v": 3,
+      "n": 0,
+      "p": 2,
+      "gf": 11,
+      "gs": 10,
+      "penalita": 0,
+      "forma": "VSVVS",
+      "casa": {
+        "pg": 3,
+        "v": 2,
+        "n": 0,
+        "p": 1
+      },
+      "trasferta": {
+        "pg": 2,
+        "v": 1,
+        "n": 0,
+        "p": 1
+      }
+    },
+    "Juventus": {
+      "pg": 5,
+      "v": 3,
+      "n": 0,
+      "p": 2,
+      "gf": 10,
+      "gs": 6,
+      "penalita": 0,
+      "forma": "VVSSV",
+      "casa": {
+        "pg": 2,
+        "v": 2,
+        "n": 0,
+        "p": 0
+      },
+      "trasferta": {
+        "pg": 3,
+        "v": 1,
+        "n": 0,
+        "p": 2
+      }
+    },
+    "Inter": {
+      "pg": 5,
+      "v": 3,
+      "n": 0,
+      "p": 2,
+      "gf": 17,
+      "gs": 13,
+      "penalita": 0,
+      "forma": "VSSVV",
+      "casa": {
+        "pg": 3,
+        "v": 2,
+        "n": 0,
+        "p": 1
+      },
+      "trasferta": {
+        "pg": 2,
+        "v": 1,
+        "n": 0,
+        "p": 1
+      }
+    },
+    "Napoli": {
+      "pg": 5,
+      "v": 2,
+      "n": 1,
+      "p": 2,
+      "gf": 12,
+      "gs": 15,
+      "penalita": 0,
+      "forma": "SVVPS",
+      "casa": {
+        "pg": 2,
+        "v": 1,
+        "n": 1,
+        "p": 0
+      },
+      "trasferta": {
+        "pg": 3,
+        "v": 1,
+        "n": 0,
+        "p": 2
+      }
+    },
+    "Atalanta": {
+      "pg": 5,
+      "v": 1,
+      "n": 1,
+      "p": 3,
+      "gf": 7,
+      "gs": 13,
+      "penalita": 0,
+      "forma": "SVSPS",
+      "casa": {
+        "pg": 3,
+        "v": 1,
+        "n": 1,
+        "p": 1
+      },
+      "trasferta": {
+        "pg": 2,
+        "v": 0,
+        "n": 0,
+        "p": 2
+      }
+    },
+    "Milan": {
+      "pg": 5,
+      "v": 1,
+      "n": 1,
+      "p": 3,
+      "gf": 9,
+      "gs": 14,
+      "penalita": 0,
+      "forma": "SSSPV",
+      "casa": {
+        "pg": 2,
+        "v": 1,
+        "n": 0,
+        "p": 1
+      },
+      "trasferta": {
+        "pg": 3,
+        "v": 0,
+        "n": 1,
+        "p": 2
+      }
+    },
+    "Bologna": {
+      "pg": 5,
+      "v": 1,
+      "n": 1,
+      "p": 3,
+      "gf": 3,
+      "gs": 7,
+      "penalita": 0,
+      "forma": "SSVPS",
+      "casa": {
+        "pg": 3,
+        "v": 1,
+        "n": 0,
+        "p": 2
+      },
+      "trasferta": {
+        "pg": 2,
+        "v": 0,
+        "n": 1,
+        "p": 1
+      }
+    }
+  },
   "palmares": [
     {
       "stagione": "2026-27",
@@ -233,7 +412,6 @@
           "punti": 10,
           "fase": "Quarti"
         },
-  
         {
           "pos": 6,
           "nazione": "Olanda",
@@ -250,7 +428,6 @@
           "punti": 9,
           "fase": "Quarti"
         },
-        
         {
           "pos": 8,
           "nazione": "Marocco",
@@ -259,7 +436,6 @@
           "punti": 8,
           "fase": "Quarti"
         },
-        
         {
           "pos": 9,
           "nazione": "Brasile",
@@ -549,7 +725,13 @@
           "logo": "images/roma.png",
           "mister": "Kevin Di Bernardo",
           "punti": "12",
-          "fp": "400"
+          "fp": "400",
+          "pg": 5,
+          "v": 4,
+          "n": 0,
+          "p": 1,
+          "gf": 18,
+          "gs": 9
         },
         {
           "pos": "2",
@@ -557,7 +739,13 @@
           "logo": "images/como.png",
           "mister": "Denis Mascherin",
           "punti": "9",
-          "fp": "341.5"
+          "fp": "341.5",
+          "pg": 5,
+          "v": 3,
+          "n": 0,
+          "p": 2,
+          "gf": 11,
+          "gs": 10
         },
         {
           "pos": "3",
@@ -565,15 +753,27 @@
           "logo": "images/juventus.png",
           "mister": "Cristian Tartaro",
           "punti": "9",
-          "fp": "370"
+          "fp": "370",
+          "pg": 5,
+          "v": 3,
+          "n": 0,
+          "p": 2,
+          "gf": 10,
+          "gs": 6
         },
         {
           "pos": "4",
           "squadra": "Inter",
-          "logo":"images/inter.png",
+          "logo": "images/inter.png",
           "mister": "Federico Burello",
           "punti": "9",
-          "fp":"389.5"
+          "fp": "389.5",
+          "pg": 5,
+          "v": 3,
+          "n": 0,
+          "p": 2,
+          "gf": 17,
+          "gs": 13
         },
         {
           "pos": "5",
@@ -581,16 +781,27 @@
           "logo": "images/napoli.png",
           "mister": "Alex Beltrame",
           "punti": "7",
-          "fp": "341.5"
+          "fp": "341.5",
+          "pg": 5,
+          "v": 2,
+          "n": 1,
+          "p": 2,
+          "gf": 12,
+          "gs": 15
         },
-    
         {
           "pos": "6",
           "squadra": "Atalanta",
           "logo": "images/atalanta.png",
           "mister": "Kevin Sandri",
           "punti": "4",
-          "fp": "315.5"
+          "fp": "315.5",
+          "pg": 5,
+          "v": 1,
+          "n": 1,
+          "p": 3,
+          "gf": 7,
+          "gs": 13
         },
         {
           "pos": "7",
@@ -598,7 +809,13 @@
           "logo": "images/milan.png",
           "mister": "Nicola Marano",
           "punti": "4",
-          "fp": "373"
+          "fp": "373",
+          "pg": 5,
+          "v": 1,
+          "n": 1,
+          "p": 3,
+          "gf": 9,
+          "gs": 14
         },
         {
           "pos": "8",
@@ -606,7 +823,13 @@
           "logo": "images/bologna.png",
           "mister": "Aidan Conti",
           "punti": "4",
-          "fp": "329.5"
+          "fp": "329.5",
+          "pg": 5,
+          "v": 1,
+          "n": 1,
+          "p": 3,
+          "gf": 3,
+          "gs": 7
         },
         {
           "pos": "1",
