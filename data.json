@@ -2,14 +2,14 @@
   "risultati2627": [],
   "stats2627": {
     "Roma": {
-      "pg": 5,
+      "pg": 6,
       "v": 4,
       "n": 0,
-      "p": 1,
+      "p": 2,
       "gf": 18,
-      "gs": 9,
+      "gs": 10,
       "penalita": 0,
-      "forma": "VVVSV",
+      "forma": "VVSVS",
       "casa": {
         "pg": 2,
         "v": 2,
@@ -17,21 +17,21 @@
         "p": 0
       },
       "trasferta": {
-        "pg": 3,
+        "pg": 4,
         "v": 2,
         "n": 0,
-        "p": 1
+        "p": 2
       }
     },
     "Como": {
-      "pg": 5,
+      "pg": 6,
       "v": 3,
       "n": 0,
-      "p": 2,
+      "p": 3,
       "gf": 11,
-      "gs": 10,
+      "gs": 13,
       "penalita": 0,
-      "forma": "VSVVS",
+      "forma": "SVVSS",
       "casa": {
         "pg": 3,
         "v": 2,
@@ -39,24 +39,24 @@
         "p": 1
       },
       "trasferta": {
-        "pg": 2,
+        "pg": 3,
         "v": 1,
         "n": 0,
-        "p": 1
+        "p": 2
       }
     },
     "Juventus": {
-      "pg": 5,
-      "v": 3,
+      "pg": 6,
+      "v": 4,
       "n": 0,
       "p": 2,
-      "gf": 10,
+      "gf": 11,
       "gs": 6,
       "penalita": 0,
-      "forma": "VVSSV",
+      "forma": "VSSVV",
       "casa": {
-        "pg": 2,
-        "v": 2,
+        "pg": 3,
+        "v": 3,
         "n": 0,
         "p": 0
       },
@@ -68,17 +68,17 @@
       }
     },
     "Inter": {
-      "pg": 5,
-      "v": 3,
+      "pg": 6,
+      "v": 4,
       "n": 0,
       "p": 2,
-      "gf": 17,
+      "gf": 20,
       "gs": 13,
       "penalita": 0,
-      "forma": "VSSVV",
+      "forma": "SSVVV",
       "casa": {
-        "pg": 3,
-        "v": 2,
+        "pg": 4,
+        "v": 3,
         "n": 0,
         "p": 1
       },
@@ -90,17 +90,17 @@
       }
     },
     "Napoli": {
-      "pg": 5,
-      "v": 2,
+      "pg": 6,
+      "v": 3,
       "n": 1,
       "p": 2,
-      "gf": 12,
+      "gf": 14,
       "gs": 15,
       "penalita": 0,
-      "forma": "SVVPS",
+      "forma": "VVPSV",
       "casa": {
-        "pg": 2,
-        "v": 1,
+        "pg": 3,
+        "v": 2,
         "n": 1,
         "p": 0
       },
@@ -112,14 +112,14 @@
       }
     },
     "Atalanta": {
-      "pg": 5,
+      "pg": 6,
       "v": 1,
       "n": 1,
-      "p": 3,
+      "p": 4,
       "gf": 7,
-      "gs": 13,
+      "gs": 15,
       "penalita": 0,
-      "forma": "SVSPS",
+      "forma": "VSPSS",
       "casa": {
         "pg": 3,
         "v": 1,
@@ -127,21 +127,21 @@
         "p": 1
       },
       "trasferta": {
-        "pg": 2,
+        "pg": 3,
         "v": 0,
         "n": 0,
-        "p": 2
+        "p": 3
       }
     },
     "Milan": {
-      "pg": 5,
-      "v": 1,
+      "pg": 6,
+      "v": 2,
       "n": 1,
       "p": 3,
-      "gf": 9,
+      "gf": 12,
       "gs": 14,
       "penalita": 0,
-      "forma": "SSSPV",
+      "forma": "SSPVV",
       "casa": {
         "pg": 2,
         "v": 1,
@@ -149,26 +149,26 @@
         "p": 1
       },
       "trasferta": {
-        "pg": 3,
+        "pg": 4,
         "v": 0,
         "n": 1,
-        "p": 2
+        "p": 3
       }
     },
     "Bologna": {
-      "pg": 5,
+      "pg": 6,
       "v": 1,
       "n": 1,
-      "p": 3,
+      "p": 4,
       "gf": 3,
-      "gs": 7,
+      "gs": 10,
       "penalita": 0,
-      "forma": "SSVPS",
+      "forma": "SVPSS",
       "casa": {
-        "pg": 3,
+        "pg": 4,
         "v": 1,
         "n": 0,
-        "p": 2
+        "p": 3
       },
       "trasferta": {
         "pg": 2,
