@@ -26,12 +26,12 @@
     "Como": {
       "pg": 7,
       "v": 3,
-      "n": 0,
-      "p": 4,
-      "gf": 13,
+      "n": 1,
+      "p": 3,
+      "gf": 15,
       "gs": 17,
       "penalita": 0,
-      "forma": "VVSSS",
+      "forma": "VVSSP",
       "casa": {
         "pg": 3,
         "v": 2,
@@ -41,19 +41,19 @@
       "trasferta": {
         "pg": 4,
         "v": 1,
-        "n": 0,
-        "p": 3
+        "n": 1,
+        "p": 2
       }
     },
     "Juventus": {
       "pg": 7,
-      "v": 4,
+      "v": 5,
       "n": 0,
-      "p": 3,
-      "gf": 12,
+      "p": 2,
+      "gf": 14,
       "gs": 7,
       "penalita": 0,
-      "forma": "SSVVS",
+      "forma": "SSVVV",
       "casa": {
         "pg": 3,
         "v": 3,
@@ -62,9 +62,9 @@
       },
       "trasferta": {
         "pg": 4,
-        "v": 1,
+        "v": 2,
         "n": 0,
-        "p": 3
+        "p": 2
       }
     },
     "Inter": {
@@ -91,18 +91,18 @@
     },
     "Napoli": {
       "pg": 7,
-      "v": 4,
+      "v": 3,
       "n": 1,
-      "p": 2,
+      "p": 3,
       "gf": 15,
-      "gs": 16,
+      "gs": 18,
       "penalita": 0,
-      "forma": "VPSVV",
+      "forma": "VPSVS",
       "casa": {
         "pg": 4,
-        "v": 3,
+        "v": 2,
         "n": 1,
-        "p": 0
+        "p": 1
       },
       "trasferta": {
         "pg": 3,
@@ -113,17 +113,17 @@
     },
     "Atalanta": {
       "pg": 7,
-      "v": 2,
-      "n": 1,
+      "v": 1,
+      "n": 2,
       "p": 4,
       "gf": 12,
-      "gs": 17,
+      "gs": 19,
       "penalita": 0,
-      "forma": "SPSSV",
+      "forma": "SPSSP",
       "casa": {
         "pg": 4,
-        "v": 2,
-        "n": 1,
+        "v": 1,
+        "n": 2,
         "p": 1
       },
       "trasferta": {
@@ -724,55 +724,55 @@
           "squadra": "Juventus",
           "logo": "images/juventus.png",
           "mister": "Cristian Tartaro",
-          "punti": "12",
-          "fp": "447.5",
-          "pg": 6,
-          "v": 4,
+          "punti": "15",
+          "fp": "514",
+          "pg": 7,
+          "v": 5,
           "n": 0,
           "p": 2,
-          "gf": 12,
-          "gs": 6
+          "gf": 14,
+          "gs": 7
         },
         {
           "pos": "2",
+          "squadra": "Roma",
+          "logo": "images/roma.png",
+          "mister": "Kevin Di Bernardo",
+          "punti": "15",
+          "fp": "532.5",
+          "pg": 7,
+          "v": 5,
+          "n": 0,
+          "p": 2,
+          "gf": 22,
+          "gs": 11
+        },
+        {
+          "pos": "3",
           "squadra": "Inter",
           "logo": "images/inter.png",
           "mister": "Federico Burello",
           "punti": "12",
-          "fp": "462.5",
-          "pg": 6,
+          "fp": "530",
+          "pg": 7,
           "v": 4,
           "n": 0,
-          "p": 2,
-          "gf": 20,
-          "gs": 13
-        },
-        {
-          "pos": "3",
-          "squadra": "Roma",
-          "logo": "images/roma.png",
-          "mister": "Kevin Di Bernardo",
-          "punti": "12",
-          "fp": "454.5",
-          "pg": 6,
-          "v": 4,
-          "n": 0,
-          "p": 2,
-          "gf": 18,
-          "gs": 11
+          "p": 3,
+          "gf": 22,
+          "gs": 16
         },
         {
           "pos": "4",
-          "squadra": "Napoli",
-          "logo": "images/napoli.png",
-          "mister": "Alex Beltrame",
+          "squadra": "Milan",
+          "logo": "images/milan.png",
+          "mister": "Nicola Marano",
           "punti": "10",
-          "fp": "409",
-          "pg": 6,
+          "fp": "529.5",
+          "pg": 7,
           "v": 3,
           "n": 1,
-          "p": 2,
-          "gf": 14,
+          "p": 3,
+          "gf": 15,
           "gs": 16
         },
         {
@@ -780,42 +780,42 @@
           "squadra": "Como",
           "logo": "images/como.png",
           "mister": "Denis Mascherin",
-          "punti": "9",
-          "fp": "401.5",
-          "pg": 6,
+          "punti": "10",
+          "fp": "470",
+          "pg": 7,
           "v": 3,
-          "n": 0,
+          "n": 1,
           "p": 3,
-          "gf": 11,
-          "gs": 13
+          "gf": 15,
+          "gs": 17
         },
         {
           "pos": "6",
-          "squadra": "Milan",
-          "logo": "images/milan.png",
-          "mister": "Nicola Marano",
-          "punti": "7",
-          "fp": "452",
-          "pg": 6,
-          "v": 2,
+          "squadra": "Napoli",
+          "logo": "images/napoli.png",
+          "mister": "Alex Beltrame",
+          "punti": "10",
+          "fp": "466.5",
+          "pg": 7,
+          "v": 3,
           "n": 1,
           "p": 3,
-          "gf": 12,
-          "gs": 14
+          "gf": 15,
+          "gs": 18
         },
         {
           "pos": "7",
           "squadra": "Atalanta",
           "logo": "images/atalanta.png",
           "mister": "Kevin Sandri",
-          "punti": "4",
-          "fp": "378.5",
-          "pg": 6,
+          "punti": "5",
+          "fp": "456",
+          "pg": 7,
           "v": 1,
-          "n": 1,
+          "n": 2,
           "p": 4,
-          "gf": 8,
-          "gs": 15
+          "gf": 12,
+          "gs": 19
         },
         
         {
@@ -824,13 +824,13 @@
           "logo": "images/bologna.png",
           "mister": "Aidan Conti",
           "punti": "4",
-          "fp": "394",
-          "pg": 6,
+          "fp": "361",
+          "pg": 7,
           "v": 1,
           "n": 1,
-          "p": 4,
+          "p": 5,
           "gf": 3,
-          "gs": 10
+          "gs": 14
         },
         {
           "pos": "1",
